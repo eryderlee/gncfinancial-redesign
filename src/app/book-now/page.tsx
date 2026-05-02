@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/metadata";
 import { SITE } from "@/lib/constants";
+import ContactForm from "@/components/sections/ContactForm";
 
 export const metadata: Metadata = pageMeta({
   title: "Book a Free Consultation – GNC Financial",
@@ -21,24 +22,15 @@ export default function BookNowPage() {
 
       <section className="py-20 bg-brand-cream">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Phase 1 TODO: replace with booking widget (Calendly, or custom server action) */}
-          <div className="bg-white rounded-2xl p-10 shadow-sm text-center space-y-6">
+          <div className="bg-white rounded-2xl p-10 shadow-sm space-y-4">
             <h2 className="text-2xl font-bold text-brand-navy">Request Your Appointment</h2>
             <p className="text-brand-gray-text">
-              Call us directly on{" "}
+              Fill in the form and we&rsquo;ll be in touch within one business day. Prefer to call?{" "}
               <a href={SITE.phoneHref} className="text-brand-blue font-semibold hover:underline">
                 {SITE.phone}
-              </a>{" "}
-              or email{" "}
-              <a href={SITE.emailHref} className="text-brand-blue font-semibold hover:underline">
-                {SITE.email}
-              </a>{" "}
-              — or fill in the form below and we'll get back to you within one business day.
+              </a>
             </p>
-            {/* Booking form placeholder — wire up in Phase 1 */}
-            <div className="bg-brand-cream rounded-xl p-6 text-brand-gray-text text-sm">
-              [Booking form / Calendly embed — Phase 1 technical]
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>

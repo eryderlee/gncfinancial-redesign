@@ -112,7 +112,9 @@ export default function TaxKellyvillePage() {
             structuring decisions that deliver real savings.
           </p>
           <p>
-            We also make sure you never get caught out by ATO changes or missed lodgment deadlines.
+            We also make sure you never get caught out by{" "}
+            <a href="https://www.ato.gov.au/" target="_blank" rel="noopener noreferrer nofollow" className="underline hover:text-brand-gold">ATO</a>{" "}
+            changes or missed lodgment deadlines.
             We track every obligation for our clients and handle all ATO correspondence on your behalf.
           </p>
 

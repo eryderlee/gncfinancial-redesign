@@ -9,6 +9,12 @@ import MobileNav from "./MobileNav";
 export default function Header() {
   return (
     <header className="w-full">
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand-gold focus:text-brand-navy focus:font-semibold focus:px-4 focus:py-2 focus:rounded-lg"
+      >
+        Skip to content
+      </a>
       {/* Top bar — phone, email, book CTA */}
       <div className="bg-brand-navy text-white text-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">

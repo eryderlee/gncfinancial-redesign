@@ -94,8 +94,9 @@ export default function TaxCastleHillPage() {
             As your{" "}
             <strong>tax accountant in Castle Hill</strong>, we&rsquo;ll meet with you regularly, review
             your financial position, and identify opportunities to reduce your tax and improve
-            your financial outcomes. We stay on top of every ATO rule change and tax law update
-            so you don&rsquo;t have to.
+            your financial outcomes. We stay on top of every{" "}
+            <a href="https://www.ato.gov.au/" target="_blank" rel="noopener noreferrer nofollow" className="underline hover:text-brand-gold">ATO</a>{" "}
+            rule change and tax law update so you don&rsquo;t have to.
           </p>
 
           <h2>Investment Property Tax in Castle Hill</h2>
