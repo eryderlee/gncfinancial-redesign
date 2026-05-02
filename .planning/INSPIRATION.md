@@ -3,6 +3,8 @@
 Use this file to collect websites you want to reference during the Phase 2 visual redesign.
 Add the site name, URL, and a note on what you like about it.
 
+**Source files** (screenshots, PDFs, Figma exports, colour swatches): drop them in [`.planning/inspo-sources/`](inspo-sources/). Name them descriptively, e.g. `firmname-hero.png`, `palette-direction.png`.
+
 ---
 
 ## Overall Aesthetic / Layout

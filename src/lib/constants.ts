@@ -281,14 +281,14 @@ export const LOCATIONS = [
 export const ACCREDITATIONS = [
   {
     name: "Xero Bronze Partner",
-    imageUrl: "https://gncfinancial.com.au/wp-content/uploads/2024/09/gnc.png",
+    imageUrl: "/images/accreditations/xero-bronze-partner.png",
   },
   {
     name: "Tax Practitioners Board Registered",
-    imageUrl: "https://gncfinancial.com.au/wp-content/uploads/2024/09/Group-1.png",
+    imageUrl: "/images/accreditations/tax-practitioners-board.png",
   },
   {
     name: "Institute of Public Accountants",
-    imageUrl: "https://gncfinancial.com.au/wp-content/uploads/2024/09/IPA_Logo_Master_HR-scaled.jpg",
+    imageUrl: "/images/accreditations/ipa-logo.jpg",
   },
 ] as const;
