@@ -10,10 +10,28 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   "chart-bar": <BarChart3 className="w-5 h-5" />,
 };
 
+function ServiceCard({ service, delay }: { service: typeof SERVICES[number]; delay: number }) {
+  return (
+    <Link href={service.slug} className="group" data-reveal data-delay={String(delay)}>
+      <div className="h-full bg-white rounded-2xl p-7 flex flex-col shadow-sm border border-gray-100 hover:border-brand-gold/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+        <div className="w-11 h-11 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5 text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all duration-300">
+          {ICON_MAP[service.icon]}
+        </div>
+        <h3 className="font-bold text-brand-navy text-lg mb-3">{service.title}</h3>
+        <p className="text-brand-gray-text text-sm leading-relaxed flex-1">{service.summary}</p>
+        <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-brand-navy group-hover:text-brand-gold transition-colors duration-300">
+          Learn more
+          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 export default function ServicesGrid() {
   return (
     <section className="py-20 bg-[#f0f2ff]" aria-labelledby="services-heading">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="text-center mb-12" data-reveal>
           <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3">
             Our Services
@@ -28,30 +46,16 @@ export default function ServicesGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES.map((service, i) => (
-            <Link
-              key={service.id}
-              href={service.slug}
-              className="group"
-              data-reveal
-              data-delay={String(i + 1)}
-            >
-              <div className="h-full bg-white rounded-2xl p-7 flex flex-col border-l-4 border-brand-gold hover:border-brand-navy transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-sm">
-                {/* Icon in circle */}
-                <div className="w-11 h-11 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5 text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all duration-300">
-                  {ICON_MAP[service.icon]}
-                </div>
-                <h3 className="font-bold text-brand-navy text-lg mb-3">{service.title}</h3>
-                <p className="text-brand-gray-text text-sm leading-relaxed flex-1">
-                  {service.summary}
-                </p>
-                <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-brand-navy group-hover:text-brand-gold transition-colors duration-300">
-                  Learn more
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </div>
-              </div>
-            </Link>
+        {/* Row 1 — 3 cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {SERVICES.slice(0, 3).map((service, i) => (
+            <ServiceCard key={service.id} service={service} delay={i + 1} />
+          ))}
+        </div>
+        {/* Row 2 — 2 cards centered */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:w-2/3 mx-auto">
+          {SERVICES.slice(3).map((service, i) => (
+            <ServiceCard key={service.id} service={service} delay={i + 4} />
           ))}
         </div>
       </div>

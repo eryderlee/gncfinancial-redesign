@@ -54,8 +54,8 @@ export default function TradesAndBusiness() {
             </div>
             <div className="order-1 lg:order-2">
               {/* Large background number */}
-              <div className="relative">
-                <span className="absolute -top-6 -left-2 text-[5rem] font-black text-brand-navy/6 leading-none select-none pointer-events-none">
+              <div className="relative pt-14">
+                <span className="absolute top-0 -left-2 text-[5rem] font-black text-brand-navy/6 leading-none select-none pointer-events-none">
                   01
                 </span>
                 <div className="relative" data-reveal data-delay="1">
@@ -89,8 +89,8 @@ export default function TradesAndBusiness() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="relative">
-                <span className="absolute -top-6 -left-2 text-[5rem] font-black text-brand-navy/6 leading-none select-none pointer-events-none">
+              <div className="relative pt-14">
+                <span className="absolute top-0 -left-2 text-[5rem] font-black text-brand-navy/6 leading-none select-none pointer-events-none">
                   02
                 </span>
                 <div className="relative" data-reveal data-delay="1">
@@ -157,8 +157,8 @@ export default function TradesAndBusiness() {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <div className="relative">
-                <span className="absolute -top-6 -left-2 text-[5rem] font-black text-brand-navy/6 leading-none select-none pointer-events-none">
+              <div className="relative pt-14">
+                <span className="absolute top-0 -left-2 text-[5rem] font-black text-brand-navy/6 leading-none select-none pointer-events-none">
                   03
                 </span>
                 <div className="relative" data-reveal data-delay="1">

@@ -9,6 +9,8 @@ const PARAGRAPHS = [
 export default function WhyChooseIntro() {
   return (
     <section className="py-24 bg-brand-navy" aria-labelledby="why-choose-intro-heading">
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Eyebrow + heading */}
         <div className="mb-5" data-reveal>

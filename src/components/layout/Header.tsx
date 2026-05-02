@@ -8,19 +8,27 @@ import MobileNav from "./MobileNav";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [goldOpacity, setGoldOpacity] = useState(1);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      setGoldOpacity(Math.max(0, 1 - y / 80));
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(total > 0 ? (y / total) * 100 : 0);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className={`w-full sticky top-0 z-50 transition-all duration-300 ${
+      className={`w-full sticky top-0 z-50 transition-all duration-300 relative ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md border-b border-gray-200/60 shadow-sm"
-          : "bg-white border-b border-gray-100"
+          ? "bg-brand-navy/95 backdrop-blur-md shadow-lg"
+          : "bg-brand-navy"
       }`}
     >
       <a
@@ -50,17 +58,17 @@ export default function Header() {
               <li key={link.href} className="relative group">
                 <Link
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-brand-navy/70 hover:text-brand-navy rounded-md transition-colors duration-200"
+                  className="px-4 py-2 text-sm font-medium text-white/75 hover:text-white rounded-md transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
                 {"children" in link && link.children && (
-                  <ul className="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <ul className="absolute left-0 top-full mt-2 w-56 bg-brand-navy border border-white/10 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {link.children.map((child) => (
                       <li key={child.href}>
                         <Link
                           href={child.href}
-                          className="block px-4 py-2.5 text-sm text-brand-navy/70 hover:text-brand-navy hover:bg-gray-50 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -76,7 +84,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               href={SLUGS.contact}
-              className="hidden lg:inline-flex items-center gap-2 bg-brand-navy text-white font-semibold px-5 py-2 rounded-lg text-sm hover:bg-brand-navy/85 transition-colors duration-200"
+              className="hidden lg:inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-5 py-2 rounded-lg text-sm hover:bg-brand-gold/90 transition-colors duration-200"
             >
               Book Consultation
             </Link>
@@ -84,6 +92,36 @@ export default function Header() {
           </div>
         </div>
       </nav>
+
+      {/* Gold border — full width at page top, fades as you scroll */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "2px",
+          background: "#f8b917",
+          opacity: goldOpacity,
+          transition: "opacity 0.1s linear",
+        }}
+      />
+
+      {/* Scroll progress bar */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          height: "2px",
+          width: `${progress}%`,
+          background: "linear-gradient(90deg, #5271ff, #f8b917)",
+          boxShadow: "0 0 8px rgba(248,185,23,0.5)",
+          transition: "width 0.1s linear",
+        }}
+      />
     </header>
   );
 }

@@ -1,9 +1,31 @@
 import Image from "next/image";
+import { FlickeringGrid } from "@/registry/magicui/flickering-grid";
 
 export default function LocalIntro() {
   return (
-    <section className="py-20 bg-white" aria-labelledby="local-intro-heading">
+    <section className="py-20 bg-white relative overflow-hidden" aria-labelledby="local-intro-heading">
+
+      {/* Flickering grid — radial ellipse centered on the section */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style={{
+          maskImage: "radial-gradient(ellipse 65% 70% at 50% 50%, transparent 0%, transparent 55%, black 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 65% 70% at 50% 50%, transparent 0%, transparent 55%, black 100%)",
+        }}
+      >
+        <FlickeringGrid
+          className="absolute inset-0 size-full"
+          squareSize={2}
+          gridGap={4}
+          color="#5271ff"
+          maxOpacity={0.22}
+          flickerChance={0.01}
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Heading */}
         <div className="mb-12" data-reveal>
           <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3">
@@ -19,54 +41,77 @@ export default function LocalIntro() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Photos: staggered offset layout */}
-          <div className="grid grid-cols-2 gap-5">
-            {/* Left photo — taller, sits higher */}
-            <div
-              className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-lg"
-              data-reveal="left"
-              data-delay="1"
-            >
-              <Image
-                src="/images/sections/bookkeeping-support.jpg"
-                alt="Reliable bookkeeping support Baulkham Hills"
-                fill
-                sizes="(max-width: 1024px) 50vw, 25vw"
-                className="object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
 
-            {/* Right column: second photo offset down + stat badge */}
-            <div className="flex flex-col gap-5 pt-10">
+          {/* Left: photos on gradient backing plate */}
+          <div className="relative" data-reveal="left">
+            {/* Gradient plate — sits behind the photos only */}
+            <div
+              className="absolute -top-5 -left-5 w-[calc(100%+2.5rem)] h-[calc(100%+2.5rem)] rounded-2xl"
+              style={{
+                background: `
+                  radial-gradient(ellipse at 15% 80%, rgba(248,185,23,0.7) 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 15%, rgba(248,185,23,0.45) 0%, transparent 45%),
+                  radial-gradient(ellipse at 55% 55%, rgba(82,113,255,0.85) 0%, transparent 60%),
+                  radial-gradient(ellipse at 0% 0%, rgba(48,66,196,1) 0%, transparent 65%),
+                  radial-gradient(ellipse at 100% 100%, rgba(6,14,36,0.9) 0%, transparent 55%),
+                  #3042c4
+                `,
+              }}
+            />
+
+            <div className="relative grid grid-cols-2 gap-4">
+              {/* Left photo — taller */}
               <div
-                className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-xl"
-                data-reveal="right"
-                data-delay="2"
+                className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-lg animate-float"
+                data-reveal="left"
+                data-delay="1"
               >
                 <Image
-                  src="/images/sections/tax-accountant-consultation.jpg"
-                  alt="Certified accountant Baulkham Hills"
+                  src="/images/sections/bookkeeping-support.jpg"
+                  alt="Reliable bookkeeping support Baulkham Hills"
                   fill
                   sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover hover:scale-105 transition-transform duration-700"
+                  className="object-cover"
                 />
               </div>
-              {/* Stat badge */}
-              <div
-                className="bg-brand-navy text-white rounded-2xl px-5 py-4 shadow-lg"
-                data-reveal="scale"
-                data-delay="3"
-              >
-                <p className="text-brand-gold text-3xl font-black leading-none">30+</p>
-                <p className="text-white/70 text-xs mt-1 leading-snug">
-                  Years trusted in the Hills District
-                </p>
+
+              {/* Right photo — offset down */}
+              <div className="flex flex-col gap-4 pt-10">
+                <div
+                  className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-xl animate-float-delayed"
+                  data-reveal="right"
+                  data-delay="2"
+                >
+                  <Image
+                    src="/images/sections/tax-accountant-consultation.jpg"
+                    alt="Certified accountant Baulkham Hills"
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Google badge */}
+                <div
+                  className="bg-white border border-gray-100 rounded-2xl px-4 py-3.5 shadow-md flex items-center gap-3"
+                  data-reveal="scale"
+                  data-delay="3"
+                >
+                  <div className="shrink-0 w-9 h-9 rounded-full bg-brand-navy flex items-center justify-center">
+                    <span className="text-brand-gold font-black text-sm">G</span>
+                  </div>
+                  <div>
+                    <p className="text-brand-navy font-bold text-sm leading-none">4.9 / 5.0</p>
+                    <p className="text-gray-400 text-xs mt-1">Google Reviews</p>
+                  </div>
+                  <p className="text-brand-gold text-base ml-auto tracking-tight">★★★★★</p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Text — staggered fade-up with left accent bar */}
-          <div className="border-l-4 border-brand-navy/10 pl-7 space-y-5">
+          {/* Right: text */}
+          <div className="space-y-5">
             <p className="text-brand-gray-text leading-relaxed" data-reveal data-delay="1">
               When managing your accounting and financial services on your own, you need an
               expert to guide you through the complex process. GNC Financial is your accountant
@@ -88,6 +133,7 @@ export default function LocalIntro() {
               wealth and sleep better at night.
             </p>
           </div>
+
         </div>
       </div>
     </section>

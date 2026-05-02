@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const TESTIMONIALS = [
@@ -37,90 +35,70 @@ const TESTIMONIALS = [
   },
 ];
 
+const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
+
 export default function Testimonials() {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % TESTIMONIALS.length);
-    }, 4500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="relative bg-[#060e24] py-24 overflow-hidden" aria-labelledby="testimonials-heading">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 50% 60% at 50% 100%, rgba(82,113,255,0.12) 0%, transparent 70%)",
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16" data-reveal>
-          <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3">
-            Client Reviews
-          </p>
-          <h2 id="testimonials-heading" className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            What Our Clients Say
-          </h2>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mt-2">
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
-              ))}
-            </div>
-            <span className="text-white/70 text-xs font-medium">4.9 · Google Reviews</span>
-          </div>
-        </div>
-
-        <div className="relative max-w-3xl mx-auto" data-reveal data-delay="2">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-8 lg:p-10 text-center"
-            >
-              <div className="flex justify-center gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-brand-gold text-brand-gold" />
-                ))}
-              </div>
-
-              <blockquote className="text-white/80 text-lg leading-relaxed mb-8">
-                &ldquo;{TESTIMONIALS[active].body}&rdquo;
-              </blockquote>
-
-              <div className="flex items-center justify-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-brand-gold/20 border border-brand-gold/30 flex items-center justify-center shrink-0">
-                  <span className="text-brand-gold text-xs font-bold">{TESTIMONIALS[active].initials}</span>
-                </div>
-                <div className="text-left">
-                  <p className="text-white text-sm font-semibold">{TESTIMONIALS[active].name}</p>
-                  <p className="text-white/40 text-xs">{TESTIMONIALS[active].role}</p>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          <div className="flex justify-center gap-2 mt-8">
-            {TESTIMONIALS.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActive(i)}
-                aria-label={`Review ${i + 1}`}
-                className={`rounded-full transition-all duration-300 ${
-                  i === active
-                    ? "bg-brand-gold w-6 h-2"
-                    : "bg-white/20 hover:bg-white/40 w-2 h-2"
-                }`}
-              />
+    <section className="bg-white py-24 overflow-hidden" aria-labelledby="testimonials-heading">
+      {/* Heading */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-14" data-reveal>
+        <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3">
+          Client Feedback
+        </p>
+        <h2
+          id="testimonials-heading"
+          className="text-3xl lg:text-4xl font-bold text-brand-navy mb-3"
+        >
+          What Our Clients Say
+        </h2>
+        <div className="w-12 h-1 bg-brand-gold rounded-full mx-auto mb-6" />
+        {/* Rating badge */}
+        <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-gray-200 bg-gray-50">
+          <div className="flex gap-0.5">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
             ))}
           </div>
+          <span className="text-gray-500 text-sm font-medium">4.9 · Google Reviews</span>
+        </div>
+      </div>
+
+      {/* Scrolling card strip */}
+      <div className="relative" data-reveal data-delay="2">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+        <div className="animate-ticker" style={{ animationDuration: "55s" }}>
+          {doubled.map((t, i) => (
+            <div
+              key={i}
+              className="w-[340px] mx-4 flex-shrink-0 bg-white border border-gray-100 rounded-2xl p-6 shadow-sm"
+            >
+              {/* Card header */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-brand-navy flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-xs font-bold">{t.initials}</span>
+                  </div>
+                  <div>
+                    <p className="text-brand-navy text-sm font-semibold leading-tight">{t.name}</p>
+                    <p className="text-gray-400 text-xs mt-0.5">{t.role}</p>
+                  </div>
+                </div>
+                <div className="flex gap-px">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} className="w-3 h-3 fill-brand-gold text-brand-gold" />
+                  ))}
+                </div>
+              </div>
+
+              {/* Review body */}
+              <p className="text-gray-500 text-sm leading-relaxed">
+                &ldquo;{t.body}&rdquo;
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

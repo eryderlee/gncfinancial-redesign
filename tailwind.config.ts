@@ -27,11 +27,22 @@ const config: Config = {
       },
       animation: {
         ticker: "ticker 28s linear infinite",
+        rainbow: "rainbow 4s linear infinite",
+        float: "float 4s ease-in-out infinite",
+        "float-slow": "float 5.5s ease-in-out 0.75s infinite",
       },
       keyframes: {
         ticker: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        rainbow: {
+          "0%": { "background-position": "0%" },
+          "100%": { "background-position": "200%" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
     },

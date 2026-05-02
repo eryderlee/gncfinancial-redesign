@@ -51,9 +51,9 @@ export default function HomePage() {
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "/" }])} />
 
       <Hero />
-      <Ticker />
 
       <LocalIntro />
+      <Ticker />
       <WhyChooseIntro />
       <ServicesGrid />
 

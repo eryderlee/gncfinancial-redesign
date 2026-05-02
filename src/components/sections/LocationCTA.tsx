@@ -40,7 +40,7 @@ export default function LocationCTA() {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Service area card */}
           <div
-            className="bg-white rounded-2xl p-8 border-l-4 border-brand-navy shadow-sm"
+            className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm"
             data-reveal="left"
             data-delay="1"
           >

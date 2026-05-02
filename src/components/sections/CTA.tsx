@@ -15,12 +15,20 @@ export default function CTA({
     <section className="relative py-24 overflow-hidden" aria-labelledby="cta-heading">
       {/* Gold bg */}
       <div className="absolute inset-0 bg-brand-gold" />
-      {/* Radial vignette — darker edges, lighter center */}
+      {/* Dot grid — navy dots, visible at corners */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(6,14,36,0.15) 1.5px, transparent 1.5px)",
+          backgroundSize: "20px 20px",
+        }}
+      />
+      {/* Radial mask — gold centre dissolves dots inward, corners remain dotted */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 75% 85% at 50% 50%, rgba(255,255,255,0.18) 0%, rgba(180,125,0,0.22) 100%)",
+            "radial-gradient(ellipse 70% 75% at 50% 50%, #f8b917 0%, #f8b917 50%, rgba(248,185,23,0.4) 80%, transparent 100%)",
         }}
       />
 
