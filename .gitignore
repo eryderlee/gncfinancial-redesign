@@ -31,5 +31,8 @@ Thumbs.db
 .idea/
 *.swp
 
+# TypeScript build info
+tsconfig.tsbuildinfo
+
 # Playwright artifacts (local only)
 .playwright-mcp/

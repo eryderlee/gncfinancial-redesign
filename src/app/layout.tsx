@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import LoadingScreen from "@/components/LoadingScreen";
+import RevealObserver from "@/components/RevealObserver";
 import { SITE } from "@/lib/constants";
 import { localBusinessSchema, glennPersonSchema } from "@/lib/metadata";
 
@@ -35,16 +37,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-AU" className={inter.variable}>
       <head>
-        {/* Preconnect for anticipated external services (Analytics, Fonts fallback) */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
-        {/* Sitewide JSON-LD: LocalBusiness + Person (Glenn) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, glennPersonSchema]) }}
         />
       </head>
       <body className="flex min-h-screen flex-col bg-white">
+        <LoadingScreen />
+        <RevealObserver />
         <Header />
         <main id="content" className="flex-1">
           {children}

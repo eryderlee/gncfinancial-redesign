@@ -3,6 +3,7 @@ import { pageMeta, faqPageSchema, breadcrumbSchema } from "@/lib/metadata";
 import JsonLd from "@/components/JsonLd";
 import { SITE } from "@/lib/constants";
 import Hero from "@/components/sections/Hero";
+import Ticker from "@/components/Ticker";
 import LocalIntro from "@/components/sections/LocalIntro";
 import WhyChooseIntro from "@/components/sections/WhyChooseIntro";
 import ServicesGrid from "@/components/sections/ServicesGrid";
@@ -48,17 +49,27 @@ export default function HomePage() {
       <JsonLd schema={homepageAccountingServiceSchema} />
       <JsonLd schema={faqPageSchema} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "/" }])} />
+
       <Hero />
+      <Ticker variant="gold" />
+
       <LocalIntro />
       <WhyChooseIntro />
       <ServicesGrid />
+
+      <Ticker variant="dark" />
+
       <TradesAndBusiness />
       <IndividualsSection />
       <WhyChooseUs />
       <Industries />
       <CloudAccounting />
       <LocationCTA />
+
       <Testimonials />
+
+      <Ticker variant="gold" />
+
       <FAQ />
       <CTA />
     </>

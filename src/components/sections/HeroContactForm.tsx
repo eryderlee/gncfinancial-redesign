@@ -2,7 +2,11 @@
 
 import React from "react";
 
-export default function HeroContactForm() {
+interface Props {
+  dark?: boolean;
+}
+
+export default function HeroContactForm({ dark = false }: Props) {
   const [status, setStatus] = React.useState<"idle" | "sending" | "success" | "error">("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -22,11 +26,23 @@ export default function HeroContactForm() {
     }
   }
 
+  const labelClass = dark
+    ? "block text-xs font-medium text-white/50 uppercase tracking-wider mb-1.5"
+    : "block text-sm font-medium text-gray-700 mb-1";
+
+  const inputClass = dark
+    ? "w-full px-4 py-2.5 bg-white/8 border border-white/12 rounded-lg text-white text-sm placeholder-white/30 focus:outline-none focus:ring-1 focus:ring-brand-gold focus:border-brand-gold transition-colors"
+    : "w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold";
+
   if (status === "success") {
     return (
       <div className="text-center py-8">
-        <p className="text-green-700 font-semibold text-lg mb-2">Message sent!</p>
-        <p className="text-brand-gray-text text-sm">We&rsquo;ll be in touch within one business day.</p>
+        <p className={`font-semibold text-lg mb-2 ${dark ? "text-brand-gold" : "text-green-700"}`}>
+          Message sent!
+        </p>
+        <p className={`text-sm ${dark ? "text-white/50" : "text-brand-gray-text"}`}>
+          We&rsquo;ll be in touch within one business day.
+        </p>
       </div>
     );
   }
@@ -35,9 +51,7 @@ export default function HeroContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4" aria-label="Contact form">
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label htmlFor="hero-name" className="block text-sm font-medium text-gray-700 mb-1">
-            Full Name
-          </label>
+          <label htmlFor="hero-name" className={labelClass}>Full Name</label>
           <input
             id="hero-name"
             name="name"
@@ -45,13 +59,11 @@ export default function HeroContactForm() {
             placeholder="Your full name"
             autoComplete="name"
             required
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold"
+            className={inputClass}
           />
         </div>
         <div>
-          <label htmlFor="hero-email" className="block text-sm font-medium text-gray-700 mb-1">
-            Email
-          </label>
+          <label htmlFor="hero-email" className={labelClass}>Email</label>
           <input
             id="hero-email"
             name="email"
@@ -59,55 +71,49 @@ export default function HeroContactForm() {
             placeholder="Your email"
             autoComplete="email"
             required
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold"
+            className={inputClass}
           />
         </div>
         <div>
-          <label htmlFor="hero-phone" className="block text-sm font-medium text-gray-700 mb-1">
-            Phone Number
-          </label>
+          <label htmlFor="hero-phone" className={labelClass}>Phone</label>
           <input
             id="hero-phone"
             name="phone"
             type="tel"
             placeholder="Your phone number"
             autoComplete="tel"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold"
+            className={inputClass}
           />
         </div>
         <div>
-          <label htmlFor="hero-date" className="block text-sm font-medium text-gray-700 mb-1">
-            Preferred Date
-          </label>
+          <label htmlFor="hero-date" className={labelClass}>Preferred Date</label>
           <input
             id="hero-date"
             name="date"
             type="date"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold"
+            className={inputClass}
           />
         </div>
       </div>
       <div>
-        <label htmlFor="hero-message" className="block text-sm font-medium text-gray-700 mb-1">
-          Any special requests
-        </label>
+        <label htmlFor="hero-message" className={labelClass}>How can we help?</label>
         <textarea
           id="hero-message"
           name="message"
           rows={3}
           placeholder="Tell us what you need help with…"
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold resize-none"
+          className={`${inputClass} resize-none`}
         />
       </div>
       {status === "error" && (
-        <p className="text-red-600 text-xs">Something went wrong — please try again or call us directly.</p>
+        <p className="text-red-400 text-xs">Something went wrong — please try again or call us directly.</p>
       )}
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full bg-brand-gold text-brand-navy font-semibold py-3 rounded-lg hover:bg-brand-gold-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full bg-brand-gold text-brand-navy font-semibold py-3 rounded-lg hover:bg-brand-gold-light transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed text-sm"
       >
-        {status === "sending" ? "Sending…" : "Send Request"}
+        {status === "sending" ? "Sending…" : "Send Request →"}
       </button>
     </form>
   );
