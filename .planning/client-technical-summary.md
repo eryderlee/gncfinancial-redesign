@@ -30,6 +30,8 @@ A plain summary of the technical work done during the redesign. Skim the heading
 
 **Cookie banner.** Visitors now get a real choice — Essential cookies only, or Accept all (including marketing). Saves their preference, respects their choice. In line with current Australian privacy expectations.
 
+**Social sharing preview.** When someone shares a link to your site on LinkedIn, Facebook, or iMessage, it now displays a branded card with your firm name, tagline, and colour scheme — instead of a blank or broken preview.
+
 ---
 
 ## Technical improvements that help Google specifically
