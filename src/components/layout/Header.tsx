@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { SITE, NAV_LINKS } from "@/lib/constants";
-import { Phone, Mail, Calendar } from "lucide-react";
+import { NAV_LINKS } from "@/lib/constants";
 import MobileNav from "./MobileNav";
 
 export default function Header() {
@@ -16,36 +15,7 @@ export default function Header() {
         Skip to content
       </a>
 
-      {/* Top bar — phone, email, book CTA */}
-      <div className="bg-brand-navy text-white text-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <a
-              href={SITE.phoneHref}
-              className="flex items-center gap-1.5 hover:text-brand-gold transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              <span>{SITE.phone}</span>
-            </a>
-            <a
-              href={SITE.emailHref}
-              className="hidden sm:flex items-center gap-1.5 hover:text-brand-gold transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5" />
-              <span>{SITE.email}</span>
-            </a>
-          </div>
-          <Link
-            href="/book-now"
-            className="flex items-center gap-1.5 bg-brand-gold text-brand-navy font-semibold px-3 py-1 rounded text-xs hover:bg-brand-gold-light transition-colors"
-          >
-            <Calendar className="w-3.5 h-3.5" />
-            Book Free Consultation
-          </Link>
-        </div>
-      </div>
-
-      {/* Main nav — same navy background so the logo sits flush */}
+      {/* Main nav */}
       <nav className="bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
@@ -53,8 +23,8 @@ export default function Header() {
             <Image
               src="/images/logo/gnc-financial-logo.png"
               alt="GNC Financial – Baulkham Hills Accountant"
-              width={160}
-              height={40}
+              width={120}
+              height={32}
               priority
               className="object-contain"
             />

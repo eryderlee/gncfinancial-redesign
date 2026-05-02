@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SITE, SLUGS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
-import { Phone, Calendar } from "lucide-react";
+import { Phone, Calendar, Mail } from "lucide-react";
 import HeroContactForm from "@/components/sections/HeroContactForm";
 
 // Phase 2 TODO: Replace layout, imagery, and form treatment per VISUAL_PLAN.md
@@ -37,6 +37,10 @@ export default function Hero() {
                 </Button>
               </a>
             </div>
+            <a href={SITE.emailHref} className="inline-flex items-center gap-2 text-white/70 hover:text-brand-gold text-sm transition-colors">
+              <Mail className="w-4 h-4" />
+              {SITE.email}
+            </a>
           </div>
 
           {/* Right: quick contact form */}
