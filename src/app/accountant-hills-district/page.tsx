@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageMeta } from "@/lib/metadata";
+import { pageMeta, locationSchema, breadcrumbSchema } from "@/lib/metadata";
+import JsonLd from "@/components/JsonLd";
 import { SLUGS, SITE, INDUSTRIES } from "@/lib/constants";
 import Link from "next/link";
 import CTA from "@/components/sections/CTA";
@@ -14,6 +15,8 @@ export const metadata: Metadata = pageMeta({
 export default function HillsDistrictPage() {
   return (
     <>
+      <JsonLd schema={locationSchema("Hills District", SLUGS.hillsDistrict)} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Accountant Hills District", url: SLUGS.hillsDistrict }])} />
       <section className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">Accountant Hills District</h1>

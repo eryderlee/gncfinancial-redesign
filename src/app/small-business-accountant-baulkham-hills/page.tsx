@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageMeta } from "@/lib/metadata";
+import { pageMeta, serviceSchema, breadcrumbSchema } from "@/lib/metadata";
+import JsonLd from "@/components/JsonLd";
 import { SERVICES, SLUGS, SITE } from "@/lib/constants";
 import Link from "next/link";
 import CTA from "@/components/sections/CTA";
@@ -16,6 +17,8 @@ const service = SERVICES.find((s) => s.id === "business-advisory")!;
 export default function SmallBusinessPage() {
   return (
     <>
+      <JsonLd schema={serviceSchema("Small Business Accounting Baulkham Hills", service.summary, SLUGS.smallBusiness)} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Services", url: SLUGS.services }, { name: "Small Business Accountant", url: SLUGS.smallBusiness }])} />
       <section className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">Small Business Accountant Baulkham Hills</h1>

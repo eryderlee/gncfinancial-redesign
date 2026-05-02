@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageMeta } from "@/lib/metadata";
+import { pageMeta, breadcrumbSchema } from "@/lib/metadata";
+import JsonLd from "@/components/JsonLd";
 import { SERVICES, SLUGS, SITE } from "@/lib/constants";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -15,6 +16,7 @@ export const metadata: Metadata = pageMeta({
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Services", url: SLUGS.services }])} />
       <section className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">

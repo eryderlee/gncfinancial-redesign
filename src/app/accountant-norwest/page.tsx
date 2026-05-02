@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageMeta } from "@/lib/metadata";
+import { pageMeta, locationSchema, breadcrumbSchema } from "@/lib/metadata";
+import JsonLd from "@/components/JsonLd";
 import { SLUGS, SITE } from "@/lib/constants";
 import Link from "next/link";
 import CTA from "@/components/sections/CTA";
@@ -14,6 +15,8 @@ export const metadata: Metadata = pageMeta({
 export default function NorwestPage() {
   return (
     <>
+      <JsonLd schema={locationSchema("Norwest", SLUGS.norwest)} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Accountant Norwest", url: SLUGS.norwest }])} />
       <section className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">Accountant Norwest</h1>

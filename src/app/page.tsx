@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { pageMeta } from "@/lib/metadata";
+import { pageMeta, faqPageSchema, breadcrumbSchema } from "@/lib/metadata";
+import JsonLd from "@/components/JsonLd";
+import { SITE } from "@/lib/constants";
 import Hero from "@/components/sections/Hero";
 import LocalIntro from "@/components/sections/LocalIntro";
 import WhyChooseIntro from "@/components/sections/WhyChooseIntro";
@@ -21,9 +23,31 @@ export const metadata: Metadata = pageMeta({
   path: "/",
 });
 
+const homepageAccountingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  name: "GNC Financial – Accountant Baulkham Hills",
+  description:
+    "Expert accounting, tax, bookkeeping, SMSF, and financial advisory services in Baulkham Hills and the Hills District. Over 30 years of experience.",
+  url: SITE.url,
+  telephone: SITE.phone,
+  areaServed: [
+    "Baulkham Hills", "Castle Hill", "Norwest", "Bella Vista",
+    "Kellyville", "Hills District", "Sydney",
+  ],
+  serviceType: [
+    "Tax Accounting", "Business Accounting", "Bookkeeping",
+    "SMSF Accounting", "Financial Advisory",
+  ],
+  priceRange: "$$",
+};
+
 export default function HomePage() {
   return (
     <>
+      <JsonLd schema={homepageAccountingServiceSchema} />
+      <JsonLd schema={faqPageSchema} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "/" }])} />
       <Hero />
       <LocalIntro />
       <WhyChooseIntro />

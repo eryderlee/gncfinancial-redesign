@@ -2,11 +2,9 @@ import Link from "next/link";
 import { SITE, SLUGS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Phone, Calendar } from "lucide-react";
+import HeroContactForm from "@/components/sections/HeroContactForm";
 
-// ─────────────────────────────────────────────────────────────
-// Phase 1: Structurally faithful hero — content matches live site.
-// Phase 2: Replace layout, imagery, and form treatment per VISUAL_PLAN.md
-// ─────────────────────────────────────────────────────────────
+// Phase 2 TODO: Replace layout, imagery, and form treatment per VISUAL_PLAN.md
 
 export default function Hero() {
   return (
@@ -42,7 +40,6 @@ export default function Hero() {
           </div>
 
           {/* Right: quick contact form */}
-          {/* Phase 2 TODO: replace with image/split layout per VISUAL_PLAN.md */}
           <div className="bg-white rounded-2xl p-8 shadow-xl">
             <h2 className="text-brand-navy text-xl font-semibold mb-6">
               Request an Appointment
@@ -52,77 +49,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function HeroContactForm() {
-  // Phase 1: static form — wire to server action or API route in technical phase
-  return (
-    <form className="space-y-4" aria-label="Contact form">
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="hero-name" className="block text-sm font-medium text-gray-700 mb-1">
-            Full Name
-          </label>
-          <input
-            id="hero-name"
-            type="text"
-            placeholder="Your full name"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="hero-email" className="block text-sm font-medium text-gray-700 mb-1">
-            Email
-          </label>
-          <input
-            id="hero-email"
-            type="email"
-            placeholder="Your email"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="hero-phone" className="block text-sm font-medium text-gray-700 mb-1">
-            Phone Number
-          </label>
-          <input
-            id="hero-phone"
-            type="tel"
-            placeholder="Your phone number"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold"
-          />
-        </div>
-        <div>
-          <label htmlFor="hero-date" className="block text-sm font-medium text-gray-700 mb-1">
-            Preferred Date
-          </label>
-          <input
-            id="hero-date"
-            type="date"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold"
-          />
-        </div>
-      </div>
-      <div>
-        <label htmlFor="hero-message" className="block text-sm font-medium text-gray-700 mb-1">
-          Any special requests
-        </label>
-        <textarea
-          id="hero-message"
-          rows={3}
-          placeholder="Tell us what you need help with..."
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold resize-none"
-        />
-      </div>
-      <button
-        type="submit"
-        className="w-full bg-brand-gold text-brand-navy font-semibold py-3 rounded-lg hover:bg-brand-gold-light transition-colors"
-      >
-        Send Request
-      </button>
-    </form>
   );
 }

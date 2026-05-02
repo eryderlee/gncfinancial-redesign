@@ -3,8 +3,9 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CookieBanner from "@/components/CookieBanner";
 import { SITE } from "@/lib/constants";
-import { localBusinessSchema } from "@/lib/metadata";
+import { localBusinessSchema, glennPersonSchema } from "@/lib/metadata";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,18 +31,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-AU" className={inter.variable}>
       <head>
-        {/* JSON-LD structured data */}
+        {/* Preconnect for anticipated external services (Analytics, Fonts fallback) */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        {/* Sitewide JSON-LD: LocalBusiness + Person (Glenn) */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, glennPersonSchema]) }}
         />
       </head>
       <body className="flex min-h-screen flex-col bg-white">
@@ -50,6 +50,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
