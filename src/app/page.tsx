@@ -51,13 +51,13 @@ export default function HomePage() {
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "/" }])} />
 
       <Hero />
-      <Ticker variant="gold" />
+      <Ticker />
 
       <LocalIntro />
       <WhyChooseIntro />
       <ServicesGrid />
 
-      <Ticker variant="dark" />
+      <Ticker />
 
       <TradesAndBusiness />
       <IndividualsSection />
@@ -68,7 +68,7 @@ export default function HomePage() {
 
       <Testimonials />
 
-      <Ticker variant="gold" />
+      <Ticker />
 
       <FAQ />
       <CTA />

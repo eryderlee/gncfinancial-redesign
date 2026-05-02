@@ -8,13 +8,13 @@ export default function LoadingScreen() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Only show on first visit per browser session
-    if (sessionStorage.getItem("gnc_loaded")) return;
+    // Only show on first visit per browser session (v2 key forces re-show after redesign)
+    if (sessionStorage.getItem("gnc_loaded_v2")) return;
     setVisible(true);
     const t = setTimeout(() => {
       setVisible(false);
-      sessionStorage.setItem("gnc_loaded", "1");
-    }, 2200);
+      sessionStorage.setItem("gnc_loaded_v2", "1");
+    }, 2400);
     return () => clearTimeout(t);
   }, []);
 
@@ -22,7 +22,7 @@ export default function LoadingScreen() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[#060e24]"
+          className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-brand-navy"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}

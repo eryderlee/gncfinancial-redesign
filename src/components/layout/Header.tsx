@@ -55,7 +55,7 @@ export default function Header() {
                   {link.label}
                 </Link>
                 {"children" in link && link.children && (
-                  <ul className="absolute left-0 top-full mt-2 w-56 bg-[#060e24] border border-white/10 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <ul className="absolute left-0 top-full mt-2 w-56 bg-[#2d46d0] border border-white/10 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {link.children.map((child) => (
                       <li key={child.href}>
                         <Link

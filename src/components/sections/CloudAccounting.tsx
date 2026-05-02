@@ -9,42 +9,102 @@ const CLOUD_FEATURES = [
   "Collaborate with us in real-time",
 ];
 
+const SOFTWARE_BADGES = [
+  {
+    name: "Xero",
+    subtitle: "Certified Advisor",
+    accent: "rgba(19, 181, 234, 0.18)",
+    border: "rgba(19, 181, 234, 0.25)",
+  },
+  {
+    name: "MYOB",
+    subtitle: "Certified Partner",
+    accent: "rgba(139, 54, 255, 0.18)",
+    border: "rgba(139, 54, 255, 0.25)",
+  },
+  {
+    name: "QuickBooks",
+    subtitle: "ProAdvisor",
+    accent: "rgba(44, 160, 28, 0.18)",
+    border: "rgba(44, 160, 28, 0.25)",
+  },
+];
+
 export default function CloudAccounting() {
   return (
     <section className="py-20 bg-brand-navy text-white" aria-labelledby="cloud-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left: heading + features */}
           <div>
-            <h2 id="cloud-heading" className="text-3xl lg:text-4xl font-bold mb-4">
+            <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3" data-reveal>
+              Cloud Accounting
+            </p>
+            <h2
+              id="cloud-heading"
+              className="text-3xl lg:text-4xl font-bold mb-4"
+              data-reveal
+              data-delay="1"
+            >
               Modern Cloud Accounting Solutions
             </h2>
-            <p className="text-white/80 mb-8 leading-relaxed">
-              Sick of clunky desktop software? Cloud accounting is the way to go. As certified Xero advisors and MYOB partners, we can help you get real-time access to your financial position anytime, anywhere.
+            <p className="text-white/65 mb-8 leading-relaxed" data-reveal data-delay="2">
+              Sick of clunky desktop software? Cloud accounting is the way to go. As certified
+              Xero advisors and MYOB partners, we can help you get real-time access to your
+              financial position anytime, anywhere.
             </p>
             <ul className="space-y-3 mb-8">
-              {CLOUD_FEATURES.map((feature) => (
-                <li key={feature} className="flex items-start gap-3 text-white/80">
-                  <span className="text-brand-gold mt-1">✓</span>
+              {CLOUD_FEATURES.map((feature, i) => (
+                <li
+                  key={feature}
+                  className="flex items-start gap-3 text-white/75"
+                  data-reveal="left"
+                  data-delay={String(Math.min(i + 1, 5))}
+                >
+                  <span className="text-brand-gold mt-1 flex-shrink-0 font-bold">✓</span>
                   <span className="text-sm">{feature}</span>
                 </li>
               ))}
             </ul>
-            <Link
-              href="/book-now"
-              className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-6 py-3 rounded-lg hover:bg-brand-gold-light transition-colors"
-            >
-              Book Free Consultation
-            </Link>
+            <div data-reveal data-delay="5">
+              <Link
+                href="/book-now"
+                className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-6 py-3 rounded-lg hover:bg-brand-gold-light transition-colors"
+              >
+                Book Free Consultation
+              </Link>
+            </div>
           </div>
 
-          {/* Partner logos / image placeholder */}
-          {/* Phase 2 TODO: add Xero/MYOB/QuickBooks logo badges */}
-          <div className="bg-white/5 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center gap-4">
-            <p className="text-white/40 text-sm">Partner logos — Phase 2</p>
-            <div className="flex gap-6 text-white/30 text-xs uppercase tracking-widest">
-              <span>Xero</span>
-              <span>MYOB</span>
-              <span>QuickBooks</span>
+          {/* Right: software badge grid */}
+          <div>
+            <p
+              className="text-white/40 text-xs font-semibold uppercase tracking-widest mb-6 text-center"
+              data-reveal
+            >
+              Certified Partner Software
+            </p>
+            <div className="flex flex-col gap-4">
+              {SOFTWARE_BADGES.map((badge, i) => (
+                <div
+                  key={badge.name}
+                  className="rounded-xl border p-6 flex items-center justify-between hover:border-opacity-60 transition-all duration-300"
+                  style={{
+                    background: badge.accent,
+                    borderColor: badge.border,
+                  }}
+                  data-reveal="scale"
+                  data-delay={String(i + 1)}
+                >
+                  <div>
+                    <p className="text-white font-bold text-xl">{badge.name}</p>
+                    <p className="text-white/50 text-xs mt-0.5">{badge.subtitle}</p>
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
+                    <span className="text-brand-gold font-bold text-sm">✓</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
