@@ -1,0 +1,471 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "Skip to content" [ref=e4] [cursor=pointer]:
+        - /url: "#content"
+      - banner [ref=e5]:
+        - generic [ref=e7]:
+          - link "Book Free Consultation" [ref=e13] [cursor=pointer]:
+            - /url: https://gncfinancial.com.au/book-now/
+            - generic [ref=e14]:
+              - img [ref=e16]
+              - generic [ref=e18]: Book Free Consultation
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - link "02 8403 2770" [ref=e25] [cursor=pointer]:
+                - /url: tel:0284032770
+                - img [ref=e27]
+                - generic [ref=e29]: 02 8403 2770
+            - listitem [ref=e30]:
+              - link "admin@gncfinancial.com.au" [ref=e31] [cursor=pointer]:
+                - /url: mailto:admin@gncfinancial.com.au
+                - img [ref=e33]
+                - generic [ref=e35]: admin@gncfinancial.com.au
+        - banner [ref=e36]:
+          - generic [ref=e38]:
+            - link "GNC Financial accountant in Baulkham Hills" [ref=e43] [cursor=pointer]:
+              - /url: https://gncfinancial.com.au
+              - img "GNC Financial accountant in Baulkham Hills" [ref=e44]
+            - button "Menu Toggle" [ref=e50] [cursor=pointer]:
+              - img [ref=e51]
+    - main [ref=e53]:
+      - generic [ref=e54]:
+        - generic [ref=e57]:
+          - generic [ref=e59]:
+            - heading "GNC Financial – Your Local Accountant in Baulkham Hills" [level=1] [ref=e62]
+            - link "Make Appointment" [ref=e66] [cursor=pointer]:
+              - /url: /contact-gnc-financial-baulkham-hills-sydney-cbd/
+              - generic [ref=e67]:
+                - img [ref=e69]
+                - generic [ref=e71]: Make Appointment
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - status
+              - list
+            - form "Contact form" [ref=e79]:
+              - generic [ref=e80]:
+                - generic [ref=e81]:
+                  - paragraph [ref=e83]:
+                    - generic [ref=e84]:
+                      - text: Full Name
+                      - textbox "Full Name" [ref=e86]:
+                        - /placeholder: Your full name
+                  - paragraph [ref=e88]:
+                    - generic [ref=e89]:
+                      - text: Email
+                      - textbox "Email" [ref=e91]:
+                        - /placeholder: Your email
+                - generic [ref=e92]:
+                  - paragraph [ref=e94]:
+                    - generic [ref=e95]:
+                      - text: Phone Number
+                      - textbox "Phone Number" [ref=e97]:
+                        - /placeholder: Add your phone number
+                  - paragraph [ref=e99]:
+                    - generic [ref=e100]:
+                      - text: Date for appointment
+                      - textbox "Date for appointment" [ref=e102]
+                - paragraph [ref=e105]:
+                  - generic [ref=e106]:
+                    - text: Add any special requests
+                    - textbox "Add any special requests" [ref=e108]
+                - paragraph [ref=e110]:
+                  - button "Send request" [ref=e111] [cursor=pointer]
+        - generic [ref=e114]:
+          - generic [ref=e116]:
+            - img "reliable bookkeeping support Baulkham Hills" [ref=e121]
+            - img "certified accountant Baulkham Hills" [ref=e125]
+          - generic [ref=e129]:
+            - text: When managing your accounting and financial services on your own, you need an expert to guide you through the complex process. GNC Financial is your accountant in Baulkham Hills serving Individuals, Sole Traders, Companies, Trusts, Superannuation Funds, and more. We’re located right here in the Hills District, helping Aussie families, tradies, and small business owners keep more money in their pockets and the ATO off their backs.
+            - text: Whether you’re a small carpenter working out of Winston Hills, running a cafe in Bella Vista, or just need help sorting out your tax return without the headache, our experienced team provides straightforward accounting services in Baulkham Hills that make your life easier.
+            - text: "We’ve been looking after locals in Baulkham Hills and across the Hills District forover 30 years,and we reckon that’s because we keep things simple, honest, and bloody effective. Our selling point: just solid advice that helps you grow your wealth and sleep better at night."
+        - generic [ref=e133]:
+          - heading "Why Choose GNC Financial for Accounting Services in Baulkham Hills" [level=2] [ref=e136]
+          - paragraph [ref=e139]: When you’re hunting for an accountant in Baulkham Hills, you don’t just need someone who can crunch numbers and lodge forms. You need a proper financial partner who understands what it’s like to run a business in the Hills District, someone whose advice is tailored to your goals.
+        - generic [ref=e141]:
+          - generic [ref=e143]:
+            - heading "Born and Bred in the Hills District" [level=3] [ref=e146]
+            - generic [ref=e148]:
+              - text: Based right here in Baulkham Hills, GNC Financial is as local as they come. We know the businesses around Norwest Business Park, the tradies working across Castle Hill, and the families trying to make their dollars stretch further in this expensive city we call home.
+              - text: Being local means we understand the unique challenges facing businesses and individuals in the Hills District. From startups finding their feet to established businesses ready to level up, we’ve worked with everyone across Baulkham Hills, Castle Hill, Bella Vista, Winston Hills, Kellyville, and beyond.
+              - text: Our firm combines the know-how of a big city firm with the down-to-earth, personal service you’d expect from your local accountant. We actually take the time to sit down with you (either in person or online), understand what you’re trying to achieve, and give you advice that works for your situation.
+          - img "Local Baulkham Hills accountant offering tax and bookkeeping services" [ref=e153]
+        - generic [ref=e157]:
+          - heading "Everything Under One Roof – No Mucking About" [level=2] [ref=e160]
+          - paragraph [ref=e163]: "Unlike accounting firms that only do the bare minimum, GNC Financial’s accounting services in Baulkham Hills cover the whole spectrum:"
+        - text:  
+        - generic [ref=e165]:
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e178]: 
+              - heading "Tax Services That Save You Coin" [level=3] [ref=e182] [cursor=pointer]
+            - list [ref=e186]:
+              - listitem [ref=e187]: Individual tax returns sorted properly
+              - listitem [ref=e188]: Business tax returns (company, trust, partnership, sole trader)
+              - listitem [ref=e189]: Smart tax planning strategies to keep more in your pocket
+              - listitem [ref=e190]: GST and BAS without the stress
+              - listitem [ref=e191]: PAYG and payroll tax compliance
+              - listitem [ref=e192]: Capital gains tax advice when you sell assets
+              - listitem [ref=e193]: Fringe benefits tax returns
+          - generic [ref=e203]:
+            - generic [ref=e204]:
+              - img [ref=e207]
+              - heading "Business Accounting Done Right" [level=3] [ref=e212] [cursor=pointer]
+            - generic [ref=e215]:
+              - paragraph
+              - list [ref=e216]:
+                - listitem [ref=e217]: Financial statements that actually tell you how you're tracking
+                - listitem [ref=e218]: Management reports that help you make smarter decisions
+                - listitem [ref=e219]: Setting up the right business structure (so you don't pay more tax than you need to)
+                - listitem [ref=e220]: ">Company secretarial services and ASIC compliances"
+                - listitem [ref=e221]: Cash flow management
+                - listitem [ref=e222]: Budgeting and forecasting to plan ahead
+          - generic [ref=e232]:
+            - generic [ref=e233]:
+              - generic [ref=e235]: 
+              - heading "Bookkeeping Services" [level=3] [ref=e239] [cursor=pointer]
+            - list [ref=e243]:
+              - listitem [ref=e244]: Daily bookkeeping that keeps you up to date
+              - listitem [ref=e245]: Accounts payable and receivable managed properly
+              - listitem [ref=e246]: Bank reconciliations done regularly
+              - listitem [ref=e247]: Xero, MYOB, and QuickBooks setup and training
+              - listitem [ref=e248]: Cloud accounting solutions for modern businesses
+              - listitem [ref=e249]: Payroll processing that's always on time
+          - generic [ref=e259]:
+            - generic [ref=e260]:
+              - img [ref=e263]
+              - heading "Business Advisory for Growth" [level=3] [ref=e268] [cursor=pointer]
+            - list [ref=e272]:
+              - listitem [ref=e273]: Help getting your business off the ground
+              - listitem [ref=e274]: Growth strategies that actually work
+              - listitem [ref=e275]: Exit planning when you're ready to sell up
+              - listitem [ref=e276]: Profit improvement advice
+              - listitem [ref=e277]: Business valuations when you need them
+              - listitem [ref=e278]: Benchmarking to see how you stack up
+          - generic [ref=e288]:
+            - generic [ref=e289]:
+              - img [ref=e292]
+              - heading "Specialist Services" [level=3] [ref=e297] [cursor=pointer]
+            - list [ref=e300]:
+              - listitem [ref=e301]: Self-managed super fund (SMSF) accounting and compliance
+              - listitem [ref=e302]: Investment property tax advice
+              - listitem [ref=e303]: Estate planning guidance
+              - listitem [ref=e304]: Crypto tax help
+        - generic [ref=e309]:
+          - heading "Accountant Baulkham Hills for Tradies & Small Business Owners" [level=2] [ref=e312]
+          - generic [ref=e314]: Running a small business in Sydney is no walk in the park. Between chasing payments, managing staff, and actually doing the work, the last thing you need is accounting headaches. That’s where GNC Financial comes in. We handle the numbers so you can focus on what you do best.
+        - generic [ref=e316]:
+          - img "experienced accountant Baulkham Hills" [ref=e321]
+          - generic [ref=e323]:
+            - heading "Bookkeeping That Doesn't Do Your Head In" [level=3] [ref=e326]
+            - generic [ref=e328]:
+              - text: Bookkeeping is crucial if you want to stay on top of your finances and keep the Australian Taxation Office (ATO) happy. Our accounting services in Baulkham Hillsinclude professional bookkeeping to keep your records clean, accurate, and compliant with all ATO requirements.
+              - text: We work with the best cloud accounting software, such as Xero, MYOB, and QuickBooks Online, so you can check your finances from your phone, tablet, or laptop, wherever you are. Whether you need us to do everything or just want some help getting set up, we’ll tailor our services to suit your needs and budget.
+        - heading "Tax Planning That Actually Saves You Money" [level=3] [ref=e335]
+        - generic [ref=e337]:
+          - generic [ref=e341]:
+            - text: Smart tax planning is more than just claiming all your deductions at tax time. It’s about setting up your business properly, making strategic decisions throughout the year, and using every legitimate strategy available to minimise your tax bill.
+            - text: As an
+            - strong [ref=e342]:
+              - link "experienced tax accountant in Baulkham Hills" [ref=e343] [cursor=pointer]:
+                - /url: https://gncfinancial.com.au/tax-accountant-baulkham-hills/
+            - text: ", GNC Financial stays on top of all the latest ATO rules and tax changes so you don’t have to. We’ll work with you year-round to identify opportunities to save tax, structure things the right way, and make sure you never get caught out by surprise tax bills."
+            - text: Our proactive approach means you’ll always know where you stand financially and can make decisions with confidence. No nasty surprises, no last-minute scrambles, just solid planning that keeps more money in your business.
+          - img "reliable bookkeeping support Baulkham Hills" [ref=e348]
+        - generic [ref=e350]:
+          - img "GNC Financial bookkeeping services" [ref=e355]
+          - generic [ref=e357]:
+            - heading "Business Advisory That Helps You Grow" [level=3] [ref=e360]
+            - generic [ref=e362]:
+              - text: "The best businesses in Baulkham Hills don’t just keep accurate books; they use their financial data to make smart decisions and grow strategically. Our business advisory services go beyond traditional accounting to help you:"
+              - list [ref=e363]:
+                - listitem [level=1] [ref=e364]: Set realistic financial goals and track your progress
+                - listitem [level=1] [ref=e365]: Find ways to boost your profitability
+                - listitem [level=1] [ref=e366]: Manage your cash flow better
+                - listitem [level=1] [ref=e367]: Prepare for expansion or eventually selling your business
+                - listitem [level=1] [ref=e368]: Navigate tough economic times
+                - listitem [level=1] [ref=e369]: Access funding when you need it
+              - text: Whether you’re just starting out or you’ve been in business for years, we provide practical advice and real support to help you succeed. No technical jargon or corporate speak. Just straight-shooting guidance from people who genuinely want to see you do well.
+        - generic [ref=e373]:
+          - heading "Tax Agent Baulkham Hills for Everyday Australians" [level=2] [ref=e376]
+          - paragraph [ref=e379]: Even if you don’t run a business, having a proper tax accountant in Baulkham Hills can make tax time stress-free and help you get the biggest refund you’re entitled to.
+        - generic [ref=e381]:
+          - generic [ref=e390]:
+            - heading "Get Every Dollar You're Owed" [level=3] [ref=e395] [cursor=pointer]
+            - generic [ref=e398]:
+              - paragraph [ref=e399]: "Reckon you're claiming every deduction you can? Most Aussies miss out on legitimate deductions simply because they don't know what they can claim. GNC Financial knows the tax system inside out and will make sure you're claiming everything you're entitled to, including:"
+              - list [ref=e400]:
+                - listitem [ref=e401]: Work-related expenses (uniforms, tools, home office setup)
+                - listitem [ref=e402]: Car and travel expenses
+                - listitem [ref=e403]: Self-education and training costs
+                - listitem [ref=e404]: Investment property deductions
+                - listitem [ref=e405]: Dividend imputation credits
+                - listitem [ref=e406]: Donations to registered charities
+                - listitem [ref=e407]: Medical expenses (where applicable)
+              - paragraph [ref=e408]: We'll have a proper look at your whole financial situation, find every deduction available, and prepare your tax return accurately to maximise your refund while keeping everything above board with the ATO.
+          - generic [ref=e418]:
+            - heading "Investment Property Tax Specialists" [level=3] [ref=e423] [cursor=pointer]
+            - generic [ref=e426]: Got an investment property in Baulkham Hills or somewhere else in Sydney? Property investing comes with its own tax complications, and getting your depreciation schedules, negative gearing, and capital gains calculations right is crucial. We specialise in investment property tax and can help you maximise your deductions while staying compliant.
+          - generic [ref=e436]:
+            - heading "SMSF Experts Who Know Their Stuff" [level=3] [ref=e441] [cursor=pointer]
+            - generic [ref=e444]:
+              - text: Self-managed super funds can be great for building wealth, but they come with strict rules. Get it wrong and you'll cop penalties from the ATO. Our
+              - link "SMSF specialists" [ref=e445] [cursor=pointer]:
+                - /url: https://gncfinancial.com.au/smsf-accounting-services-baulkham-hills/
+                - strong [ref=e446]: SMSF specialists
+              - text: provide complete fund administration, including annual financial statements, tax returns, audit coordination, and making sure you tick all the ATO's boxes. We'll help you build wealth for retirement in the most tax-effective way possible.
+        - heading "Why Baulkham Hills Locals Choose GNC Financial" [level=2] [ref=e454]
+        - text:  
+        - generic [ref=e456]:
+          - generic [ref=e466]:
+            - generic [ref=e470]: 
+            - heading "Qualified Team Who Know Their Stuff" [level=3] [ref=e473] [cursor=pointer]
+            - generic [ref=e476]: Glenn has been a certified accountant for over 30 years and has helped thousands of clients with taxation and other accounting services, offering personalised financial advice based on clients’ unique situations.
+          - generic [ref=e487]:
+            - generic [ref=e491]: 
+            - heading "No Hidden Fees – Straight-Up Pricing" [level=3] [ref=e494] [cursor=pointer]
+            - generic [ref=e497]: We're upfront about what things cost. No hidden charges, no surprise bills. We offer transparent fixed-fee pricing for most services, so you know exactly what you'll pay before we start. Our rates are fair and competitive, and we reckon we deliver exceptional value for money.
+          - generic [ref=e508]:
+            - img [ref=e512]
+            - heading "Quick Turnaround When You Need It" [level=3] [ref=e516] [cursor=pointer]
+            - generic [ref=e519]: We understand time is money in business. Our efficient systems and modern tech mean we can sort out most tax returns and financial statements quickly without cutting corners. Need something done urgently? We offer priority services for time-sensitive work.
+          - generic [ref=e530]:
+            - img [ref=e534]
+            - heading "Actually Available When You Need Us" [level=3] [ref=e538] [cursor=pointer]
+            - generic [ref=e541]: Ever tried calling your accountant only to get voicemail after voicemail? Yeah, we hate that too. We pride ourselves on being accessible. We return calls and emails promptly, and we make time for face-to-face meetings when you need them. You'll deal directly with your accountant, not get bounced around between different people.
+          - generic [ref=e552]:
+            - img [ref=e556]
+            - heading "Proactive, Not Just Reactive" [level=3] [ref=e560] [cursor=pointer]
+            - generic [ref=e563]: We don't just sit back and wait for you to have problems. We help you avoid them in the first place. Our proactive approach means we regularly check in, identify opportunities, and alert you to potential issues before they become costly headaches. You'll get timely advice and strategic guidance throughout the year, not just at tax time.
+        - heading "Industries We Work With in Baulkham Hills" [level=2] [ref=e571]
+        - generic [ref=e573]:
+          - img "Professional accountant supporting individuals and small businesses in Baulkham Hills" [ref=e578]
+          - generic [ref=e582]:
+            - paragraph [ref=e583]: "GNC Financial’s accounting services in Baulkham Hills support businesses across heaps of industries, including:"
+            - list [ref=e584]:
+              - listitem [ref=e585]: "Tradies: Sparkies, plumbers, builders, chippies, painters – we’ve got you covered"
+              - listitem [ref=e586]: "Professional Services: Doctors, dentists, lawyers, consultants"
+              - listitem [ref=e587]: "Retail & Hospitality: Cafes, restaurants, shops, franchises"
+              - listitem [ref=e588]: "Tech & IT: Software developers, IT consultants, tech startups"
+              - listitem [ref=e589]: "Real Estate: Agents, property developers, property managers"
+              - listitem [ref=e590]: "Manufacturing: Wholesalers, distributors, manufacturers"
+              - listitem [ref=e591]: "Healthcare: Allied health pros, medical specialists"
+              - listitem [ref=e592]: "Transport & Logistics: Freight, couriers, transport operators"
+            - paragraph
+            - paragraph [ref=e593]: No matter what industry you’re in, we’ve got the expertise to understand your specific challenges and provide practical accounting solutions that work.
+        - heading "Modern Cloud Accounting Solutions" [level=2] [ref=e600]
+        - generic [ref=e602]:
+          - generic [ref=e606]:
+            - text: "Sick of clunky desktop software? Cloud accounting is the way to go. Get real-time access to your financial position anytime, anywhere. As certified Xero advisors and MYOB partners, we can help you:"
+            - list [ref=e607]:
+              - listitem [ref=e608]: Move from desktop to cloud accounting software
+              - listitem [ref=e609]: Set up and configure your system properly
+              - listitem [ref=e610]: Train you and your team on best practices
+              - listitem [ref=e611]: Connect apps and add-ons to make everything easier
+              - listitem [ref=e612]: Access your financial data on your phone
+              - listitem [ref=e613]: Collaborate with us in real-time
+            - text: Cloud accounting transforms how you manage your business finances, making bookkeeping faster, easier, and more accurate while giving you powerful insights into how your business is performing.
+          - img "Trusted accountant providing financial guidance in Baulkham Hills" [ref=e618]
+        - generic [ref=e622]:
+          - heading "Book Your Chat with GNC Financial Today" [level=2] [ref=e625]
+          - paragraph [ref=e628]:
+            - text: Ready to experience what it’s like having a proper accountant who actually cares about your success? Whether you need help with your annual tax return,
+            - link "comprehensive business accounting support" [ref=e629] [cursor=pointer]:
+              - /url: https://gncfinancial.com.au/small-business-accountant-baulkham-hills/
+              - strong [ref=e630]: comprehensive business accounting support
+            - text: ", or"
+            - strong [ref=e631]:
+              - link "strategic financial advice" [ref=e632] [cursor=pointer]:
+                - /url: https://gncfinancial.com.au/financial-advisor-baulkham-hills/
+            - text: ", the GNC Financial team in Baulkham Hills is here to help."
+        - generic [ref=e634]:
+          - generic [ref=e636]:
+            - heading "Servicing Baulkham Hills and the Hills District" [level=3] [ref=e639]
+            - generic [ref=e641]:
+              - paragraph [ref=e642]: "While we’re based in Baulkham Hills (Level 5, Nexus Building, Norwest Business Park), we proudly help clients throughout the Hills District and Greater Sydney, including:"
+              - list [ref=e643]:
+                - listitem [level=1] [ref=e644]:
+                  - link "Castle Hill" [ref=e645] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/accountant-castle-hill/
+                - listitem [level=1] [ref=e646]: Bella Vista
+                - listitem [level=1] [ref=e647]: Winston Hills
+                - listitem [level=1] [ref=e648]: Kellyville
+                - listitem [level=1] [ref=e649]: Rouse Hill
+                - listitem [level=1] [ref=e650]:
+                  - link "Norwest" [ref=e651] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/accountant-norwest/
+                - listitem [level=1] [ref=e652]: Seven Hills
+                - listitem [level=1] [ref=e653]: Parramatta
+                - listitem [level=1] [ref=e654]:
+                  - link "Hills District" [ref=e655] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/accountant-hills-district/
+                    - strong [ref=e656]: Hills District
+                - listitem [level=1] [ref=e657]: Blacktown
+                - listitem [level=1] [ref=e658]: South West Sydney
+          - generic [ref=e660]:
+            - heading "Get Started – No Obligation" [level=3] [ref=e663]
+            - generic [ref=e665]:
+              - text: Tax time doesn’t have to be a nightmare. With the right accountant in Baulkham Hills on your side, you can stay compliant, minimise your tax, and build wealth with confidence.
+              - text: "Let GNC Financial take care of your accounting needs so you can focus on what matters: running your business, spending time with family, and enjoying life."
+              - text: Call us on
+              - link "02 8403 2770" [ref=e666] [cursor=pointer]:
+                - /url: tel:0284032770
+              - text: or fill out our online form to book your free, no-obligation consultation.
+            - link "Make Appointment" [ref=e670] [cursor=pointer]:
+              - /url: /contact-gnc-financial-baulkham-hills-sydney-cbd/
+              - generic [ref=e671]:
+                - img [ref=e673]
+                - generic [ref=e675]: Make Appointment
+        - generic [ref=e679]:
+          - heading "Common Questions About Our Accounting Services" [level=2] [ref=e682]
+          - tablist [ref=e685]:
+            - generic [ref=e686]:
+              - tab "How much do your accounting services cost?" [ref=e687] [cursor=pointer]:
+                - generic [ref=e688]:
+                  - text: 
+                  - generic [ref=e689]: 
+                - generic [ref=e690]: How much do your accounting services cost?
+              - tabpanel "How much do your accounting services cost?" [ref=e691]:
+                - generic [ref=e692]: Our fees depend on what you need, but we’re always upfront about pricing. Individual tax returns start from competitive rates, and business accounting packages are customised to your requirements. We’ll give you a clear fixed-fee quote before starting any work – no hidden surprises.
+            - tab "What accounting software do you work with?" [ref=e694] [cursor=pointer]:
+              - generic [ref=e695]:
+                - generic [ref=e696]: 
+                - text: 
+              - generic [ref=e697]: What accounting software do you work with?
+            - tab "Do I have to come to your office or can we meet online?" [ref=e699] [cursor=pointer]:
+              - generic [ref=e700]:
+                - generic [ref=e701]: 
+                - text: 
+              - generic [ref=e702]: Do I have to come to your office or can we meet online?
+            - tab "When should I get in touch with an accountant?" [ref=e704] [cursor=pointer]:
+              - generic [ref=e705]:
+                - generic [ref=e706]: 
+                - text: 
+              - generic [ref=e707]: When should I get in touch with an accountant?
+            - tab "What do I need for my tax return?" [ref=e709] [cursor=pointer]:
+              - generic [ref=e710]:
+                - generic [ref=e711]: 
+                - text: 
+              - generic [ref=e712]: What do I need for my tax return?
+            - tab "Do you only work with businesses in Baulkham Hills?" [ref=e714] [cursor=pointer]:
+              - generic [ref=e715]:
+                - generic [ref=e716]: 
+                - text: 
+              - generic [ref=e717]: Do you only work with businesses in Baulkham Hills?
+            - tab "Can you help with crypto taxes?" [ref=e719] [cursor=pointer]:
+              - generic [ref=e720]:
+                - generic [ref=e721]: 
+                - text: 
+              - generic [ref=e722]: Can you help with crypto taxes?
+            - tab "What if I haven't lodged tax returns for a few years?" [ref=e724] [cursor=pointer]:
+              - generic [ref=e725]:
+                - generic [ref=e726]: 
+                - text: 
+              - generic [ref=e727]: What if I haven't lodged tax returns for a few years?
+    - contentinfo [ref=e728]:
+      - generic [ref=e736]:
+        - figure [ref=e737]:
+          - link [ref=e739] [cursor=pointer]:
+            - /url: https://gncfinancial.com.au/wp-content/uploads/2024/09/gnc.png
+        - figure [ref=e740]:
+          - link [ref=e742] [cursor=pointer]:
+            - /url: https://gncfinancial.com.au/wp-content/uploads/2024/09/Group-1.png
+        - figure [ref=e743]:
+          - link [ref=e745] [cursor=pointer]:
+            - /url: https://gncfinancial.com.au/wp-content/uploads/2024/09/IPA_Logo_Master_HR-scaled.jpg
+      - heading "Testimonials" [level=2] [ref=e752]
+      - heading "Take Control of Your Finances Today!" [level=4] [ref=e760]
+      - contentinfo [ref=e761]:
+        - generic [ref=e763]:
+          - generic [ref=e765]:
+            - link "GNC Financial accountant in Baulkham Hills" [ref=e768] [cursor=pointer]:
+              - /url: https://gncfinancial.com.au
+              - img "GNC Financial accountant in Baulkham Hills" [ref=e769]
+            - paragraph [ref=e772]:
+              - emphasis [ref=e773]: Expert support from GNC Financial — proudly servicing Baulkham Hills and surrounding areas across the Hills District.
+            - list [ref=e776]:
+              - listitem [ref=e777]:
+                - link "Instagram" [ref=e778] [cursor=pointer]:
+                  - /url: https://www.instagram.com/gncfinancial/
+                  - generic [ref=e779]: Instagram
+                  - img [ref=e780]
+              - listitem [ref=e782]:
+                - link "Facebook" [ref=e783] [cursor=pointer]:
+                  - /url: https://www.facebook.com/profile.php?id=61568291158118
+                  - generic [ref=e784]: Facebook
+                  - img [ref=e785]
+              - listitem [ref=e787]:
+                - link "Linkedin" [ref=e788] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/www.gncfinancial.com.au/
+                  - generic [ref=e789]: Linkedin
+                  - img [ref=e790]
+          - generic [ref=e793]:
+            - heading "Quick links" [level=5] [ref=e796]
+            - navigation "Menu" [ref=e799]:
+              - list [ref=e800]:
+                - listitem [ref=e801]:
+                  - link "Home" [ref=e802] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/
+                - listitem [ref=e803]:
+                  - link "About" [ref=e804] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/about-gnc-financial-baulkham-hills/
+                - listitem [ref=e805]:
+                  - link "Services" [ref=e806] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/baulkham-hills-accounting-tax-financial-services/
+                - listitem [ref=e807]:
+                  - link "Blog" [ref=e808] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/blog/
+                - listitem [ref=e809]:
+                  - link "Book Now" [ref=e810] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/book-now/
+                - listitem [ref=e811]:
+                  - link "FAQ" [ref=e812] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/baulkham-hills-accounting-faq/
+                - listitem [ref=e813]:
+                  - link "Contact" [ref=e814] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/contact-gnc-financial-baulkham-hills-sydney-cbd/
+                - listitem [ref=e815]:
+                  - link "Disclaimer" [ref=e816] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/disclaimer/
+                - listitem [ref=e817]:
+                  - link "Privacy Policy" [ref=e818] [cursor=pointer]:
+                    - /url: https://gncfinancial.com.au/privacy-policy/
+          - generic [ref=e820]:
+            - heading "Contact us" [level=5] [ref=e823]
+            - generic [ref=e825]:
+              - navigation "Menu" [ref=e826]:
+                - list [ref=e827]:
+                  - listitem [ref=e828]:
+                    - link " 02 8403 2770" [ref=e829] [cursor=pointer]:
+                      - /url: tel:0284032770
+                      - generic [ref=e830]: 
+                      - generic [ref=e831]: 02 8403 2770
+                  - listitem [ref=e832]:
+                    - link " admin@gncfinancial.com.au" [ref=e833] [cursor=pointer]:
+                      - /url: mailto:admin@gncfinancial.com.au
+                      - generic [ref=e834]: 
+                      - generic [ref=e835]: admin@gncfinancial.com.au
+                  - listitem [ref=e836]:
+                    - generic [ref=e837] [cursor=pointer]:
+                      - generic [ref=e838]: 
+                      - generic [ref=e839]: 111 / 33 Lexington Drive East Block – Level 1 Bella Vista, NSW, 2153
+              - text:   
+          - iframe [ref=e844]:
+            
+      - paragraph [ref=e851]:
+        - text: Copyright © 2026 GNC Financial |
+        - link "Designed & Powered by Easy Flow Web Design" [ref=e853] [cursor=pointer]:
+          - /url: https://easyflowwebdesign.com/
+  - generic [ref=e854]:
+    - link [ref=e856] [cursor=pointer]:
+      - /url: mailto:admin@gncfinancial.com.au
+      - img [ref=e857]
+    - link [ref=e859] [cursor=pointer]:
+      - /url: tel:0284032770
+      - img [ref=e860]
+  - generic [ref=e861]: tablet
+  - dialog "Cookie Notice" [ref=e862]:
+    - generic [ref=e863]:
+      - generic [ref=e864]: We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.
+      - button "Ok" [ref=e866] [cursor=pointer]
+      - button "No" [ref=e867] [cursor=pointer]

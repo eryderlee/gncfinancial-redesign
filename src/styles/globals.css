@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 antialiased;
+  }
+
+  /* Focus visible styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-gold ring-offset-2;
+  }
+}
+
+@layer components {
+  /* Prose-like content blocks used in service/blog pages */
+  .content-prose h2 {
+    @apply text-2xl font-bold text-brand-navy mt-8 mb-4;
+  }
+  .content-prose h3 {
+    @apply text-xl font-semibold text-brand-navy mt-6 mb-3;
+  }
+  .content-prose p {
+    @apply text-brand-gray-text leading-relaxed mb-4;
+  }
+  .content-prose ul {
+    @apply list-disc pl-5 space-y-2 text-brand-gray-text mb-4;
+  }
+  .content-prose a {
+    @apply text-brand-blue underline hover:text-brand-navy;
+  }
+}
