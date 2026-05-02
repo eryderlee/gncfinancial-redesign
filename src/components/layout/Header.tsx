@@ -19,8 +19,8 @@ export default function Header() {
     <header
       className={`w-full sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-brand-navy/80 backdrop-blur-md shadow-lg shadow-black/20"
-          : "bg-brand-navy"
+          ? "bg-white/80 backdrop-blur-md border-b border-gray-200/60 shadow-sm"
+          : "bg-white border-b border-gray-100"
       }`}
     >
       <a
@@ -50,17 +50,17 @@ export default function Header() {
               <li key={link.href} className="relative group">
                 <Link
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-white/80 hover:text-brand-gold rounded-md transition-colors duration-200"
+                  className="px-4 py-2 text-sm font-medium text-brand-navy/70 hover:text-brand-navy rounded-md transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
                 {"children" in link && link.children && (
-                  <ul className="absolute left-0 top-full mt-2 w-56 bg-[#2d46d0] border border-white/10 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <ul className="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {link.children.map((child) => (
                       <li key={child.href}>
                         <Link
                           href={child.href}
-                          className="block px-4 py-2.5 text-sm text-white/70 hover:text-brand-gold hover:bg-white/5 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-brand-navy/70 hover:text-brand-navy hover:bg-gray-50 transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -76,7 +76,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               href={SLUGS.contact}
-              className="hidden lg:inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-5 py-2 rounded-lg text-sm hover:bg-brand-gold-light transition-colors duration-200"
+              className="hidden lg:inline-flex items-center gap-2 bg-brand-navy text-white font-semibold px-5 py-2 rounded-lg text-sm hover:bg-brand-navy/85 transition-colors duration-200"
             >
               Book Consultation
             </Link>
