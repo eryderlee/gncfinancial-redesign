@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { SITE, NAV_LINKS } from "@/lib/constants";
 import { Phone, Mail, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import MobileNav from "./MobileNav";
 
 export default function Header() {
@@ -15,8 +15,9 @@ export default function Header() {
       >
         Skip to content
       </a>
+
       {/* Top bar — phone, email, book CTA */}
-      <div className="bg-brand-navy text-white text-sm">
+      <div className="bg-brand-navy text-white text-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a
@@ -44,15 +45,19 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main nav */}
-      <nav className="bg-white border-b border-gray-100 shadow-sm">
+      {/* Main nav — same navy background so the logo sits flush */}
+      <nav className="bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            {/* Phase 2: swap for transparent-background SVG/PNG logo */}
-            <span className="text-brand-navy font-bold text-xl tracking-tight">
-              GNC <span className="text-brand-gold">Financial</span>
-            </span>
+            <Image
+              src="/images/logo/gnc-financial-logo.png"
+              alt="GNC Financial – Baulkham Hills Accountant"
+              width={160}
+              height={40}
+              priority
+              className="object-contain"
+            />
           </Link>
 
           {/* Desktop nav links */}
@@ -61,7 +66,7 @@ export default function Header() {
               <li key={link.href} className="relative group">
                 <Link
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-brand-navy rounded-md transition-colors"
+                  className="px-4 py-2 text-sm font-medium text-white/85 hover:text-brand-gold rounded-md transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -85,10 +90,11 @@ export default function Header() {
 
           {/* Desktop CTA + mobile hamburger */}
           <div className="flex items-center gap-3">
-            <Link href="/contact" className="hidden lg:block">
-              <Button variant="primary" size="sm">
-                Make Appointment
-              </Button>
+            <Link
+              href="/contact-gnc-financial-baulkham-hills-sydney-cbd"
+              className="hidden lg:inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-4 py-2 rounded-lg text-sm hover:bg-brand-gold-light transition-colors"
+            >
+              Make Appointment
             </Link>
             <MobileNav />
           </div>
