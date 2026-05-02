@@ -57,7 +57,7 @@
     rgba(255, 255, 255, 0.13) 0%,
     transparent 70%
   );
-  animation: lightDrift 10s ease-in-out infinite;
+  animation: lightDrift 8s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -75,18 +75,8 @@
 }
 
 @keyframes lightDrift {
-  0%, 100% {
-    opacity: 0.7;
-    transform: scale(1) translate(0, 0);
-  }
-  33% {
-    opacity: 1;
-    transform: scale(1.08) translate(2%, -2%);
-  }
-  66% {
-    opacity: 0.85;
-    transform: scale(0.96) translate(-1%, 2%);
-  }
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
 }
 
 /* ─── Ticker / marquee ───────────────────────────────────────────────────── */
