@@ -43,7 +43,7 @@
 /* ─── Hero dynamic lighting ──────────────────────────────────────────────── */
 
 .hero-bg {
-  background: linear-gradient(170deg, #5271ff 0%, #3a52e8 45%, #2d46d0 100%);
+  background: #5271ff;
   position: relative;
   overflow: hidden;
 }
