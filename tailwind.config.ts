@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // GNC brand tokens — update these in Phase 2
         brand: {
-          navy: "#1a2f5e",       // primary dark
-          blue: "#2d4fa3",       // primary mid
-          gold: "#f0a500",       // accent
-          "gold-light": "#fbbf24",
-          "navy-light": "#2a3f70",
-          cream: "#f8f7f4",      // off-white background
-          "gray-text": "#4b5563",
+          navy: "#5271ff",        // primary background — header, hero, dark sections
+          "navy-light": "#5370ff", // deeper blue variant
+          blue: "#0065cb",        // primary accent — buttons, links
+          "blue-dark": "#0057ad", // hover state for blue elements
+          gold: "#f8b917",        // gold accent — dividers, logo, CTA text
+          "gold-light": "#fac93a", // gold hover
+          cream: "#f6f6f6",       // light section background
+          "gray-text": "#4b5563", // body text on light backgrounds
         },
       },
       fontFamily: {

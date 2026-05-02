@@ -10,7 +10,7 @@ export default function OgImage() {
     (
       <div
         style={{
-          background: "#1a2f5e",
+          background: "#5271ff",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -25,7 +25,7 @@ export default function OgImage() {
           style={{
             width: "80px",
             height: "6px",
-            background: "#f0a500",
+            background: "#f8b917",
             marginBottom: "40px",
           }}
         />
