@@ -67,7 +67,9 @@ export default function SmallBusinessPage() {
           <p>
             Clean books are the foundation of good business decisions. If your financial records
             are a mess, you don&rsquo;t know how profitable you really are, you can&rsquo;t make confident
-            decisions about growth, and the ATO will have a field day in an audit.
+            decisions about growth, and the{" "}
+            <a href="https://www.ato.gov.au/" target="_blank" rel="noopener noreferrer nofollow" className="underline hover:text-brand-gold">ATO</a>{" "}
+            will have a field day in an audit.
           </p>
           <p>
             Our bookkeeping services in Baulkham Hills keep your accounts up to date, your

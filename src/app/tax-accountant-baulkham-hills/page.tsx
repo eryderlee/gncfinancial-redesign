@@ -37,7 +37,9 @@ export default function TaxPage() {
             out your business taxes, or a company with complex tax obligations, we&rsquo;ve got you covered.
           </p>
           <p>
-            As registered tax agents in Baulkham Hills, we work with the ATO on your behalf, handle all
+            As registered tax agents in Baulkham Hills, we work with the{" "}
+            <a href="https://www.ato.gov.au/" target="_blank" rel="noopener noreferrer nofollow" className="underline hover:text-brand-gold">ATO</a>{" "}
+            on your behalf, handle all
             your lodgments, and make sure you&rsquo;re never caught out by changes to the tax rules. Our goal
             is simple: keep more money in your pocket while keeping you perfectly compliant.
           </p>
