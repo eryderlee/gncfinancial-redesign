@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SLUGS } from "@/lib/constants";
 
@@ -22,9 +23,13 @@ export default function TradesAndBusiness() {
 
         {/* Bookkeeping subsection */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* [real photo needed] alt: "experienced accountant Baulkham Hills" */}
-          <div className="bg-brand-cream rounded-2xl aspect-[4/3] flex items-center justify-center order-2 lg:order-1">
-            <span className="text-sm text-brand-gray-text">Experienced accountant photo — Phase 2</span>
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] order-2 lg:order-1">
+            <Image
+              src="/images/sections/accountant-at-desk.jpg"
+              alt="Experienced accountant Baulkham Hills"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="order-1 lg:order-2">
             <h3 className="text-2xl font-bold text-brand-navy mb-4">
@@ -81,17 +86,25 @@ export default function TradesAndBusiness() {
               </p>
             </div>
           </div>
-          {/* [real photo needed] alt: "reliable bookkeeping support Baulkham Hills" */}
-          <div className="bg-brand-cream rounded-2xl aspect-[4/3] flex items-center justify-center">
-            <span className="text-sm text-brand-gray-text">Bookkeeping support photo — Phase 2</span>
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+            <Image
+              src="/images/sections/small-business-accounting.jpg"
+              alt="Reliable bookkeeping support Baulkham Hills"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
 
         {/* Business Advisory subsection */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* [real photo needed] alt: "GNC Financial bookkeeping services" */}
-          <div className="bg-brand-cream rounded-2xl aspect-[4/3] flex items-center justify-center order-2 lg:order-1">
-            <span className="text-sm text-brand-gray-text">GNC Financial bookkeeping photo — Phase 2</span>
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] order-2 lg:order-1">
+            <Image
+              src="/images/sections/office-team-meeting.jpg"
+              alt="GNC Financial business advisory services"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="order-1 lg:order-2">
             <h3 className="text-2xl font-bold text-brand-navy mb-4">

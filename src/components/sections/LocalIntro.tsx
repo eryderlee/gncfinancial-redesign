@@ -1,17 +1,26 @@
+import Image from "next/image";
+
 export default function LocalIntro() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Images placeholder — Phase 2: replace with next/image real photos */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-brand-cream rounded-xl aspect-[4/3] flex items-center justify-center">
-              {/* [real photo needed] alt: "reliable bookkeeping support Baulkham Hills" */}
-              <span className="text-xs text-brand-gray-text text-center px-2">Bookkeeping support photo</span>
+            <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/sections/bookkeeping-support.jpg"
+                alt="Reliable bookkeeping support Baulkham Hills"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="bg-brand-cream rounded-xl aspect-[4/3] flex items-center justify-center">
-              {/* [real photo needed] alt: "certified accountant Baulkham Hills" */}
-              <span className="text-xs text-brand-gray-text text-center px-2">Certified accountant photo</span>
+            <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/sections/tax-accountant-consultation.jpg"
+                alt="Certified accountant Baulkham Hills"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
 

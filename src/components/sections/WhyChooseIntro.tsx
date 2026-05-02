@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function WhyChooseIntro() {
   return (
     <section className="py-20 bg-brand-cream" aria-labelledby="why-choose-intro-heading">
@@ -42,9 +44,13 @@ export default function WhyChooseIntro() {
             </div>
           </div>
 
-          {/* [real photo needed] alt: "Local Baulkham Hills accountant offering tax and bookkeeping services" */}
-          <div className="bg-white rounded-2xl aspect-[4/3] flex items-center justify-center shadow-sm">
-            <span className="text-sm text-brand-gray-text">Local accountant photo — Phase 2</span>
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm">
+            <Image
+              src="/images/sections/home-office-accounting.jpg"
+              alt="Local Baulkham Hills accountant offering tax and bookkeeping services"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
       </div>

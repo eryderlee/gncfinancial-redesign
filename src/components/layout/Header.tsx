@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { SITE, NAV_LINKS } from "@/lib/constants";
 import { Phone, Mail, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -50,14 +49,10 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo/gnc-financial-logo.png"
-              alt="GNC Financial – Baulkham Hills Accountant"
-              width={160}
-              height={40}
-              priority
-              className="object-contain"
-            />
+            {/* Phase 2: swap for transparent-background SVG/PNG logo */}
+            <span className="text-brand-navy font-bold text-xl tracking-tight">
+              GNC <span className="text-brand-gold">Financial</span>
+            </span>
           </Link>
 
           {/* Desktop nav links */}
