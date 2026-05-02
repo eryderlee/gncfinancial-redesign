@@ -261,15 +261,15 @@ export const FAQS = [
 
 export const LOCATIONS = [
   { name: "Baulkham Hills", slug: null },
-  { name: "Castle Hill", slug: "/locations/castle-hill" },
+  { name: "Castle Hill", slug: SLUGS.castleHill },
   { name: "Bella Vista", slug: null },
   { name: "Winston Hills", slug: null },
   { name: "Kellyville", slug: null },
   { name: "Rouse Hill", slug: null },
-  { name: "Norwest", slug: "/locations/norwest" },
+  { name: "Norwest", slug: SLUGS.norwest },
   { name: "Seven Hills", slug: null },
   { name: "Parramatta", slug: null },
-  { name: "Hills District", slug: "/locations/hills-district" },
+  { name: "Hills District", slug: SLUGS.hillsDistrict },
   { name: "Blacktown", slug: null },
   { name: "South West Sydney", slug: null },
 ] as const;
