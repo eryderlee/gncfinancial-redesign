@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full sticky top-0 z-50 transition-all duration-300 relative ${
+      className={`w-full sticky top-0 z-[80] transition-all duration-300 relative ${
         scrolled
           ? "bg-brand-navy/95 backdrop-blur-md shadow-lg"
           : "bg-brand-navy"

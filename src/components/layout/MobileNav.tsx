@@ -41,7 +41,7 @@ export default function MobileNav() {
       <div
         aria-hidden="true"
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`fixed top-16 left-0 right-0 bottom-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       />
@@ -51,24 +51,10 @@ export default function MobileNav() {
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
-        className={`fixed top-0 right-0 bottom-0 z-[70] w-[85%] max-w-sm bg-brand-navy shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
+        className={`fixed top-16 right-0 bottom-0 z-[70] w-[85%] max-w-sm bg-brand-navy shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Header bar */}
-        <div className="flex items-center justify-between px-5 h-16 border-b border-white/10 flex-shrink-0">
-          <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">
-            Menu
-          </span>
-          <button
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-            className="p-2 -mr-2 rounded-md text-white hover:bg-white/10 transition-colors"
-          >
-            <X className="w-6 h-6" />
-          </button>
-        </div>
-
         {/* Scrollable nav content */}
         <nav className="flex-1 overflow-y-auto px-5 py-6">
           <ul className="space-y-1">
