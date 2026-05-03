@@ -356,6 +356,33 @@
   .hero-slide-up { transform: none !important; }
 }
 
+/* ─── IndividualsSection tab transitions ─────────────────────────────────── */
+
+@keyframes individualsFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.individuals-fade {
+  animation: individualsFade 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes individualsProgress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+.individuals-progress {
+  animation: individualsProgress 7s linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .individuals-fade,
+  .individuals-progress {
+    animation: none !important;
+  }
+}
+
 /* Hero ambient bloom — desktop default */
 .hero-ambient {
   width: 900px;
