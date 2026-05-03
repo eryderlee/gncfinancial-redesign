@@ -11,11 +11,13 @@ export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [goldOpacity, setGoldOpacity] = useState(1);
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 24);
+      setGoldOpacity(Math.max(0, 1 - y / 80));
       const total = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(total > 0 ? (y / total) * 100 : 0);
     };
@@ -25,14 +27,11 @@ export default function Header() {
   }, []);
 
   const isHero = pathname === "/";
-  const goldMode = isHero && !scrolled;
 
   return (
     <header
-      className={`w-full sticky top-0 z-50 transition-colors duration-300 relative ${
-        goldMode
-          ? "bg-brand-gold"
-          : scrolled
+      className={`w-full sticky top-0 z-50 transition-all duration-300 relative ${
+        scrolled
           ? "bg-brand-navy/95 backdrop-blur-md shadow-lg"
           : "bg-brand-navy"
       }`}
@@ -64,11 +63,7 @@ export default function Header() {
               <li key={link.href} className="relative group">
                 <Link
                   href={link.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
-                    goldMode
-                      ? "text-brand-navy/80 hover:text-brand-navy"
-                      : "text-white/75 hover:text-white"
-                  }`}
+                  className="px-4 py-2 text-sm font-medium text-white/75 hover:text-white rounded-md transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
@@ -94,18 +89,31 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               href={SLUGS.contact}
-              className={`hidden lg:inline-flex items-center gap-2 font-semibold px-5 py-2 rounded-lg text-sm transition-colors duration-200 ${
-                goldMode
-                  ? "bg-brand-navy text-white hover:bg-brand-navy/90"
-                  : "bg-brand-gold text-brand-navy hover:bg-brand-gold/90"
-              }`}
+              className="hidden lg:inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-5 py-2 rounded-lg text-sm hover:bg-brand-gold/90 transition-colors duration-200"
             >
               Book Consultation
             </Link>
-            <MobileNav goldMode={goldMode} />
+            <MobileNav />
           </div>
         </div>
       </nav>
+
+      {/* Gold bottom border — only on the homepage hero, fades on scroll */}
+      {isHero && (
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "2px",
+            background: "#f8b917",
+            opacity: goldOpacity,
+            transition: "opacity 0.1s linear",
+          }}
+        />
+      )}
 
       {/* Scroll progress bar */}
       <div
