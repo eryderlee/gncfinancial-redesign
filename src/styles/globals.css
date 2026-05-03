@@ -382,10 +382,10 @@
 .hero-stripe {
   position: absolute;
   background: #f8b917;
-  width: 80px;
+  width: 28px;
   height: 1000px;
-  top: -80px;
-  border-radius: 4px;
+  top: -60px;
+  border-radius: 3px;
   transform: rotate(30deg);
   transform-origin: top center;
   animation:
@@ -397,9 +397,9 @@
 .hero-stripe-2 {
   animation-delay: 0.1s, 1s;
 }
-.hero-stripe-0 { left: 140px; }
-.hero-stripe-1 { left: 250px; }
-.hero-stripe-2 { left: 360px; }
+.hero-stripe-0 { left: 80px; }
+.hero-stripe-1 { left: 124px; }
+.hero-stripe-2 { left: 168px; }
 
 .hero-stripe-glow {
   position: absolute;
