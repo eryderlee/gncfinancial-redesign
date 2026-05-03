@@ -68,7 +68,7 @@ export default function Hero() {
             {/* Email */}
             <a
               href={SITE.emailHref}
-              className="inline-flex items-center gap-2 text-white/40 hover:text-brand-gold text-sm transition-colors duration-200 break-all"
+              className="inline-flex items-center gap-2 text-white/85 hover:text-brand-gold text-sm font-medium transition-colors duration-200 break-all px-3 py-1.5 rounded-md bg-white/5 backdrop-blur-sm border border-white/10 self-start"
             >
               <Mail className="w-3.5 h-3.5 flex-shrink-0" />
               {SITE.email}
