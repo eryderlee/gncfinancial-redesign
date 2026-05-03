@@ -188,6 +188,43 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+/* Animated gradient border that cycles the backlight palette */
+.backlight-border {
+  position: relative;
+}
+
+.backlight-border::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    rgba(48, 66, 196, 1)   0%,
+    rgba(82, 113, 255, 0.95) 25%,
+    rgba(248, 185, 23, 1)  50%,
+    rgba(82, 113, 255, 0.95) 75%,
+    rgba(48, 66, 196, 1) 100%
+  );
+  background-size: 300% 300%;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: backlightBorder 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes backlightBorder {
+  0%   { background-position:   0%  30%; }
+  25%  { background-position: 100%  10%; }
+  50%  { background-position: 100%  90%; }
+  75%  { background-position:   0%  70%; }
+  100% { background-position:   0%  30%; }
+}
+
 /* ─── Float animation ────────────────────────────────────────────────────── */
 
 @keyframes float {

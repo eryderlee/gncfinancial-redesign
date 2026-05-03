@@ -78,7 +78,7 @@ export default function Hero() {
 
           {/* Right: glassmorphism contact card with backlight */}
           <Backlight>
-          <div className="glass-card rounded-2xl p-5 sm:p-8 shadow-2xl shadow-black/40" style={{ background: "rgba(20, 38, 120, 0.55)" }}>
+          <div className="glass-card backlight-border rounded-2xl p-5 sm:p-8 shadow-2xl shadow-black/40" style={{ background: "rgba(20, 38, 120, 0.55)" }}>
             <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-1">
               Free Consultation
             </p>
