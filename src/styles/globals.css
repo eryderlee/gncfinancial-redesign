@@ -306,8 +306,8 @@
 /* ─── Hero entrance choreography ─────────────────────────────────────────── */
 
 @keyframes stripeIn {
-  from { transform: translateY(-180%) rotate(30deg); }
-  to   { transform: translateY(0)     rotate(30deg); }
+  from { transform: rotate(30deg) scaleY(0); }
+  to   { transform: rotate(30deg) scaleY(1); }
 }
 
 @keyframes heroFadeUp {
