@@ -31,8 +31,8 @@ export default function HeroContactForm({ dark = false }: Props) {
     : "block text-sm font-medium text-gray-700 mb-1";
 
   const inputClass = dark
-    ? "block w-full min-w-0 max-w-full appearance-none px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white text-sm placeholder:text-white/60 focus:outline-none focus:ring-1 focus:ring-brand-gold focus:border-brand-gold transition-colors"
-    : "block w-full min-w-0 max-w-full appearance-none px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold";
+    ? "block w-full min-w-0 max-w-full appearance-none min-h-[42px] leading-tight px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white text-sm placeholder:text-white/60 focus:outline-none focus:ring-1 focus:ring-brand-gold focus:border-brand-gold transition-colors"
+    : "block w-full min-w-0 max-w-full appearance-none min-h-[42px] leading-tight px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold";
 
   if (status === "success") {
     return (
