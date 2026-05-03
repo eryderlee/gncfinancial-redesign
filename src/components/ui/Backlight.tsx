@@ -19,7 +19,7 @@ export function Backlight({ blur = 40, className, children }: BacklightProps) {
       {/* Animated gradient layer */}
       <div
         aria-hidden="true"
-        className="backlight-glow absolute -inset-3 rounded-3xl pointer-events-none"
+        className="backlight-glow absolute -inset-8 rounded-[2rem] pointer-events-none"
         style={{ filter: `blur(${blur}px)` }}
       />
       {/* Content sits above */}

@@ -209,6 +209,8 @@
   background-size: 300% 300%;
   animation: backlightShift 6s ease-in-out infinite;
   opacity: 0.65;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 35%, transparent 85%);
+  mask-image: radial-gradient(ellipse at center, black 35%, transparent 85%);
 }
 
 @keyframes backlightShift {
