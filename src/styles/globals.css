@@ -272,7 +272,7 @@
   animation: stripeFlow 3.5s ease-in-out infinite;
 }
 
-/* Mobile/tablet — slim stripes tucked to the top-left corner, out of text */
+/* Mobile/tablet — slim stripes anchored ~10% from the left edge */
 @media (max-width: 1023px) {
   .hero-stripe {
     width: 16px;
@@ -281,9 +281,9 @@
     border-radius: 3px;
     opacity: 0.85;
   }
-  .hero-stripe-0 { left: 8px; }
-  .hero-stripe-1 { left: 32px; }
-  .hero-stripe-2 { left: 56px; }
+  .hero-stripe-0 { left: 10%; }
+  .hero-stripe-1 { left: calc(10% + 24px); }
+  .hero-stripe-2 { left: calc(10% + 48px); }
 }
 
 @media (max-width: 480px) {
@@ -293,9 +293,9 @@
     top: -30px;
     opacity: 0.7;
   }
-  .hero-stripe-0 { left: 6px; }
-  .hero-stripe-1 { left: 22px; }
-  .hero-stripe-2 { left: 38px; }
+  .hero-stripe-0 { left: 10%; }
+  .hero-stripe-1 { left: calc(10% + 16px); }
+  .hero-stripe-2 { left: calc(10% + 32px); }
 }
 
 /* ─── Float idle animation ───────────────────────────────────────────────── */
