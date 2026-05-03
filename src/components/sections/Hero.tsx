@@ -93,13 +93,11 @@ export default function Hero() {
       </div>
 
       {/* Full-width stats bar */}
-      <div className="relative z-10 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
-        {STATS.map((stat, i) => (
+      <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4">
+        {STATS.map((stat) => (
           <div
             key={stat.label}
-            className={`px-3 sm:px-8 py-5 sm:py-7 text-center hover:bg-white/5 transition-colors duration-300 ${
-              i >= 2 ? "border-t border-white/10 lg:border-t-0" : ""
-            }`}
+            className="px-3 sm:px-8 py-5 sm:py-7 text-center hover:bg-white/5 transition-colors duration-300"
           >
             <p className="text-brand-gold text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">{stat.value}</p>
             <p className="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest mt-1.5 sm:mt-2">{stat.label}</p>

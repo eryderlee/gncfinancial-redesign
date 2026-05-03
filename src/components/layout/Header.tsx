@@ -9,13 +9,11 @@ import MobileNav from "./MobileNav";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [goldOpacity, setGoldOpacity] = useState(1);
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 24);
-      setGoldOpacity(Math.max(0, 1 - y / 80));
       const total = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(total > 0 ? (y / total) * 100 : 0);
     };
@@ -92,21 +90,6 @@ export default function Header() {
           </div>
         </div>
       </nav>
-
-      {/* Gold border — full width at page top, fades as you scroll */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "2px",
-          background: "#f8b917",
-          opacity: goldOpacity,
-          transition: "opacity 0.1s linear",
-        }}
-      />
 
       {/* Scroll progress bar */}
       <div
