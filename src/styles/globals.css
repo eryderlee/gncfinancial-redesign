@@ -392,9 +392,14 @@
     stripeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) both,
     stripeGlow 3.5s ease-in-out infinite;
 }
-.hero-stripe-0 { left: 140px; animation-delay: 0.05s, 1.65s; }
-.hero-stripe-1 { left: 250px; animation-delay: 0.22s, 1.82s; }
-.hero-stripe-2 { left: 360px; animation-delay: 0.40s, 2.00s; }
+.hero-stripe-0,
+.hero-stripe-1,
+.hero-stripe-2 {
+  animation-delay: 0.1s, 1.7s;
+}
+.hero-stripe-0 { left: 140px; }
+.hero-stripe-1 { left: 250px; }
+.hero-stripe-2 { left: 360px; }
 
 .hero-stripe-glow {
   position: absolute;
