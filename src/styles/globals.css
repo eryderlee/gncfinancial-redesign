@@ -303,6 +303,59 @@
   100% { transform: translateY(600%); }
 }
 
+/* ─── Hero entrance choreography ─────────────────────────────────────────── */
+
+@keyframes stripeIn {
+  from { transform: translateY(-180%) rotate(30deg); }
+  to   { transform: translateY(0)     rotate(30deg); }
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroScaleIn {
+  from { opacity: 0; transform: scale(0.96) translateY(14px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+@keyframes heroSlideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-fade-up,
+.hero-scale-in,
+.hero-slide-up {
+  opacity: 0;
+}
+
+.hero-fade-up  { animation: heroFadeUp  0.75s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-scale-in { animation: heroScaleIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-slide-up { animation: heroSlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+.hero-delay-1 { animation-delay: 1.05s; }
+.hero-delay-2 { animation-delay: 1.20s; }
+.hero-delay-3 { animation-delay: 1.35s; }
+.hero-delay-4 { animation-delay: 1.50s; }
+.hero-delay-5 { animation-delay: 1.65s; }
+.hero-delay-6 { animation-delay: 1.80s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stripe,
+  .hero-fade-up,
+  .hero-scale-in,
+  .hero-slide-up {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .hero-stripe { transform: rotate(30deg) !important; }
+  .hero-fade-up,
+  .hero-scale-in,
+  .hero-slide-up { transform: none !important; }
+}
+
 /* Hero ambient bloom — desktop default */
 .hero-ambient {
   width: 900px;
@@ -335,11 +388,13 @@
   border-radius: 4px;
   transform: rotate(30deg);
   transform-origin: top center;
-  animation: stripeGlow 3.5s ease-in-out infinite;
+  animation:
+    stripeIn 1.05s cubic-bezier(0.16, 1, 0.3, 1) both,
+    stripeGlow 3.5s ease-in-out infinite;
 }
-.hero-stripe-0 { left: 140px; }
-.hero-stripe-1 { left: 250px; }
-.hero-stripe-2 { left: 360px; }
+.hero-stripe-0 { left: 140px; animation-delay: 0.05s, 1.1s; }
+.hero-stripe-1 { left: 250px; animation-delay: 0.18s, 1.23s; }
+.hero-stripe-2 { left: 360px; animation-delay: 0.31s, 1.36s; }
 
 .hero-stripe-glow {
   position: absolute;

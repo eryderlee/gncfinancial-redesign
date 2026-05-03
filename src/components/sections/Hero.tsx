@@ -35,20 +35,20 @@ export default function Hero() {
 
           {/* Left: headline + CTAs */}
           <div className="space-y-6 sm:space-y-8">
-            <h1 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-bold leading-[1.15] lg:leading-[1.1] tracking-tight">
+            <h1 className="hero-fade-up hero-delay-1 text-3xl sm:text-4xl lg:text-[3.25rem] font-bold leading-[1.15] lg:leading-[1.1] tracking-tight">
               Expert Accounting &amp;{" "}
               <span className="text-brand-gold">Financial Advice</span>{" "}
               You Can Actually Rely On
             </h1>
 
-            <p className="text-white/60 text-base sm:text-lg leading-relaxed max-w-lg">
+            <p className="hero-fade-up hero-delay-2 text-white/60 text-base sm:text-lg leading-relaxed max-w-lg">
               GNC Financial — your local Baulkham Hills accountant. Tax, bookkeeping,
               SMSF, and business advisory for individuals and businesses across the
               Hills District. Over 30 years of honest, straight-shooting advice.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
+            <div className="hero-fade-up hero-delay-3 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
               <Link
                 href={SLUGS.bookNow}
                 className="inline-flex items-center justify-center gap-2 bg-brand-gold text-brand-navy font-semibold px-6 sm:px-7 py-3.5 rounded-lg hover:bg-brand-gold-light transition-colors duration-200 text-sm"
@@ -68,7 +68,7 @@ export default function Hero() {
             {/* Email */}
             <a
               href={SITE.emailHref}
-              className="inline-flex items-center gap-2 text-white hover:text-brand-gold text-sm font-medium transition-colors duration-200 break-all px-3 py-1.5 rounded-md bg-white/10 backdrop-blur-md border border-white/15 self-start"
+              className="hero-fade-up hero-delay-4 inline-flex items-center gap-2 text-white hover:text-brand-gold text-sm font-medium transition-colors duration-200 break-all px-3 py-1.5 rounded-md bg-white/10 backdrop-blur-md border border-white/15 self-start"
             >
               <Mail className="w-3.5 h-3.5 flex-shrink-0" />
               {SITE.email}
@@ -77,23 +77,25 @@ export default function Hero() {
 
 
           {/* Right: glassmorphism contact card with backlight */}
-          <Backlight>
-          <div className="glass-card backlight-border rounded-2xl p-5 sm:p-8 shadow-2xl shadow-black/40" style={{ background: "rgba(20, 38, 120, 0.55)" }}>
-            <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-1">
-              Free Consultation
-            </p>
-            <h2 className="text-white text-lg sm:text-xl font-semibold mb-5 sm:mb-6">
-              Request an Appointment
-            </h2>
-            <HeroContactForm dark />
+          <div className="hero-scale-in hero-delay-2">
+            <Backlight>
+              <div className="glass-card backlight-border rounded-2xl p-5 sm:p-8 shadow-2xl shadow-black/40" style={{ background: "rgba(20, 38, 120, 0.55)" }}>
+                <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-1">
+                  Free Consultation
+                </p>
+                <h2 className="text-white text-lg sm:text-xl font-semibold mb-5 sm:mb-6">
+                  Request an Appointment
+                </h2>
+                <HeroContactForm dark />
+              </div>
+            </Backlight>
           </div>
-          </Backlight>
         </div>
 
       </div>
 
       {/* Full-width stats bar */}
-      <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4">
+      <div className="hero-slide-up hero-delay-5 relative z-10 grid grid-cols-2 lg:grid-cols-4">
         {STATS.map((stat) => (
           <div
             key={stat.label}
