@@ -335,12 +335,12 @@
 .hero-scale-in { animation: heroScaleIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .hero-slide-up { animation: heroSlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
-.hero-delay-1 { animation-delay: 1.55s; }
-.hero-delay-2 { animation-delay: 1.70s; }
-.hero-delay-3 { animation-delay: 1.85s; }
-.hero-delay-4 { animation-delay: 2.00s; }
-.hero-delay-5 { animation-delay: 2.15s; }
-.hero-delay-6 { animation-delay: 2.30s; }
+.hero-delay-1 { animation-delay: 2.05s; }
+.hero-delay-2 { animation-delay: 2.20s; }
+.hero-delay-3 { animation-delay: 2.35s; }
+.hero-delay-4 { animation-delay: 2.50s; }
+.hero-delay-5 { animation-delay: 2.65s; }
+.hero-delay-6 { animation-delay: 2.80s; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-stripe,
@@ -389,13 +389,13 @@
   transform: rotate(30deg);
   transform-origin: top center;
   animation:
-    stripeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) both,
+    stripeIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) both,
     stripeGlow 3.5s ease-in-out infinite;
 }
 .hero-stripe-0,
 .hero-stripe-1,
 .hero-stripe-2 {
-  animation-delay: 0.1s, 1.7s;
+  animation-delay: 0.1s, 2.3s;
 }
 .hero-stripe-0 { left: 140px; }
 .hero-stripe-1 { left: 250px; }
