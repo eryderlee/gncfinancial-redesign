@@ -49,7 +49,7 @@ export default function HeroContactForm({ dark = false }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" aria-label="Contact form">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
           <label htmlFor="hero-name" className={labelClass}>Full Name</label>
           <input

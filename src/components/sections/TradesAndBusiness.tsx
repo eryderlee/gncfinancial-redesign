@@ -15,7 +15,7 @@ export default function TradesAndBusiness() {
   return (
     <section aria-labelledby="tradies-heading">
       {/* ── Section intro ── */}
-      <div className="bg-white pt-20 pb-4">
+      <div className="bg-white pt-14 sm:pt-20 pb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl" data-reveal>
             <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3">
@@ -23,7 +23,7 @@ export default function TradesAndBusiness() {
             </p>
             <h2
               id="tradies-heading"
-              className="text-3xl lg:text-4xl font-bold text-brand-navy mb-6"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-navy mb-5 sm:mb-6"
             >
               Accountant Baulkham Hills for Tradies &amp; Small Business Owners
             </h2>
@@ -38,9 +38,9 @@ export default function TradesAndBusiness() {
       </div>
 
       {/* ── 01 Bookkeeping ── */}
-      <div className="bg-white py-16 border-t border-brand-gold/20">
+      <div className="bg-white py-12 sm:py-16 border-t border-brand-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div
               className="relative rounded-2xl overflow-hidden aspect-[4/3] order-2 lg:order-1 shadow-md"
               data-reveal="scale"
@@ -54,12 +54,12 @@ export default function TradesAndBusiness() {
             </div>
             <div className="order-1 lg:order-2">
               {/* Large background number */}
-              <div className="relative pt-20">
-                <span className="absolute top-0 -left-2 text-[5rem] font-black text-brand-navy/10 leading-none select-none pointer-events-none">
+              <div className="relative pt-14 sm:pt-20">
+                <span className="absolute top-0 -left-1 sm:-left-2 text-[3.5rem] sm:text-[5rem] font-black text-brand-navy/10 leading-none select-none pointer-events-none">
                   01
                 </span>
                 <div className="relative" data-reveal data-delay="1">
-                  <h3 className="text-2xl font-bold text-brand-navy mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-brand-navy mb-3 sm:mb-4">
                     Bookkeeping That Doesn&rsquo;t Do Your Head In
                   </h3>
                   <div className="space-y-4 text-brand-gray-text leading-relaxed">
@@ -85,16 +85,16 @@ export default function TradesAndBusiness() {
       </div>
 
       {/* ── 02 Tax Planning ── */}
-      <div className="bg-[#f8f9ff] py-16 border-t border-brand-gold/20">
+      <div className="bg-[#f8f9ff] py-12 sm:py-16 border-t border-brand-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <div className="relative pt-20">
-                <span className="absolute top-0 -left-2 text-[5rem] font-black text-brand-navy/10 leading-none select-none pointer-events-none">
+              <div className="relative pt-14 sm:pt-20">
+                <span className="absolute top-0 -left-1 sm:-left-2 text-[3.5rem] sm:text-[5rem] font-black text-brand-navy/10 leading-none select-none pointer-events-none">
                   02
                 </span>
                 <div className="relative" data-reveal data-delay="1">
-                  <h3 className="text-2xl font-bold text-brand-navy mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-brand-navy mb-3 sm:mb-4">
                     Tax Planning That Actually Saves You Money
                   </h3>
                   <div className="space-y-4 text-brand-gray-text leading-relaxed">
@@ -142,9 +142,9 @@ export default function TradesAndBusiness() {
       </div>
 
       {/* ── 03 Business Advisory ── */}
-      <div className="bg-white py-16 border-t border-brand-gold/20">
+      <div className="bg-white py-12 sm:py-16 border-t border-brand-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div
               className="relative rounded-2xl overflow-hidden aspect-[4/3] order-2 lg:order-1 shadow-md"
               data-reveal="scale"
@@ -157,12 +157,12 @@ export default function TradesAndBusiness() {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <div className="relative pt-20">
-                <span className="absolute top-0 -left-2 text-[5rem] font-black text-brand-navy/10 leading-none select-none pointer-events-none">
+              <div className="relative pt-14 sm:pt-20">
+                <span className="absolute top-0 -left-1 sm:-left-2 text-[3.5rem] sm:text-[5rem] font-black text-brand-navy/10 leading-none select-none pointer-events-none">
                   03
                 </span>
                 <div className="relative" data-reveal data-delay="1">
-                  <h3 className="text-2xl font-bold text-brand-navy mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-brand-navy mb-3 sm:mb-4">
                     Business Advisory That Helps You Grow
                   </h3>
                   <div className="space-y-4 text-brand-gray-text leading-relaxed">

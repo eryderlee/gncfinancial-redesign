@@ -15,8 +15,8 @@ export default function Footer() {
       {/* Gold accent bar */}
       <div className="h-1 bg-brand-gold" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
           {/* Brand column */}
           <div className="space-y-5">
             <Image

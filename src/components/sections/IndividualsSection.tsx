@@ -13,15 +13,15 @@ const DOLLAR_ITEMS = [
 
 export default function IndividualsSection() {
   return (
-    <section className="py-20 bg-brand-navy" aria-labelledby="individuals-heading">
+    <section className="py-14 sm:py-20 bg-brand-navy" aria-labelledby="individuals-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-10 sm:mb-12">
           <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3" data-reveal>
             For Individuals
           </p>
           <h2
             id="individuals-heading"
-            className="text-3xl lg:text-4xl font-bold text-white mb-6"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-5 sm:mb-6"
             data-reveal
             data-delay="1"
           >
@@ -34,7 +34,7 @@ export default function IndividualsSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Card 1 */}
           <div
             className="bg-white/8 border border-white/10 rounded-2xl overflow-hidden flex flex-col"
@@ -42,8 +42,8 @@ export default function IndividualsSection() {
             data-delay="1"
           >
             <div className="h-[3px] bg-brand-gold" />
-            <div className="p-8 flex flex-col flex-1">
-              <h3 className="text-xl font-bold text-white mb-4">
+            <div className="p-6 sm:p-8 flex flex-col flex-1">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
                 Get Every Dollar You&rsquo;re Owed
               </h3>
               <p className="text-white/65 text-sm leading-relaxed mb-5">
@@ -75,8 +75,8 @@ export default function IndividualsSection() {
             data-delay="2"
           >
             <div className="h-[3px] bg-brand-gold" />
-            <div className="p-8 flex flex-col flex-1">
-              <h3 className="text-xl font-bold text-white mb-4">
+            <div className="p-6 sm:p-8 flex flex-col flex-1">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
                 Investment Property Tax Specialists
               </h3>
               <p className="text-white/65 text-sm leading-relaxed">
@@ -91,13 +91,13 @@ export default function IndividualsSection() {
 
           {/* Card 3 */}
           <div
-            className="bg-white/8 border border-white/10 rounded-2xl overflow-hidden flex flex-col"
+            className="bg-white/8 border border-white/10 rounded-2xl overflow-hidden flex flex-col md:col-span-2 lg:col-span-1"
             data-reveal
             data-delay="3"
           >
             <div className="h-[3px] bg-brand-gold" />
-            <div className="p-8 flex flex-col flex-1">
-              <h3 className="text-xl font-bold text-white mb-4">
+            <div className="p-6 sm:p-8 flex flex-col flex-1">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
                 SMSF Experts Who Know Their Stuff
               </h3>
               <p className="text-white/65 text-sm leading-relaxed mb-5">

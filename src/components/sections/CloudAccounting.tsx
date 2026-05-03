@@ -32,9 +32,9 @@ const SOFTWARE_BADGES = [
 
 export default function CloudAccounting() {
   return (
-    <section className="py-20 bg-brand-navy text-white" aria-labelledby="cloud-heading">
+    <section className="py-14 sm:py-20 bg-brand-navy text-white" aria-labelledby="cloud-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left: heading + features */}
           <div>
             <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3" data-reveal>
@@ -42,18 +42,18 @@ export default function CloudAccounting() {
             </p>
             <h2
               id="cloud-heading"
-              className="text-3xl lg:text-4xl font-bold mb-4"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4"
               data-reveal
               data-delay="1"
             >
               Modern Cloud Accounting Solutions
             </h2>
-            <p className="text-white/65 mb-8 leading-relaxed" data-reveal data-delay="2">
+            <p className="text-white/65 mb-6 sm:mb-8 leading-relaxed" data-reveal data-delay="2">
               Sick of clunky desktop software? Cloud accounting is the way to go. As certified
               Xero advisors and MYOB partners, we can help you get real-time access to your
               financial position anytime, anywhere.
             </p>
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-3 mb-6 sm:mb-8">
               {CLOUD_FEATURES.map((feature, i) => (
                 <li
                   key={feature}
@@ -79,16 +79,16 @@ export default function CloudAccounting() {
           {/* Right: software badge grid */}
           <div>
             <p
-              className="text-white/40 text-xs font-semibold uppercase tracking-widest mb-6 text-center"
+              className="text-white/40 text-xs font-semibold uppercase tracking-widest mb-5 sm:mb-6 text-center"
               data-reveal
             >
               Certified Partner Software
             </p>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 sm:gap-4">
               {SOFTWARE_BADGES.map((badge, i) => (
                 <div
                   key={badge.name}
-                  className="rounded-xl border p-6 flex items-center justify-between hover:border-opacity-60 transition-all duration-300"
+                  className="rounded-xl border p-5 sm:p-6 flex items-center justify-between hover:border-opacity-60 transition-all duration-300"
                   style={{
                     background: badge.accent,
                     borderColor: badge.border,
@@ -97,10 +97,10 @@ export default function CloudAccounting() {
                   data-delay={String(i + 1)}
                 >
                   <div>
-                    <p className="text-white font-bold text-xl">{badge.name}</p>
+                    <p className="text-white font-bold text-lg sm:text-xl">{badge.name}</p>
                     <p className="text-white/50 text-xs mt-0.5">{badge.subtitle}</p>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0">
                     <span className="text-brand-gold font-bold text-sm">✓</span>
                   </div>
                 </div>

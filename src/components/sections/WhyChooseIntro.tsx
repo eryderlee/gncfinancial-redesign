@@ -8,7 +8,7 @@ const PARAGRAPHS = [
 
 export default function WhyChooseIntro() {
   return (
-    <section className="py-24 bg-brand-navy" aria-labelledby="why-choose-intro-heading">
+    <section className="py-16 sm:py-20 lg:py-24 bg-brand-navy" aria-labelledby="why-choose-intro-heading">
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,29 +19,29 @@ export default function WhyChooseIntro() {
           </p>
           <h2
             id="why-choose-intro-heading"
-            className="text-3xl lg:text-4xl font-bold text-white"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight"
           >
             Why Choose GNC Financial for Accounting Services in Baulkham Hills
           </h2>
         </div>
 
-        <p className="text-white/60 leading-relaxed mb-14 max-w-3xl" data-reveal data-delay="1">
+        <p className="text-white/60 leading-relaxed mb-10 sm:mb-14 max-w-3xl" data-reveal data-delay="1">
           When you&rsquo;re hunting for an accountant in Baulkham Hills, you don&rsquo;t just need someone
           who can crunch numbers and lodge forms. You need a proper financial partner who
           understands what it&rsquo;s like to run a business in the Hills District, someone whose
           advice is tailored to your goals.
         </p>
 
-        <div className="grid lg:grid-cols-2 gap-14 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
           {/* Left: text with gold rules */}
           <div data-reveal="left">
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-5 sm:mb-6">
               Born and Bred in the Hills District
             </h3>
             <div>
               {PARAGRAPHS.map((para, i) => (
                 <div key={i}>
-                  <p className="text-white/65 leading-relaxed py-5">{para}</p>
+                  <p className="text-white/65 leading-relaxed py-4 sm:py-5">{para}</p>
                   {i < PARAGRAPHS.length - 1 && (
                     <div className="h-px bg-brand-gold/20" />
                   )}
@@ -51,7 +51,7 @@ export default function WhyChooseIntro() {
           </div>
 
           {/* Right: photo with gold frame offset overlay */}
-          <div className="relative" data-reveal="right">
+          <div className="relative mr-3 sm:mr-0" data-reveal="right">
             {/* Gold border — offset behind */}
             <div className="absolute -top-3 -right-3 w-full h-full rounded-2xl border-2 border-brand-gold/35 pointer-events-none z-0" />
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl z-10">

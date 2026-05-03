@@ -4,15 +4,15 @@ import { Calendar, MapPin } from "lucide-react";
 
 export default function LocationCTA() {
   return (
-    <section className="py-20 bg-[#f0f2ff]" aria-labelledby="location-cta-heading">
+    <section className="py-14 sm:py-20 bg-[#f0f2ff]" aria-labelledby="location-cta-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12" data-reveal>
+        <div className="mb-10 sm:mb-12" data-reveal>
           <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3">
             Based in Baulkham Hills
           </p>
           <h2
             id="location-cta-heading"
-            className="text-3xl lg:text-4xl font-bold text-brand-navy mb-3"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-navy mb-3"
           >
             Book Your Chat with GNC Financial Today
           </h2>
@@ -37,20 +37,20 @@ export default function LocationCTA() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
           {/* Service area card */}
           <div
-            className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm"
+            className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm"
             data-reveal="left"
             data-delay="1"
           >
             <div className="flex items-center gap-2 mb-4">
               <MapPin className="w-5 h-5 text-brand-navy flex-shrink-0" />
-              <h3 className="text-xl font-bold text-brand-navy">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-navy">
                 Servicing the Hills District
               </h3>
             </div>
-            <p className="text-brand-gray-text text-sm leading-relaxed mb-6">
+            <p className="text-brand-gray-text text-sm leading-relaxed mb-5 sm:mb-6">
               While we&rsquo;re based in Baulkham Hills, we proudly help clients throughout
               the Hills District and Greater Sydney, including:
             </p>
@@ -60,12 +60,12 @@ export default function LocationCTA() {
                   {loc.slug ? (
                     <Link
                       href={loc.slug}
-                      className="inline-flex items-center text-sm px-3 py-1.5 rounded-full border border-brand-navy/20 text-brand-navy hover:bg-brand-navy hover:text-white hover:border-brand-navy transition-all duration-200 font-medium"
+                      className="inline-flex items-center text-xs sm:text-sm px-3 py-1.5 rounded-full border border-brand-navy/20 text-brand-navy hover:bg-brand-navy hover:text-white hover:border-brand-navy transition-all duration-200 font-medium"
                     >
                       {loc.name}
                     </Link>
                   ) : (
-                    <span className="inline-flex items-center text-sm px-3 py-1.5 rounded-full border border-gray-200 text-brand-gray-text">
+                    <span className="inline-flex items-center text-xs sm:text-sm px-3 py-1.5 rounded-full border border-gray-200 text-brand-gray-text">
                       {loc.name}
                     </span>
                   )}
@@ -76,7 +76,7 @@ export default function LocationCTA() {
 
           {/* CTA card */}
           <div
-            className="relative bg-brand-navy rounded-2xl p-8 text-white flex flex-col justify-between overflow-hidden shadow-xl"
+            className="relative bg-brand-navy rounded-2xl p-6 sm:p-8 text-white flex flex-col justify-between overflow-hidden shadow-xl"
             data-reveal="right"
             data-delay="2"
           >
@@ -89,7 +89,7 @@ export default function LocationCTA() {
               }}
             />
             <div className="relative">
-              <h3 className="text-xl font-bold mb-4">Get Started – No Obligation</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-4">Get Started – No Obligation</h3>
               <div className="space-y-4 text-white/70 text-sm leading-relaxed">
                 <p>
                   Tax time doesn&rsquo;t have to be a nightmare. With the right accountant in

@@ -3,7 +3,7 @@ import { FlickeringGrid } from "@/registry/magicui/flickering-grid";
 
 export default function LocalIntro() {
   return (
-    <section className="py-20 bg-white relative overflow-hidden" aria-labelledby="local-intro-heading">
+    <section className="py-14 sm:py-20 bg-white relative overflow-hidden" aria-labelledby="local-intro-heading">
 
       {/* Flickering grid — radial ellipse centered on the section */}
       <div
@@ -27,26 +27,26 @@ export default function LocalIntro() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
-        <div className="mb-12" data-reveal>
+        <div className="mb-10 sm:mb-12" data-reveal>
           <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-3">
             Your Local Hills District Accountant
           </p>
           <h2
             id="local-intro-heading"
-            className="text-3xl lg:text-4xl font-bold text-brand-navy mb-3"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-navy mb-3"
           >
             Trusted by Locals for Over 30 Years
           </h2>
           <div className="w-12 h-1 bg-brand-gold rounded-full" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
 
           {/* Left: photos on gradient backing plate */}
           <div className="relative" data-reveal="left">
             {/* Gradient plate — sits behind the photos only */}
             <div
-              className="absolute -top-5 -left-5 w-[calc(100%+2.5rem)] h-[calc(100%+2.5rem)] rounded-2xl"
+              className="absolute -top-3 -left-3 sm:-top-5 sm:-left-5 w-[calc(100%+1.5rem)] sm:w-[calc(100%+2.5rem)] h-[calc(100%+1.5rem)] sm:h-[calc(100%+2.5rem)] rounded-2xl"
               style={{
                 background: `
                   radial-gradient(ellipse at 15% 80%, rgba(248,185,23,0.7) 0%, transparent 50%),
@@ -59,7 +59,7 @@ export default function LocalIntro() {
               }}
             />
 
-            <div className="relative grid grid-cols-2 gap-4">
+            <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
               {/* Left photo — taller */}
               <div
                 className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-lg animate-float"
@@ -76,7 +76,7 @@ export default function LocalIntro() {
               </div>
 
               {/* Right photo — offset down */}
-              <div className="flex flex-col gap-4 pt-10">
+              <div className="flex flex-col gap-3 sm:gap-4 pt-6 sm:pt-10">
                 <div
                   className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-xl animate-float-delayed"
                   data-reveal="right"
@@ -93,18 +93,18 @@ export default function LocalIntro() {
 
                 {/* Google badge */}
                 <div
-                  className="bg-white border border-gray-100 rounded-2xl px-4 py-3.5 shadow-md flex items-center gap-3"
+                  className="bg-white border border-gray-100 rounded-2xl px-3 sm:px-4 py-3 sm:py-3.5 shadow-md flex items-center gap-2 sm:gap-3"
                   data-reveal="scale"
                   data-delay="3"
                 >
-                  <div className="shrink-0 w-9 h-9 rounded-full bg-brand-navy flex items-center justify-center">
+                  <div className="shrink-0 w-8 sm:w-9 h-8 sm:h-9 rounded-full bg-brand-navy flex items-center justify-center">
                     <span className="text-brand-gold font-black text-sm">G</span>
                   </div>
-                  <div>
-                    <p className="text-brand-navy font-bold text-sm leading-none">4.9 / 5.0</p>
-                    <p className="text-gray-400 text-xs mt-1">Google Reviews</p>
+                  <div className="min-w-0">
+                    <p className="text-brand-navy font-bold text-xs sm:text-sm leading-none">4.9 / 5.0</p>
+                    <p className="text-gray-400 text-[10px] sm:text-xs mt-1">Google Reviews</p>
                   </div>
-                  <p className="text-brand-gold text-base ml-auto tracking-tight">★★★★★</p>
+                  <p className="text-brand-gold text-sm sm:text-base ml-auto tracking-tight whitespace-nowrap">★★★★★</p>
                 </div>
               </div>
             </div>
