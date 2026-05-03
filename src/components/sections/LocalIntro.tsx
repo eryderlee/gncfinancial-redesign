@@ -47,14 +47,17 @@ export default function LocalIntro() {
           <div className="relative" data-reveal="left">
             {/* Gradient plate — sits behind the photos only */}
             <div
-              className="absolute -top-3 -left-3 sm:-top-5 sm:-left-5 w-[calc(100%+1.5rem)] sm:w-[calc(100%+2.5rem)] h-[calc(100%+1.5rem)] sm:h-[calc(100%+2.5rem)] rounded-2xl"
+              className="absolute -top-3 -left-3 sm:-top-5 sm:-left-5 w-[calc(100%+1.5rem)] sm:w-[calc(100%+2.5rem)] h-[calc(100%+1.5rem)] sm:h-[calc(100%+2.5rem)] rounded-2xl overflow-hidden"
               style={{
                 background: `
-                  radial-gradient(ellipse at 15% 80%, rgba(248,185,23,0.7) 0%, transparent 50%),
-                  radial-gradient(ellipse at 80% 15%, rgba(248,185,23,0.45) 0%, transparent 45%),
-                  radial-gradient(ellipse at 55% 55%, rgba(82,113,255,0.85) 0%, transparent 60%),
-                  radial-gradient(ellipse at 0% 0%, rgba(48,66,196,1) 0%, transparent 65%),
-                  radial-gradient(ellipse at 100% 100%, rgba(6,14,36,0.9) 0%, transparent 55%),
+                  radial-gradient(ellipse 70% 22% at 18% 72%, rgba(248,185,23,0.95) 0%, transparent 60%),
+                  radial-gradient(ellipse 22% 30% at 88% 25%, rgba(250,201,58,0.85) 0%, transparent 75%),
+                  radial-gradient(ellipse 35% 50% at 62% 40%, rgba(82,113,255,1) 0%, transparent 65%),
+                  radial-gradient(ellipse 80% 55% at 8% 8%, rgba(48,66,196,1) 0%, transparent 70%),
+                  radial-gradient(ellipse 45% 65% at 95% 92%, rgba(6,14,36,0.95) 0%, transparent 60%),
+                  radial-gradient(ellipse 18% 14% at 45% 32%, rgba(200,215,255,0.55) 0%, transparent 90%),
+                  radial-gradient(ellipse 30% 18% at 78% 78%, rgba(248,185,23,0.45) 0%, transparent 75%),
+                  radial-gradient(ellipse 22% 32% at 12% 38%, rgba(82,113,255,0.5) 0%, transparent 80%),
                   #3042c4
                 `,
               }}
