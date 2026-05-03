@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Award } from "lucide-react";
 import { FlickeringGrid } from "@/registry/magicui/flickering-grid";
+import CountUp from "@/components/CountUp";
 
 export default function LocalIntro() {
   return (
@@ -93,7 +94,7 @@ export default function LocalIntro() {
                     </p>
                   </div>
                   <p className="text-brand-navy font-bold text-sm sm:text-base leading-none">
-                    30+ Years
+                    <CountUp value="30+ Years" />
                   </p>
                 </div>
               </div>
@@ -137,7 +138,7 @@ export default function LocalIntro() {
                   </div>
                   <div className="flex items-center justify-between gap-2">
                     <p className="text-brand-navy font-bold text-sm sm:text-base leading-none">
-                      4.9 / 5.0
+                      <CountUp value="4.9 / 5.0" />
                     </p>
                     <p className="text-brand-gold text-xs sm:text-sm tracking-tight whitespace-nowrap">
                       ★★★★★

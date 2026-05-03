@@ -3,6 +3,7 @@ import { SITE, SLUGS } from "@/lib/constants";
 import { Phone, Mail, ArrowRight } from "lucide-react";
 import HeroContactForm from "@/components/sections/HeroContactForm";
 import { Backlight } from "@/components/ui/Backlight";
+import CountUp from "@/components/CountUp";
 
 const STATS = [
   { value: "30+", label: "Years Experience" },
@@ -101,7 +102,9 @@ export default function Hero() {
             key={stat.label}
             className="px-3 sm:px-8 py-5 sm:py-7 text-center hover:bg-white/5 transition-colors duration-300"
           >
-            <p className="text-brand-gold text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">{stat.value}</p>
+            <p className="text-brand-gold text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
+              <CountUp value={stat.value} />
+            </p>
             <p className="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest mt-1.5 sm:mt-2">{stat.label}</p>
           </div>
         ))}

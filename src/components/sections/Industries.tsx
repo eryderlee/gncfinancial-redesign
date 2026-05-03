@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { INDUSTRIES } from "@/lib/constants";
+import CountUp from "@/components/CountUp";
 
 export default function Industries() {
   return (
@@ -60,7 +61,9 @@ export default function Industries() {
               <p className="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-1">
                 Industries Served
               </p>
-              <p className="text-4xl sm:text-5xl font-black leading-none">8+</p>
+              <p className="text-4xl sm:text-5xl font-black leading-none">
+                <CountUp value="8+" />
+              </p>
               <p className="text-white/65 text-xs sm:text-sm mt-1">Sectors Across the Hills District</p>
             </div>
           </div>
