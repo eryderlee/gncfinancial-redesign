@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function RevealObserver() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,19 +20,21 @@ export default function RevealObserver() {
     );
 
     const observe = () => {
-      document.querySelectorAll("[data-reveal]").forEach((el) => {
-        observer.observe(el);
-      });
+      document
+        .querySelectorAll("[data-reveal]:not(.revealed)")
+        .forEach((el) => {
+          observer.observe(el);
+        });
     };
 
-    // Run on mount and after any dynamic content settles
+    // Re-observe on every navigation, plus a short retry for late content
     observe();
     const t = setTimeout(observe, 500);
     return () => {
       clearTimeout(t);
       observer.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

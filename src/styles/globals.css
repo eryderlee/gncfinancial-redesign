@@ -179,6 +179,18 @@
 [data-reveal][data-delay="5"] { transition-delay: 0.5s; }
 [data-reveal][data-delay="6"] { transition-delay: 0.65s; }
 
+/* Accessibility / safety net: if motion is reduced or the reveal
+ * observer never fires (JS error, blocked, etc.), keep content visible
+ * instead of leaving it at opacity: 0. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
 /* ─── Glassmorphism hero card ────────────────────────────────────────────── */
 
 .glass-card {
