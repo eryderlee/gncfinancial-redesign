@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
-export default function MobileNav() {
+export default function MobileNav({ goldMode = false }: { goldMode?: boolean }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -32,7 +32,11 @@ export default function MobileNav() {
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
+        className={`p-2 rounded-md transition-colors ${
+          goldMode
+            ? "text-brand-navy hover:bg-brand-navy/10"
+            : "text-white hover:bg-white/10"
+        }`}
       >
         {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
