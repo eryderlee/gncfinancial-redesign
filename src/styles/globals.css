@@ -335,12 +335,12 @@
 .hero-scale-in { animation: heroScaleIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .hero-slide-up { animation: heroSlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
-.hero-delay-1 { animation-delay: 2.50s; }
-.hero-delay-2 { animation-delay: 2.62s; }
-.hero-delay-3 { animation-delay: 2.74s; }
-.hero-delay-4 { animation-delay: 2.86s; }
-.hero-delay-5 { animation-delay: 2.98s; }
-.hero-delay-6 { animation-delay: 3.10s; }
+.hero-delay-1 { animation-delay: 1.55s; }
+.hero-delay-2 { animation-delay: 1.67s; }
+.hero-delay-3 { animation-delay: 1.79s; }
+.hero-delay-4 { animation-delay: 1.91s; }
+.hero-delay-5 { animation-delay: 2.03s; }
+.hero-delay-6 { animation-delay: 2.15s; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-stripe,
