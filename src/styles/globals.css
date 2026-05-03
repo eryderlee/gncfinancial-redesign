@@ -212,31 +212,31 @@
 @keyframes backlightGlow {
   0%, 100% {
     box-shadow:
-      -55px -35px 110px 5px rgba(48, 66, 196, 0.55),
-       55px  35px 110px 5px rgba(248, 185, 23, 0.32),
-       45px -45px  90px 0   rgba(82, 113, 255, 0.50),
-      -45px  45px  90px 0   rgba(82, 113, 255, 0.45);
+      -65px -45px 130px 15px rgba(48, 66, 196, 0.95),
+       65px  45px 130px 15px rgba(248, 185, 23, 0.65),
+       55px -55px 110px 10px rgba(82, 113, 255, 0.85),
+      -55px  55px 110px 10px rgba(82, 113, 255, 0.80);
   }
   25% {
     box-shadow:
-       55px -35px 110px 5px rgba(248, 185, 23, 0.40),
-      -55px  35px 110px 5px rgba(48, 66, 196, 0.55),
-      -45px -45px  90px 0   rgba(82, 113, 255, 0.50),
-       45px  45px  90px 0   rgba(82, 113, 255, 0.45);
+       65px -45px 130px 15px rgba(248, 185, 23, 0.70),
+      -65px  45px 130px 15px rgba(48, 66, 196, 0.95),
+      -55px -55px 110px 10px rgba(82, 113, 255, 0.85),
+       55px  55px 110px 10px rgba(82, 113, 255, 0.80);
   }
   50% {
     box-shadow:
-       55px  35px 110px 5px rgba(48, 66, 196, 0.55),
-      -55px -35px 110px 5px rgba(248, 185, 23, 0.40),
-       45px  45px  90px 0   rgba(82, 113, 255, 0.50),
-      -45px -45px  90px 0   rgba(82, 113, 255, 0.45);
+       65px  45px 130px 15px rgba(48, 66, 196, 0.95),
+      -65px -45px 130px 15px rgba(248, 185, 23, 0.70),
+       55px  55px 110px 10px rgba(82, 113, 255, 0.85),
+      -55px -55px 110px 10px rgba(82, 113, 255, 0.80);
   }
   75% {
     box-shadow:
-      -55px  35px 110px 5px rgba(248, 185, 23, 0.40),
-       55px -35px 110px 5px rgba(48, 66, 196, 0.55),
-      -45px  45px  90px 0   rgba(82, 113, 255, 0.50),
-       45px -45px  90px 0   rgba(82, 113, 255, 0.45);
+      -65px  45px 130px 15px rgba(248, 185, 23, 0.70),
+       65px -45px 130px 15px rgba(48, 66, 196, 0.95),
+      -55px  55px 110px 10px rgba(82, 113, 255, 0.85),
+       55px -55px 110px 10px rgba(82, 113, 255, 0.80);
   }
 }
 
