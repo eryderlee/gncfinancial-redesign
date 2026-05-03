@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -26,17 +32,8 @@ export default function MobileNav() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  return (
-    <div className="lg:hidden">
-      <button
-        aria-label={open ? "Close menu" : "Open menu"}
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-        className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
-      >
-        {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
-
+  const overlay = (
+    <>
       {/* Backdrop */}
       <div
         aria-hidden="true"
@@ -56,7 +53,7 @@ export default function MobileNav() {
         }`}
       >
         {/* Scrollable nav content */}
-        <nav className="flex-1 overflow-y-auto px-5 py-6">
+        <nav className="flex-1 overflow-y-auto overscroll-contain px-5 py-6">
           <ul className="space-y-1">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
@@ -106,6 +103,21 @@ export default function MobileNav() {
           </a>
         </div>
       </div>
+    </>
+  );
+
+  return (
+    <div className="lg:hidden">
+      <button
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
+      >
+        {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </button>
+
+      {mounted && createPortal(overlay, document.body)}
     </div>
   );
 }
