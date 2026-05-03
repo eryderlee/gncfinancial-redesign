@@ -197,24 +197,47 @@
 
 /* ─── Backlight glow ─────────────────────────────────────────────────────── */
 
-.backlight-glow {
-  background:
-    radial-gradient(ellipse 55% 55% at 25% 30%, rgba(48, 66, 196, 0.95) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 50% at 75% 25%, rgba(82, 113, 255, 0.8) 0%, transparent 65%),
-    radial-gradient(ellipse 55% 50% at 70% 80%, rgba(248, 185, 23, 0.7) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 55% at 25% 75%, rgba(48, 66, 196, 0.85) 0%, transparent 65%);
-  background-size: 200% 200%;
-  background-position: 0% 50%;
-  animation: backlightShift 8s ease-in-out infinite;
-  opacity: 0.7;
+/*
+ * Multi-color glow built from animated box-shadows on the wrapper.
+ * Box-shadow renders a blurred, offset copy of the wrapper's outline
+ * and naturally fades to transparent at the blur radius — no element
+ * edge exists to expose a hard cutoff line.
+ */
+.backlight-wrap {
+  position: relative;
+  border-radius: 1rem;
+  animation: backlightGlow 9s ease-in-out infinite;
 }
 
-@keyframes backlightShift {
-  0%   { background-position:   0%  30%; }
-  25%  { background-position: 100%  10%; }
-  50%  { background-position: 100%  90%; }
-  75%  { background-position:   0%  70%; }
-  100% { background-position:   0%  30%; }
+@keyframes backlightGlow {
+  0%, 100% {
+    box-shadow:
+      -55px -35px 110px 5px rgba(48, 66, 196, 0.55),
+       55px  35px 110px 5px rgba(248, 185, 23, 0.32),
+       45px -45px  90px 0   rgba(82, 113, 255, 0.50),
+      -45px  45px  90px 0   rgba(82, 113, 255, 0.45);
+  }
+  25% {
+    box-shadow:
+       55px -35px 110px 5px rgba(248, 185, 23, 0.40),
+      -55px  35px 110px 5px rgba(48, 66, 196, 0.55),
+      -45px -45px  90px 0   rgba(82, 113, 255, 0.50),
+       45px  45px  90px 0   rgba(82, 113, 255, 0.45);
+  }
+  50% {
+    box-shadow:
+       55px  35px 110px 5px rgba(48, 66, 196, 0.55),
+      -55px -35px 110px 5px rgba(248, 185, 23, 0.40),
+       45px  45px  90px 0   rgba(82, 113, 255, 0.50),
+      -45px -45px  90px 0   rgba(82, 113, 255, 0.45);
+  }
+  75% {
+    box-shadow:
+      -55px  35px 110px 5px rgba(248, 185, 23, 0.40),
+       55px -35px 110px 5px rgba(48, 66, 196, 0.55),
+      -45px  45px  90px 0   rgba(82, 113, 255, 0.50),
+       45px -45px  90px 0   rgba(82, 113, 255, 0.45);
+  }
 }
 
 /* ─── Stripe glow pulse ──────────────────────────────────────────────────── */
