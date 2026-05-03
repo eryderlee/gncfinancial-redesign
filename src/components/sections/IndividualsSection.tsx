@@ -34,7 +34,7 @@ const TABS: Tab[] = [
           GNC Financial knows the tax system inside out and will make sure you&rsquo;re
           claiming everything you&rsquo;re entitled to, including:
         </p>
-        <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2 mt-1">
+        <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
           {DOLLAR_ITEMS.map((item) => (
             <li key={item} className="flex items-start gap-2 text-sm">
               <span className="text-brand-gold mt-0.5 flex-shrink-0 font-bold">✓</span>
@@ -155,23 +155,41 @@ export default function IndividualsSection() {
                   aria-selected={isActive}
                   aria-controls={`individuals-panel-${tab.id}`}
                   onClick={() => handleSelect(i)}
-                  className={`relative snap-start text-left flex-shrink-0 lg:flex-shrink min-w-[180px] sm:min-w-[220px] lg:min-w-0 px-5 py-4 rounded-xl border transition-all duration-300 overflow-hidden ${
+                  className={`relative snap-start text-left flex-shrink-0 lg:flex-shrink min-w-[200px] sm:min-w-[240px] lg:min-w-0 pl-6 pr-5 py-4 rounded-xl border transition-all duration-300 overflow-hidden ${
                     isActive
-                      ? "bg-brand-gold border-brand-gold text-brand-navy shadow-lg"
-                      : "bg-white/5 border-white/10 text-white/75 hover:border-white/30 hover:bg-white/10"
+                      ? "bg-white/[0.08] border-white/20"
+                      : "bg-white/[0.02] border-white/10 hover:bg-white/[0.05] hover:border-white/20"
                   }`}
                 >
-                  <span className={`block text-[10px] font-bold tracking-widest uppercase ${isActive ? "text-brand-navy/70" : "text-brand-gold"}`}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="block font-semibold mt-1 text-sm sm:text-base">
-                    {tab.short}
-                  </span>
+                  {/* Gold accent bar — left edge */}
+                  <span
+                    aria-hidden="true"
+                    className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-brand-gold transition-all duration-300 ${
+                      isActive ? "opacity-100 scale-y-100" : "opacity-0 scale-y-50"
+                    }`}
+                  />
+                  <div className="flex items-baseline gap-3">
+                    <span
+                      className={`text-[11px] font-bold tracking-[0.2em] transition-colors duration-300 ${
+                        isActive ? "text-brand-gold" : "text-white/35"
+                      }`}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={`font-semibold text-sm sm:text-base transition-colors duration-300 ${
+                        isActive ? "text-white" : "text-white/70"
+                      }`}
+                    >
+                      {tab.short}
+                    </span>
+                  </div>
+                  {/* Auto-rotate progress */}
                   {isActive && !paused && (
                     <span
                       key={`progress-${active}`}
                       aria-hidden="true"
-                      className="absolute bottom-0 left-0 h-[3px] bg-brand-navy/30 individuals-progress"
+                      className="absolute bottom-0 left-0 h-[2px] bg-brand-gold individuals-progress"
                     />
                   )}
                 </button>
@@ -183,17 +201,36 @@ export default function IndividualsSection() {
           <div
             id={`individuals-panel-${current.id}`}
             role="tabpanel"
-            aria-labelledby={`individuals-tab-${current.id}`}
-            className="lg:col-span-8 bg-white/[0.04] border border-white/10 rounded-2xl p-6 sm:p-8 lg:p-10 min-h-[320px] sm:min-h-[360px]"
+            className="lg:col-span-8 relative bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden"
           >
-            <div key={current.id} className="grid sm:grid-cols-5 gap-6 sm:gap-8 individuals-fade">
-              <div className="sm:col-span-2">
-                <h3 className="text-xl sm:text-2xl lg:text-[1.65rem] font-bold text-white leading-tight">
-                  {current.title}
-                </h3>
-                <div className="w-12 h-1 bg-brand-gold rounded-full mt-4" />
-              </div>
-              <div className="sm:col-span-3 space-y-4 text-white/70 text-sm leading-relaxed">
+            {/* Gold accent line at top */}
+            <span
+              aria-hidden="true"
+              className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-gold via-brand-gold/50 to-transparent"
+            />
+
+            <div key={current.id} className="relative p-6 sm:p-8 lg:p-10 individuals-fade">
+              {/* Decorative big number */}
+              <span
+                aria-hidden="true"
+                className="absolute top-4 right-5 sm:top-6 sm:right-8 text-6xl sm:text-7xl lg:text-8xl font-black leading-none select-none pointer-events-none text-white/[0.05]"
+              >
+                {String(active + 1).padStart(2, "0")}
+              </span>
+
+              {/* Eyebrow */}
+              <p className="text-brand-gold text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
+                For Individuals
+              </p>
+
+              {/* Title */}
+              <h3 className="relative text-xl sm:text-2xl lg:text-[1.75rem] font-bold text-white leading-tight max-w-xl">
+                {current.title}
+              </h3>
+              <div className="w-12 h-1 bg-brand-gold rounded-full mt-4 mb-6 sm:mb-7" />
+
+              {/* Body */}
+              <div className="relative space-y-4 text-white/70 text-sm sm:text-[15px] leading-relaxed max-w-3xl">
                 {current.body}
               </div>
             </div>
