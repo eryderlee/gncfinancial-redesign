@@ -31,8 +31,8 @@ export default function HeroContactForm({ dark = false }: Props) {
     : "block text-sm font-medium text-gray-700 mb-1";
 
   const inputClass = dark
-    ? "w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white text-sm placeholder:text-white/60 focus:outline-none focus:ring-1 focus:ring-brand-gold focus:border-brand-gold transition-colors"
-    : "w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold";
+    ? "block w-full min-w-0 max-w-full appearance-none px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white text-sm placeholder:text-white/60 focus:outline-none focus:ring-1 focus:ring-brand-gold focus:border-brand-gold transition-colors"
+    : "block w-full min-w-0 max-w-full appearance-none px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold";
 
   if (status === "success") {
     return (
@@ -50,7 +50,7 @@ export default function HeroContactForm({ dark = false }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4" aria-label="Contact form">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-        <div>
+        <div className="min-w-0">
           <label htmlFor="hero-name" className={labelClass}>Full Name</label>
           <input
             id="hero-name"
@@ -62,7 +62,7 @@ export default function HeroContactForm({ dark = false }: Props) {
             className={inputClass}
           />
         </div>
-        <div>
+        <div className="min-w-0">
           <label htmlFor="hero-email" className={labelClass}>Email</label>
           <input
             id="hero-email"
@@ -74,7 +74,7 @@ export default function HeroContactForm({ dark = false }: Props) {
             className={inputClass}
           />
         </div>
-        <div>
+        <div className="min-w-0">
           <label htmlFor="hero-phone" className={labelClass}>Phone</label>
           <input
             id="hero-phone"
@@ -85,7 +85,7 @@ export default function HeroContactForm({ dark = false }: Props) {
             className={inputClass}
           />
         </div>
-        <div>
+        <div className="min-w-0">
           <label htmlFor="hero-date" className={labelClass}>Preferred Date</label>
           <input
             id="hero-date"
@@ -95,7 +95,7 @@ export default function HeroContactForm({ dark = false }: Props) {
           />
         </div>
       </div>
-      <div>
+      <div className="min-w-0">
         <label htmlFor="hero-message" className={labelClass}>How can we help?</label>
         <textarea
           id="hero-message"
