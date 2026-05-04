@@ -610,45 +610,34 @@
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
 
-/* Compact backlight wrapper — same rotating multi-color glow as the
- * hero contact card but tuned for a button-sized element. Apply to
- * a span/div that wraps the button. */
-.btn-backlight {
+/* Subtle animated outline — thin conic-gradient ring (navy/blue/gold)
+ * rotating around the button via @property --bl-angle. Reuses the
+ * backlightBorder keyframe defined for the contact card. */
+.btn-outline-glow {
   position: relative;
-  display: inline-flex;
-  border-radius: 0.5rem;
-  animation: btnBacklight 8s ease-in-out infinite;
 }
 
-@keyframes btnBacklight {
-  0%, 100% {
-    box-shadow:
-      -22px -14px 36px 2px rgba(48, 66, 196, 0.85),
-       22px  14px 36px 2px rgba(255, 176, 46, 0.6),
-       18px -18px 28px 0   rgba(82, 113, 255, 0.7),
-      -18px  18px 28px 0   rgba(82, 113, 255, 0.65);
-  }
-  25% {
-    box-shadow:
-       22px -14px 36px 2px rgba(255, 176, 46, 0.65),
-      -22px  14px 36px 2px rgba(48, 66, 196, 0.85),
-      -18px -18px 28px 0   rgba(82, 113, 255, 0.7),
-       18px  18px 28px 0   rgba(82, 113, 255, 0.65);
-  }
-  50% {
-    box-shadow:
-       22px  14px 36px 2px rgba(48, 66, 196, 0.85),
-      -22px -14px 36px 2px rgba(255, 176, 46, 0.65),
-       18px  18px 28px 0   rgba(82, 113, 255, 0.7),
-      -18px -18px 28px 0   rgba(82, 113, 255, 0.65);
-  }
-  75% {
-    box-shadow:
-      -22px  14px 36px 2px rgba(255, 176, 46, 0.65),
-       22px -14px 36px 2px rgba(48, 66, 196, 0.85),
-      -18px  18px 28px 0   rgba(82, 113, 255, 0.7),
-       18px -18px 28px 0   rgba(82, 113, 255, 0.65);
-  }
+.btn-outline-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--bl-angle),
+    rgba(48, 66, 196, 0.6)  0deg,
+    rgba(82, 113, 255, 0.7) 90deg,
+    rgba(255, 176, 46, 0.8) 180deg,
+    rgba(82, 113, 255, 0.7) 270deg,
+    rgba(48, 66, 196, 0.6) 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: backlightBorder 9s linear infinite;
+  pointer-events: none;
 }
 
 /* ─── Gold LED flicker (headline accent) ─────────────────────────────────── */
