@@ -13,23 +13,22 @@ export default function CTA({
 }: CTAProps) {
   return (
     <section className="relative py-16 sm:py-24 overflow-hidden" aria-labelledby="cta-heading">
-      {/* Metallic gold backing — vertical gradient echoing the logo's
-       *  pale highlight → core → deeper amber, instead of a flat gold wall */}
+      {/* Metallic gold backing — gentle vertical gradient with subtle
+       *  variation, kept close to brand-gold so navy text stays readable */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, #fff2b0 0%, #ffc347 14%, #ffb02e 48%, #e89a1a 82%, #b87a18 100%)",
+            "linear-gradient(180deg, #ffc861 0%, #ffb02e 25%, #ffb02e 75%, #f5a623 100%)",
         }}
       />
-      {/* Diagonal sheen — soft brushed-metal highlight running across the
-       *  panel, gives a subtle gleam consistent with the logo stripes */}
+      {/* Soft top sheen — subtle highlight echoing the logo without a sharp line */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(105deg, transparent 25%, rgba(255,245,200,0.35) 48%, rgba(255,245,200,0.15) 55%, transparent 78%)",
+            "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,245,200,0.3) 0%, transparent 60%)",
         }}
       />
       {/* Dot grid — navy dots, visible at corners */}
@@ -40,12 +39,12 @@ export default function CTA({
           backgroundSize: "20px 20px",
         }}
       />
-      {/* Radial vignette — softens the centre so the content doesn't compete with the dots */}
+      {/* Radial mask — gold centre dissolves dots inward, corners remain dotted */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 75% at 50% 50%, rgba(255,176,46,0.55) 0%, rgba(255,176,46,0.2) 60%, transparent 100%)",
+            "radial-gradient(ellipse 70% 75% at 50% 50%, #ffb02e 0%, #ffb02e 50%, rgba(255,176,46,0.4) 80%, transparent 100%)",
         }}
       />
 
