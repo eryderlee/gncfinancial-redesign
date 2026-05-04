@@ -87,12 +87,14 @@ export default function Header() {
 
           {/* CTA + mobile hamburger */}
           <div className="flex items-center gap-3">
-            <Link
-              href={SLUGS.contact}
-              className="btn-gold hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-lg text-sm"
-            >
-              Book Consultation
-            </Link>
+            <span className="btn-backlight hidden lg:inline-flex">
+              <Link
+                href={SLUGS.contact}
+                className="btn-gold inline-flex items-center gap-2 px-5 py-2 rounded-lg text-sm"
+              >
+                Book Consultation
+              </Link>
+            </span>
             <MobileNav />
           </div>
         </div>

@@ -610,6 +610,47 @@
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
 
+/* Compact backlight wrapper — same rotating multi-color glow as the
+ * hero contact card but tuned for a button-sized element. Apply to
+ * a span/div that wraps the button. */
+.btn-backlight {
+  position: relative;
+  display: inline-flex;
+  border-radius: 0.5rem;
+  animation: btnBacklight 8s ease-in-out infinite;
+}
+
+@keyframes btnBacklight {
+  0%, 100% {
+    box-shadow:
+      -22px -14px 36px 2px rgba(48, 66, 196, 0.85),
+       22px  14px 36px 2px rgba(255, 176, 46, 0.6),
+       18px -18px 28px 0   rgba(82, 113, 255, 0.7),
+      -18px  18px 28px 0   rgba(82, 113, 255, 0.65);
+  }
+  25% {
+    box-shadow:
+       22px -14px 36px 2px rgba(255, 176, 46, 0.65),
+      -22px  14px 36px 2px rgba(48, 66, 196, 0.85),
+      -18px -18px 28px 0   rgba(82, 113, 255, 0.7),
+       18px  18px 28px 0   rgba(82, 113, 255, 0.65);
+  }
+  50% {
+    box-shadow:
+       22px  14px 36px 2px rgba(48, 66, 196, 0.85),
+      -22px -14px 36px 2px rgba(255, 176, 46, 0.65),
+       18px  18px 28px 0   rgba(82, 113, 255, 0.7),
+      -18px -18px 28px 0   rgba(82, 113, 255, 0.65);
+  }
+  75% {
+    box-shadow:
+      -22px  14px 36px 2px rgba(255, 176, 46, 0.65),
+       22px -14px 36px 2px rgba(48, 66, 196, 0.85),
+      -18px  18px 28px 0   rgba(82, 113, 255, 0.7),
+       18px -18px 28px 0   rgba(82, 113, 255, 0.65);
+  }
+}
+
 /* ─── Gold LED flicker (headline accent) ─────────────────────────────────── */
 
 .text-glow-gold {
