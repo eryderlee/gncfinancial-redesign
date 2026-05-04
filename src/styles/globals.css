@@ -610,16 +610,17 @@
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
 
-/* Parallelogram variant — slants both vertical edges to echo the
- * diagonal stripe geometry of the logo. Pairs with .btn-gold (or
- * stands alone on any button). */
-.btn-parallelogram {
+/* Pointed-tip variant — slants the left edge (parallelogram lean)
+ * AND extends the right edge into a triangular tip, echoing the
+ * pointed protrusions on the logo's frame. Pairs with .btn-gold. */
+.btn-tip {
   border-radius: 0 !important;
   clip-path: polygon(
-    16px 0,
-    100% 0,
-    calc(100% - 16px) 100%,
-    0 100%
+    14px 0,                  /* top-left, tucked in (parallelogram lean) */
+    calc(100% - 16px) 0,     /* top edge stops short of right */
+    100% 50%,                /* right tip at vertical middle */
+    calc(100% - 16px) 100%,  /* bottom edge starts at the tip's base */
+    0 100%                   /* bottom-left */
   );
 }
 
