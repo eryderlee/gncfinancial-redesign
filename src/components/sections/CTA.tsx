@@ -9,83 +9,86 @@ interface CTAProps {
 
 export default function CTA({
   heading = "Take Control of Your Finances Today",
-  body = "Tax time doesn\u2019t have to be a nightmare. With the right accountant in Baulkham Hills on your side, you can stay compliant, minimise your tax, and build wealth with confidence.",
+  body = "Tax time doesn’t have to be a nightmare. With the right accountant in Baulkham Hills on your side, you can stay compliant, minimise your tax, and build wealth with confidence.",
 }: CTAProps) {
+  // Split heading so the last word renders in gold
+  const headingWords = heading.split(" ");
+  const lastWord = headingWords.pop();
+  const headingLead = headingWords.join(" ");
+
   return (
-    <section className="relative py-16 sm:py-24 overflow-hidden" aria-labelledby="cta-heading">
-      {/* Metallic gold backing — gentle vertical gradient with subtle
-       *  variation, kept close to brand-gold so navy text stays readable */}
+    <section
+      className="cta-bg relative py-20 sm:py-28 overflow-hidden text-white"
+      aria-labelledby="cta-heading"
+    >
+      {/* Animated gold radial glow — sits behind the heading */}
+      <div className="cta-glow absolute inset-0 pointer-events-none" aria-hidden="true" />
+
+      {/* Diagonal stripe motif — very faint, echoes the logo */}
+      <div className="cta-stripes absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        {[0, 1, 2].map((i) => (
+          <span key={i} className={`cta-stripe cta-stripe-${i}`} />
+        ))}
+      </div>
+
+      {/* Subtle dot grid */}
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, #ffc861 0%, #ffb02e 25%, #ffb02e 75%, #f5a623 100%)",
-        }}
-      />
-      {/* Soft top sheen — subtle highlight echoing the logo without a sharp line */}
-      <div
+        className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,245,200,0.3) 0%, transparent 60%)",
-        }}
-      />
-      {/* Dot grid — navy dots, visible at corners */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(6,14,36,0.15) 1.5px, transparent 1.5px)",
-          backgroundSize: "20px 20px",
-        }}
-      />
-      {/* Radial mask — gold centre dissolves dots inward, corners remain dotted */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 75% at 50% 50%, #ffb02e 0%, #ffb02e 50%, rgba(255,176,46,0.4) 80%, transparent 100%)",
+          backgroundImage:
+            "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
+          backgroundSize: "26px 26px",
+          maskImage:
+            "radial-gradient(ellipse 70% 70% at 50% 50%, transparent 0%, transparent 45%, black 100%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 70% 70% at 50% 50%, transparent 0%, transparent 45%, black 100%)",
         }}
       />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Decorative element above heading */}
-        <div className="flex items-center justify-center gap-3 mb-6 sm:mb-8" data-reveal>
-          <div className="h-px w-10 sm:w-16 bg-brand-navy/25" />
-          <div className="flex gap-1.5">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full bg-brand-navy/35" />
-            ))}
-          </div>
-          <div className="h-px w-10 sm:w-16 bg-brand-navy/25" />
+        {/* Eyebrow */}
+        <div className="flex items-center justify-center gap-3 mb-7 sm:mb-9" data-reveal>
+          <div className="h-px w-10 sm:w-14 bg-brand-gold/50" />
+          <p className="text-brand-gold text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em]">
+            Take Action
+          </p>
+          <div className="h-px w-10 sm:w-14 bg-brand-gold/50" />
         </div>
 
         <h2
           id="cta-heading"
-          className="text-3xl sm:text-4xl lg:text-6xl font-black text-brand-navy mb-5 sm:mb-6 leading-tight"
+          className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-5 sm:mb-6 leading-[1.1]"
           data-reveal="scale"
           data-delay="1"
         >
-          {heading}
+          {headingLead}{" "}
+          <span className="text-brand-gold">{lastWord}</span>
         </h2>
+
         <p
-          className="text-brand-navy/70 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed text-base sm:text-lg"
+          className="text-white/65 max-w-2xl mx-auto mb-9 sm:mb-12 leading-relaxed text-base sm:text-lg"
           data-reveal
           data-delay="2"
         >
           {body}
         </p>
-        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 justify-center" data-reveal data-delay="3">
+
+        <div
+          className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 justify-center"
+          data-reveal
+          data-delay="3"
+        >
           <Link
             href={SLUGS.contact}
-            className="inline-flex items-center justify-center gap-2 bg-brand-navy text-white font-semibold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-brand-navy/90 transition-colors shadow-lg"
+            className="btn-gold inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl"
           >
             <Calendar className="w-5 h-5" />
             Make Appointment
           </Link>
           <a
             href={SITE.phoneHref}
-            className="inline-flex items-center justify-center gap-2 text-brand-navy font-semibold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl border-2 border-brand-navy/30 hover:border-brand-navy hover:bg-brand-navy/10 transition-all"
+            className="inline-flex items-center justify-center gap-2 text-white font-semibold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl border border-white/30 hover:border-white hover:bg-white/5 transition-all"
           >
             <Phone className="w-5 h-5" />
             {SITE.phone}

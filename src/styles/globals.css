@@ -552,6 +552,58 @@
 }
 
 
+/* ─── CTA section (dark navy with animated gold glow) ───────────────────── */
+
+.cta-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(48, 66, 196, 0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(48, 66, 196, 0.35) 0%, transparent 65%),
+    #060e24;
+}
+
+.cta-glow {
+  background: radial-gradient(ellipse 55% 50% at 50% 50%,
+    rgba(255, 176, 46, 0.22) 0%,
+    rgba(255, 176, 46, 0.08) 35%,
+    transparent 70%);
+  animation: ctaGlowPulse 9s ease-in-out infinite;
+}
+
+@keyframes ctaGlowPulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.08); }
+}
+
+/* Faint diagonal stripes — same direction as the hero logo motif */
+.cta-stripe {
+  position: absolute;
+  width: 26px;
+  height: 1400px;
+  top: -200px;
+  background: linear-gradient(100deg,
+    rgba(255, 215, 130, 0.18) 0%,
+    rgba(255, 176, 46, 0.28) 50%,
+    rgba(150, 90, 18, 0.18) 100%
+  );
+  transform: rotate(30deg);
+  transform-origin: top center;
+  filter: blur(0.5px);
+}
+.cta-stripe-0 { left: 12%;  opacity: 0.55; }
+.cta-stripe-1 { left: 50%;  opacity: 0.4; }
+.cta-stripe-2 { right: 14%; opacity: 0.5; }
+
+@media (max-width: 640px) {
+  .cta-stripe { width: 14px; height: 900px; top: -120px; }
+  .cta-stripe-0 { left: 6%; }
+  .cta-stripe-1 { left: 50%; }
+  .cta-stripe-2 { right: 8%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow { animation: none !important; }
+}
+
 /* ─── Scrollbar ──────────────────────────────────────────────────────────── */
 
 ::-webkit-scrollbar {
