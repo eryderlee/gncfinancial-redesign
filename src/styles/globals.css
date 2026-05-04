@@ -610,18 +610,16 @@
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
 
-/* Diamond-clipped variant — chamfers the top-left and bottom-right
- * corners to echo the angular geometry of the logo. Pairs with
- * .btn-gold (or stands alone on any button). */
-.btn-clip {
+/* Parallelogram variant — slants both vertical edges to echo the
+ * diagonal stripe geometry of the logo. Pairs with .btn-gold (or
+ * stands alone on any button). */
+.btn-parallelogram {
   border-radius: 0 !important;
   clip-path: polygon(
-    10px 0,
+    16px 0,
     100% 0,
-    100% calc(100% - 10px),
-    calc(100% - 10px) 100%,
-    0 100%,
-    0 10px
+    calc(100% - 16px) 100%,
+    0 100%
   );
 }
 
