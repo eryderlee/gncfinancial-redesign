@@ -570,3 +570,37 @@
     inset 0 2px 4px rgba(80, 40, 0, 0.22),
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
+
+/* ─── Metallic gold shimmer text ─────────────────────────────────────────── */
+
+.text-shimmer-gold {
+  background: linear-gradient(
+    100deg,
+    #fff2b0   0%,
+    #ffb830  20%,
+    #d99524  40%,
+    #fffcd6  50%,
+    #d99524  60%,
+    #b87a18  80%,
+    #946018 100%
+  );
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmerGold 7s ease-in-out infinite;
+}
+
+@keyframes shimmerGold {
+  0%, 100% { background-position:   0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer-gold {
+    animation: none !important;
+    background-position: 50% 50% !important;
+  }
+}

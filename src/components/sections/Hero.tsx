@@ -38,7 +38,7 @@ export default function Hero() {
           <div className="space-y-6 sm:space-y-8">
             <h1 className="hero-fade-up hero-delay-1 text-3xl sm:text-4xl lg:text-[3.25rem] font-bold leading-[1.15] lg:leading-[1.1] tracking-tight">
               Expert Accounting &amp;{" "}
-              <span className="text-brand-gold">Financial Advice</span>{" "}
+              <span className="text-shimmer-gold">Financial Advice</span>{" "}
               You Can Actually Rely On
             </h1>
 
