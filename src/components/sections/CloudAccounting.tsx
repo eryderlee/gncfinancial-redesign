@@ -13,22 +13,24 @@ const CLOUD_FEATURES = [
 function XeroLogo({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 64 64"
+      viewBox="0 0 100 100"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <circle cx="32" cy="32" r="32" fill="#13B5EA" />
-      {/* Stylised "x" mark */}
-      <g
-        stroke="#ffffff"
-        strokeWidth="6"
-        strokeLinecap="round"
-        fill="none"
+      <circle cx="50" cy="50" r="50" fill="#13B5EA" />
+      <text
+        x="50"
+        y="62"
+        textAnchor="middle"
+        fontFamily="ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, -apple-system, sans-serif"
+        fontSize="34"
+        fontWeight="700"
+        fill="#ffffff"
+        letterSpacing="-1"
       >
-        <line x1="21" y1="21" x2="43" y2="43" />
-        <line x1="43" y1="21" x2="21" y2="43" />
-      </g>
+        xero
+      </text>
     </svg>
   );
 }
@@ -36,23 +38,29 @@ function XeroLogo({ className }: { className?: string }) {
 function MYOBLogo({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 120 36"
+      viewBox="0 0 100 100"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <rect width="120" height="36" rx="6" fill="#6E2BA8" />
+      <defs>
+        <linearGradient id="myob-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#6E2BA8" />
+          <stop offset="100%" stopColor="#E91E63" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="50" fill="url(#myob-grad)" />
       <text
-        x="60"
-        y="25"
+        x="50"
+        y="61"
         textAnchor="middle"
-        fontFamily="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
-        fontSize="20"
-        fontWeight="900"
+        fontFamily="ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, -apple-system, sans-serif"
+        fontSize="28"
+        fontWeight="700"
         fill="#ffffff"
-        letterSpacing="1.5"
+        letterSpacing="-1"
       >
-        MYOB
+        myob
       </text>
     </svg>
   );
@@ -61,20 +69,21 @@ function MYOBLogo({ className }: { className?: string }) {
 function QuickBooksLogo({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 64 64"
+      viewBox="0 0 100 100"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <circle cx="32" cy="32" r="32" fill="#2CA01C" />
+      <circle cx="50" cy="50" r="50" fill="#2CA01C" />
       <text
-        x="32"
-        y="42"
+        x="50"
+        y="66"
         textAnchor="middle"
-        fontFamily="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
-        fontSize="24"
-        fontWeight="900"
+        fontFamily="ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, -apple-system, sans-serif"
+        fontSize="42"
+        fontWeight="800"
         fill="#ffffff"
+        letterSpacing="-2"
       >
         qb
       </text>
@@ -192,8 +201,7 @@ export default function CloudAccounting() {
                         <p className="text-white/65 text-xs sm:text-[13px] mt-1">{badge.subtitle}</p>
                       </div>
                       <CheckCircle2
-                        className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
-                        style={{ color: badge.brand }}
+                        className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-[#4ade80]"
                         strokeWidth={2.5}
                       />
                     </div>
