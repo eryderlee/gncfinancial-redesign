@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/metadata";
-import { SLUGS } from "@/lib/constants";
+import { SITE, SLUGS } from "@/lib/constants";
 import ContactForm from "@/components/sections/ContactForm";
+import PageHero from "@/components/sections/PageHero";
 
 export const metadata: Metadata = pageMeta({
   title: "Contact GNC Financial – Baulkham Hills & Sydney CBD",
@@ -13,12 +14,23 @@ export const metadata: Metadata = pageMeta({
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-brand-navy text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">Contact GNC Financial</h1>
-          <p className="text-white/80 text-xl">Baulkham Hills &amp; Sydney CBD</p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Get in Touch"
+        title={
+          <>
+            Contact{" "}
+            <span className="text-glow-gold">GNC Financial</span>
+          </>
+        }
+        subtitle="Baulkham Hills and Sydney CBD. Drop us a line below or call us directly — we'll get back to you within one business day."
+      >
+        <p className="text-white/55 text-sm">
+          Phone:{" "}
+          <a href={SITE.phoneHref} className="text-brand-gold font-semibold hover:underline underline-offset-2">
+            {SITE.phone}
+          </a>
+        </p>
+      </PageHero>
       <ContactForm />
     </>
   );

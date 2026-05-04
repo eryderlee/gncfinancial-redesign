@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMeta } from "@/lib/metadata";
 import { SITE } from "@/lib/constants";
 import ContactForm from "@/components/sections/ContactForm";
+import PageHero from "@/components/sections/PageHero";
 
 export const metadata: Metadata = pageMeta({
   title: "Book a Free Consultation – GNC Financial",
@@ -13,27 +14,24 @@ export const metadata: Metadata = pageMeta({
 export default function BookNowPage() {
   return (
     <>
-      <section className="bg-brand-navy text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">Book Free Consultation</h1>
-          <p className="text-white/80 text-xl">No obligation. Just straight-shooting advice.</p>
-        </div>
-      </section>
-
-      <section className="py-20 bg-brand-cream">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl p-10 shadow-sm space-y-4">
-            <h2 className="text-2xl font-bold text-brand-navy">Request Your Appointment</h2>
-            <p className="text-brand-gray-text">
-              Fill in the form and we&rsquo;ll be in touch within one business day. Prefer to call?{" "}
-              <a href={SITE.phoneHref} className="text-brand-blue font-semibold hover:underline">
-                {SITE.phone}
-              </a>
-            </p>
-            <ContactForm />
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Book Now"
+        title={
+          <>
+            Book Your{" "}
+            <span className="text-glow-gold">Free Consultation</span>
+          </>
+        }
+        subtitle="No obligation. Just straight-shooting advice from a Baulkham Hills accountant who'll get back to you within one business day."
+      >
+        <p className="text-white/55 text-sm">
+          Prefer to call?{" "}
+          <a href={SITE.phoneHref} className="text-brand-gold font-semibold hover:underline underline-offset-2">
+            {SITE.phone}
+          </a>
+        </p>
+      </PageHero>
+      <ContactForm />
     </>
   );
 }
