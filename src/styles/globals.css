@@ -571,46 +571,37 @@
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
 
-/* ─── Gold glow flicker (headline accent) ────────────────────────────────── */
+/* ─── Gold LED flicker (headline accent) ─────────────────────────────────── */
 
 .text-glow-gold {
   color: #ffb02e;
   text-shadow:
-    0 0 10px rgba(255, 176, 46, 0.5),
-    0 0 22px rgba(255, 176, 46, 0.22);
-  animation: goldFlicker 5s ease-in-out infinite;
+    0 0 10px rgba(255, 176, 46, 0.55),
+    0 0 24px rgba(255, 176, 46, 0.25);
+  animation: ledFlicker 12s steps(1) infinite;
 }
 
-@keyframes goldFlicker {
+/* Hard-cut keyframes (steps(1)) — looks like an LED briefly losing
+ * power, with one short flicker burst per 12s loop. */
+@keyframes ledFlicker {
   0%, 100% {
+    opacity: 1;
     text-shadow:
-      0 0 10px rgba(255, 176, 46, 0.5),
-      0 0 22px rgba(255, 176, 46, 0.22);
+      0 0 10px rgba(255, 176, 46, 0.55),
+      0 0 24px rgba(255, 176, 46, 0.25);
   }
-  18% {
-    text-shadow:
-      0 0 14px rgba(255, 176, 46, 0.75),
-      0 0 32px rgba(255, 176, 46, 0.4);
-  }
-  35% {
-    text-shadow:
-      0 0 6px rgba(255, 176, 46, 0.3);
-  }
-  55% {
-    text-shadow:
-      0 0 16px rgba(255, 176, 46, 0.85),
-      0 0 38px rgba(255, 176, 46, 0.45),
-      0 0 60px rgba(255, 176, 46, 0.2);
-  }
-  72% {
-    text-shadow:
-      0 0 8px rgba(255, 176, 46, 0.4);
-  }
-  85% {
-    text-shadow:
-      0 0 12px rgba(255, 176, 46, 0.6),
-      0 0 26px rgba(255, 176, 46, 0.3);
-  }
+
+  /* Flicker burst around 50% of the loop */
+  50%   { opacity: 0.15;
+          text-shadow: 0 0 2px rgba(255, 176, 46, 0.15); }
+  50.4% { opacity: 1; }
+  50.8% { opacity: 0.3;
+          text-shadow: 0 0 4px rgba(255, 176, 46, 0.2); }
+  51.1% { opacity: 1; }
+  51.6% { opacity: 0.18; }
+  52%   { opacity: 1; }
+  52.6% { opacity: 0.4; }
+  53%   { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
