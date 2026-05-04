@@ -12,7 +12,7 @@ const LOCAL_STATS = [
 
 export default function LocalIntro() {
   return (
-    <section className="py-14 sm:py-20 bg-white relative overflow-hidden" aria-labelledby="local-intro-heading">
+    <section className="pt-14 sm:pt-20 bg-white relative overflow-hidden" aria-labelledby="local-intro-heading">
 
       {/* Flickering grid — radial ellipse centered on the section */}
       <div
@@ -189,7 +189,7 @@ export default function LocalIntro() {
         </div>
 
         {/* Stats bar */}
-        <div className="mt-14 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 border-y border-gray-200" data-reveal>
+        <div className="mt-14 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 border-t border-gray-200" data-reveal>
           {LOCAL_STATS.map((stat, i) => (
             <div
               key={stat.label}

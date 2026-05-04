@@ -17,7 +17,7 @@ export default function Ticker() {
   const doubled = [...ITEMS, ...ITEMS];
 
   return (
-    <div className="bg-brand-navy/95 border-y border-white/8 py-3.5 overflow-hidden" aria-hidden="true">
+    <div className="bg-brand-navy py-3.5 overflow-hidden" aria-hidden="true">
       <div className="animate-ticker">
         {doubled.map((item, i) => (
           <span
