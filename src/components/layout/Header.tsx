@@ -108,7 +108,7 @@ export default function Header() {
             left: 0,
             right: 0,
             height: "2px",
-            background: "#f5a623",
+            background: "#ffb02e",
             opacity: goldOpacity,
             transition: "opacity 0.1s linear",
           }}
@@ -124,8 +124,8 @@ export default function Header() {
           left: 0,
           height: "2px",
           width: `${progress}%`,
-          background: "linear-gradient(90deg, #5271ff, #f5a623)",
-          boxShadow: "0 0 8px rgba(245,166,35,0.5)",
+          background: "linear-gradient(90deg, #5271ff, #ffb02e)",
+          boxShadow: "0 0 8px rgba(255,176,46,0.5)",
           transition: "width 0.1s linear",
         }}
       />
