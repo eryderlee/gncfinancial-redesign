@@ -610,34 +610,41 @@
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
 
-/* Stripe-shaped variant — borrows the geometry of a logo stripe.
- * - Sharp triangle point on the LEFT end (tip at body's vertical centre).
- * - Right side: slants from top-right down-left past the parallelogram
- *   endpoint, then turns back toward the right.
- * - A small triangular spike protrudes BELOW the body's bottom edge
- *   near the right, like a flag tail.
- * Pairs with .btn-gold. The button needs extra bottom padding so the
- * spike (in the bottom 20% of the element) doesn't crowd the text. */
-.btn-tip {
+/* Parallelogram variant — slants both vertical edges in the same
+ * direction (top shifted right relative to bottom), echoing the
+ * diagonal stripe geometry of the logo. Pairs with .btn-gold. */
+.btn-parallelogram {
+  position: relative;
   border-radius: 0 !important;
   clip-path: polygon(
-    /* Top-left of body (right of triangle base) */
-    20px 0,
-    /* Top edge to top-right corner */
+    16px 0,
     100% 0,
-    /* Slant from top-right down-left, past parallelogram endpoint */
-    calc(100% - 32px) 65%,
-    /* Turn back toward the right at body's bottom edge */
-    calc(100% - 6px) 80%,
-    /* Spike tip — protrudes below body */
-    calc(100% - 14px) 100%,
-    /* Spike's left edge back up to body bottom */
-    calc(100% - 24px) 80%,
-    /* Bottom edge of body, back to triangle base */
-    20px 80%,
-    /* Triangle tip at body's vertical centre (40% of element = 50% of body) */
-    0 40%
+    calc(100% - 16px) 100%,
+    0 100%
   );
+}
+
+/* Inverse-gradient outline — a thin ring of the gradient running in
+ * the opposite direction to the .btn-gold fill (dark top → light
+ * bottom), painted around the parallelogram's edges via mask-composite. */
+.btn-parallelogram::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(180deg,
+    #946018  0%,
+    #b87a18 28%,
+    #d99524 55%,
+    #ffc347 78%,
+    #fff2b0 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
 }
 
 /* ─── Gold LED flicker (headline accent) ─────────────────────────────────── */
