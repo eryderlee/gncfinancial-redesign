@@ -610,28 +610,30 @@
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
 
-/* Stripe-shaped variant — borrows the geometry of the logo's middle
- * stripe: triangular point on the left edge, arrow tip on the right
- * edge, plus a small hook/notch pointing up from the bottom right
- * (the "spike" coming off the arrow base). Pairs with .btn-gold. */
+/* Stripe-shaped variant — borrows the geometry of a logo stripe:
+ * sharp triangle point on the LEFT end (tip at vertical centre),
+ * arrow tip + curling hook spike on the RIGHT end (top-right corner).
+ * Pairs with .btn-gold. */
 .btn-tip {
   border-radius: 0 !important;
   clip-path: polygon(
-    /* Top-left of body (right of left triangle base) */
-    14px 0,
-    /* Top edge across to arrow base */
-    calc(100% - 24px) 0,
-    /* Arrow tip on the right */
-    100% 50%,
-    /* Bottom of arrow back to body */
-    calc(100% - 24px) 100%,
-    /* Hook notch — small spike pointing up-left from bottom edge */
-    calc(100% - 34px) 100%,
-    calc(100% - 40px) 70%,
-    calc(100% - 52px) 100%,
+    /* Top-left of body (right of the triangle's top edge) */
+    20px 0,
+    /* Top edge across to where the hook begins */
+    calc(100% - 14px) 0,
+    /* Arrow tip — top-right corner, then curving down */
+    100% 0,
+    100% 22%,
+    /* Hook spike pointing back into the body */
+    calc(100% - 18px) 32%,
+    /* Back out to the right edge */
+    calc(100% - 2px) 48%,
+    100% 58%,
+    /* Right edge down */
+    100% 100%,
     /* Bottom edge */
-    14px 100%,
-    /* Left triangle (tip at vertical centre) */
+    20px 100%,
+    /* Triangle tip at left-centre */
     0 50%
   );
 }
