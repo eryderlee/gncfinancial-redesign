@@ -433,13 +433,13 @@
   position: absolute;
   background: linear-gradient(
     100deg,
-    #fde58a   0%,
-    #f5a623  22%,
-    #c98818  42%,
-    #fff2a3  50%,
-    #c98818  58%,
-    #a06b14  78%,
-    #7a5012 100%
+    #fff2b0   0%,
+    #ffb830  22%,
+    #d99524  42%,
+    #fffcd6  50%,
+    #d99524  58%,
+    #b87a18  78%,
+    #946018 100%
   );
   width: 40px;
   height: 1000px;
