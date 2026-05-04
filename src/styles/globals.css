@@ -610,12 +610,14 @@
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
 
-/* Stripe-shaped variant — borrows the geometry of a logo stripe:
- * sharp triangle point on the LEFT end (tip at vertical centre).
- * Right side: slants from top-right down-left BEYOND a normal
- * parallelogram lean, then turns back to the right, creating a
- * small triangular spike at the bottom-right corner.
- * Pairs with .btn-gold. */
+/* Stripe-shaped variant — borrows the geometry of a logo stripe.
+ * - Sharp triangle point on the LEFT end (tip at body's vertical centre).
+ * - Right side: slants from top-right down-left past the parallelogram
+ *   endpoint, then turns back toward the right.
+ * - A small triangular spike protrudes BELOW the body's bottom edge
+ *   near the right, like a flag tail.
+ * Pairs with .btn-gold. The button needs extra bottom padding so the
+ * spike (in the bottom 20% of the element) doesn't crowd the text. */
 .btn-tip {
   border-radius: 0 !important;
   clip-path: polygon(
@@ -623,16 +625,18 @@
     20px 0,
     /* Top edge to top-right corner */
     100% 0,
-    /* Slant from top-right down-left, past natural parallelogram endpoint */
-    calc(100% - 38px) 72%,
-    /* Turn back toward the right */
-    calc(100% - 16px) 92%,
-    /* Bottom-right corner (the spike) */
-    100% 100%,
-    /* Bottom edge back to triangle base */
-    20px 100%,
-    /* Triangle tip at left-centre */
-    0 50%
+    /* Slant from top-right down-left, past parallelogram endpoint */
+    calc(100% - 32px) 65%,
+    /* Turn back toward the right at body's bottom edge */
+    calc(100% - 6px) 80%,
+    /* Spike tip — protrudes below body */
+    calc(100% - 14px) 100%,
+    /* Spike's left edge back up to body bottom */
+    calc(100% - 24px) 80%,
+    /* Bottom edge of body, back to triangle base */
+    20px 80%,
+    /* Triangle tip at body's vertical centre (40% of element = 50% of body) */
+    0 40%
   );
 }
 

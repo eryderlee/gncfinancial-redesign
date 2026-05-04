@@ -89,7 +89,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               href={SLUGS.contact}
-              className="btn-gold btn-tip hidden lg:inline-flex items-center gap-2 pl-7 pr-10 py-2.5 text-sm"
+              className="btn-gold btn-tip hidden lg:inline-flex items-center gap-2 pl-7 pr-10 pt-2.5 pb-4 text-sm"
             >
               Book Consultation
             </Link>
