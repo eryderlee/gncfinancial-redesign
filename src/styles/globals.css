@@ -576,35 +576,42 @@
 .text-glow-gold {
   color: #ffb02e;
   text-shadow:
-    0 0 10px rgba(255, 176, 46, 0.55),
-    0 0 24px rgba(255, 176, 46, 0.25);
-  /* 2.5s delay holds steady gold while the hero entrance plays out,
-   * then the flicker burst hits ~0.75s into each 15s loop */
-  animation: ledFlicker 15s steps(1) 2.5s infinite;
+    0 0 6px rgba(255, 176, 46, 0.4),
+    0 0 16px rgba(255, 176, 46, 0.16);
+  /* 2.2s delay = right after content fades in, so the sequence reads
+   * stripes → content → flicker. Loop is 15s; flicker burst lands at
+   * the start of every loop (so it kicks in immediately when the
+   * delay ends), then steady glow for the rest of the cycle. */
+  animation: ledFlicker 15s steps(1) 2.2s infinite;
 }
 
 @keyframes ledFlicker {
-  0%, 100% {
+  /* Flicker burst at the very start of every loop */
+  0%   { opacity: 0.08;
+         text-shadow: 0 0 2px rgba(255, 176, 46, 0.1); }
+  0.4% { opacity: 1;
+         text-shadow: 0 0 6px rgba(255, 176, 46, 0.4),
+                      0 0 16px rgba(255, 176, 46, 0.16); }
+  0.9% { opacity: 0.22;
+         text-shadow: 0 0 3px rgba(255, 176, 46, 0.15); }
+  1.2% { opacity: 1;
+         text-shadow: 0 0 6px rgba(255, 176, 46, 0.4),
+                      0 0 16px rgba(255, 176, 46, 0.16); }
+  1.7% { opacity: 0.05;
+         text-shadow: 0 0 1px rgba(255, 176, 46, 0.08); }
+  2.1% { opacity: 1;
+         text-shadow: 0 0 6px rgba(255, 176, 46, 0.4),
+                      0 0 16px rgba(255, 176, 46, 0.16); }
+  2.6% { opacity: 0.4;
+         text-shadow: 0 0 4px rgba(255, 176, 46, 0.2); }
+
+  /* Steady state for the rest of the 15s loop */
+  3%, 100% {
     opacity: 1;
     text-shadow:
-      0 0 10px rgba(255, 176, 46, 0.55),
-      0 0 24px rgba(255, 176, 46, 0.25);
+      0 0 6px rgba(255, 176, 46, 0.4),
+      0 0 16px rgba(255, 176, 46, 0.16);
   }
-
-  /* Flicker burst — opacity collapses the whole word like an LED
-   * losing power, with a dim text-shadow during the dropouts */
-  5%   { opacity: 0.08;
-         text-shadow: 0 0 2px rgba(255, 176, 46, 0.12); }
-  5.4% { opacity: 1; }
-  5.9% { opacity: 0.22;
-         text-shadow: 0 0 3px rgba(255, 176, 46, 0.15); }
-  6.2% { opacity: 1; }
-  6.7% { opacity: 0.05;
-         text-shadow: 0 0 1px rgba(255, 176, 46, 0.08); }
-  7.1% { opacity: 1; }
-  7.6% { opacity: 0.4;
-         text-shadow: 0 0 4px rgba(255, 176, 46, 0.2); }
-  8%   { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
