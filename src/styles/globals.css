@@ -383,6 +383,27 @@
   }
 }
 
+/* ─── LocalIntro animated gradient plate ─────────────────────────────────── */
+
+@keyframes localPlateDrift {
+  0%, 100% { transform: rotate(0deg)  scale(1.02); }
+  25%      { transform: rotate(2deg)  scale(1.05); }
+  50%      { transform: rotate(0deg)  scale(1.07); }
+  75%      { transform: rotate(-2deg) scale(1.04); }
+}
+
+.local-gradient-anim {
+  transform-origin: center;
+  animation: localPlateDrift 22s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .local-gradient-anim {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
 /* Hero ambient bloom — desktop default */
 .hero-ambient {
   width: 900px;
