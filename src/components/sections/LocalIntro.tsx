@@ -49,8 +49,12 @@ export default function LocalIntro() {
             {/* Gradient plate — animated, sits behind the photos only */}
             <div className="absolute -top-3 -left-3 sm:-top-5 sm:-left-5 w-[calc(100%+1.5rem)] sm:w-[calc(100%+2.5rem)] h-[calc(100%+1.5rem)] sm:h-[calc(100%+2.5rem)] rounded-2xl overflow-hidden">
               <div
-                className="absolute -inset-[15%] local-gradient-anim"
+                className="absolute local-gradient-anim"
                 style={{
+                  top: "-25%",
+                  left: "-25%",
+                  right: "-25%",
+                  bottom: "-25%",
                   background: `
                     radial-gradient(ellipse 70% 22% at 18% 72%, rgba(248,185,23,0.95) 0%, transparent 60%),
                     radial-gradient(ellipse 22% 30% at 88% 25%, rgba(250,201,58,0.85) 0%, transparent 75%),

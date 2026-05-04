@@ -386,15 +386,17 @@
 /* ─── LocalIntro animated gradient plate ─────────────────────────────────── */
 
 @keyframes localPlateDrift {
-  0%, 100% { transform: rotate(0deg)  scale(1.02); }
-  25%      { transform: rotate(2deg)  scale(1.05); }
-  50%      { transform: rotate(0deg)  scale(1.07); }
-  75%      { transform: rotate(-2deg) scale(1.04); }
+  0%   { transform: rotate(0deg)   scale(1.05) translate(0%, 0%); }
+  25%  { transform: rotate(4deg)   scale(1.10) translate(2%, -1%); }
+  50%  { transform: rotate(0deg)   scale(1.15) translate(-2%, 2%); }
+  75%  { transform: rotate(-4deg)  scale(1.08) translate(1%, 1%); }
+  100% { transform: rotate(0deg)   scale(1.05) translate(0%, 0%); }
 }
 
 .local-gradient-anim {
   transform-origin: center;
-  animation: localPlateDrift 22s ease-in-out infinite;
+  animation: localPlateDrift 16s ease-in-out infinite;
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
