@@ -610,43 +610,6 @@
     0 2px 6px rgba(255, 176, 46, 0.3);
 }
 
-/* Parallelogram variant — slants both vertical edges in the same
- * direction (top shifted right relative to bottom), echoing the
- * diagonal stripe geometry of the logo. Pairs with .btn-gold. */
-.btn-parallelogram {
-  position: relative;
-  border-radius: 0 !important;
-  clip-path: polygon(
-    16px 0,
-    100% 0,
-    calc(100% - 16px) 100%,
-    0 100%
-  );
-}
-
-/* Inverse-gradient outline — a thin ring of the gradient running in
- * the opposite direction to the .btn-gold fill (dark top → light
- * bottom), painted around the parallelogram's edges via mask-composite. */
-.btn-parallelogram::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 2px;
-  background: linear-gradient(180deg,
-    #946018  0%,
-    #b87a18 28%,
-    #d99524 55%,
-    #ffc347 78%,
-    #fff2b0 100%
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  pointer-events: none;
-}
-
 /* ─── Gold LED flicker (headline accent) ─────────────────────────────────── */
 
 .text-glow-gold {
