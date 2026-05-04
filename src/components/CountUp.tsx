@@ -12,7 +12,7 @@ interface CountUpProps {
 
 const NUMERIC_RE = /^([\d,.]+)(.*)$/;
 
-export default function CountUp({ value, duration = 1800 }: CountUpProps) {
+export default function CountUp({ value, duration = 1200 }: CountUpProps) {
   const match = value.match(NUMERIC_RE);
 
   const numericStr = match ? match[1].replace(/,/g, "") : "";
@@ -56,7 +56,7 @@ export default function CountUp({ value, duration = 1800 }: CountUpProps) {
           }
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0, rootMargin: "0px 0px 120px 0px" }
     );
     observer.observe(node);
     return () => observer.disconnect();
