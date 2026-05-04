@@ -5,25 +5,37 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 export default function LoadingScreen() {
-  const [visible, setVisible] = useState(false);
+  // Default to visible so the loader is rendered on the very first
+  // paint (SSR + initial client render). useEffect below either keeps
+  // it for ~2.4s on first visit or hides it immediately on subsequent
+  // visits in the same session.
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // Only show on first visit per browser session (v2 key forces re-show after redesign)
-    if (sessionStorage.getItem("gnc_loaded_v2")) return;
-    setVisible(true);
+    try {
+      if (sessionStorage.getItem("gnc_loaded_v2")) {
+        // Returning visitor in this session — hide immediately.
+        setVisible(false);
+        return;
+      }
+    } catch {
+      // sessionStorage unavailable — treat as first visit
+    }
+
     const t = setTimeout(() => {
       setVisible(false);
-      sessionStorage.setItem("gnc_loaded_v2", "1");
+      try {
+        sessionStorage.setItem("gnc_loaded_v2", "1");
+      } catch {}
     }, 2400);
     return () => clearTimeout(t);
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {visible && (
         <motion.div
           className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-brand-navy"
-          initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
         >

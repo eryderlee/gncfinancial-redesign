@@ -15,12 +15,36 @@ export default function CookieBanner() {
   const [marketingChecked, setMarketingChecked] = useState(false);
 
   useEffect(() => {
+    let stored: string | null = null;
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (!stored) setVisible(true);
+      stored = localStorage.getItem(STORAGE_KEY);
     } catch {
       // localStorage unavailable (SSR or private browsing) — don't show banner
+      return;
     }
+    if (stored) return;
+
+    let shown = false;
+    const reveal = () => {
+      if (shown) return;
+      shown = true;
+      setVisible(true);
+      window.removeEventListener("scroll", onScroll);
+      clearTimeout(timeout);
+    };
+    const onScroll = () => {
+      if (window.scrollY > 200) reveal();
+    };
+
+    // Show after 5s OR once the user has scrolled past 200px,
+    // whichever happens first.
+    const timeout = setTimeout(reveal, 5000);
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   function saveConsent(consent: ConsentState) {
