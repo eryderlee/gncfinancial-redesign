@@ -431,7 +431,16 @@
 /* Hero diagonal stripe motif — desktop default */
 .hero-stripe {
   position: absolute;
-  background: #f8b917;
+  background: linear-gradient(
+    100deg,
+    #fde58a   0%,
+    #f8b917  22%,
+    #e0851a  42%,
+    #fff2a3  50%,
+    #e0851a  58%,
+    #c47013  78%,
+    #8a4a0e 100%
+  );
   width: 40px;
   height: 1000px;
   top: -60px;
