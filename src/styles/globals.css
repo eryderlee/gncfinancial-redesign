@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --color-1: #f59629;
+  --color-1: #f5a623;
   --color-2: #5271ff;
-  --color-3: #ffc861;
+  --color-3: #ffd565;
   --color-4: #3d5ce0;
-  --color-5: #f59629;
+  --color-5: #f5a623;
 }
 
 @layer base {
@@ -81,7 +81,7 @@
   height: 160%;
   top: -30%;
   left: -30%;
-  background: radial-gradient(ellipse 35% 30% at 20% 75%, rgba(245,150,41,0.11) 0%, transparent 60%);
+  background: radial-gradient(ellipse 35% 30% at 20% 75%, rgba(245,166,35,0.11) 0%, transparent 60%);
   animation: heroFillLight 17s ease-in-out infinite;
   pointer-events: none;
 }
@@ -221,7 +221,7 @@
     from var(--bl-angle),
     rgba(48, 66, 196, 1)   0deg,
     rgba(82, 113, 255, 1)  90deg,
-    rgba(245,150,41, 1)  180deg,
+    rgba(245,166,35, 1)  180deg,
     rgba(82, 113, 255, 1)  270deg,
     rgba(48, 66, 196, 1)   360deg
   );
@@ -264,13 +264,13 @@
   0%, 100% {
     box-shadow:
       -65px -45px 130px 15px rgba(48, 66, 196, 0.95),
-       65px  45px 130px 15px rgba(245,150,41, 0.65),
+       65px  45px 130px 15px rgba(245,166,35, 0.65),
        55px -55px 110px 10px rgba(82, 113, 255, 0.85),
       -55px  55px 110px 10px rgba(82, 113, 255, 0.80);
   }
   25% {
     box-shadow:
-       65px -45px 130px 15px rgba(245,150,41, 0.70),
+       65px -45px 130px 15px rgba(245,166,35, 0.70),
       -65px  45px 130px 15px rgba(48, 66, 196, 0.95),
       -55px -55px 110px 10px rgba(82, 113, 255, 0.85),
        55px  55px 110px 10px rgba(82, 113, 255, 0.80);
@@ -278,13 +278,13 @@
   50% {
     box-shadow:
        65px  45px 130px 15px rgba(48, 66, 196, 0.95),
-      -65px -45px 130px 15px rgba(245,150,41, 0.70),
+      -65px -45px 130px 15px rgba(245,166,35, 0.70),
        55px  55px 110px 10px rgba(82, 113, 255, 0.85),
       -55px -55px 110px 10px rgba(82, 113, 255, 0.80);
   }
   75% {
     box-shadow:
-      -65px  45px 130px 15px rgba(245,150,41, 0.70),
+      -65px  45px 130px 15px rgba(245,166,35, 0.70),
        65px -45px 130px 15px rgba(48, 66, 196, 0.95),
       -55px  55px 110px 10px rgba(82, 113, 255, 0.85),
        55px -55px 110px 10px rgba(82, 113, 255, 0.80);
@@ -294,8 +294,8 @@
 /* ─── Stripe glow pulse ──────────────────────────────────────────────────── */
 
 @keyframes stripeGlow {
-  0%, 100% { box-shadow: 0 0 10px 3px rgba(245,150,41,0.22), 0 0 28px 8px rgba(82,113,255,0.1); }
-  50%       { box-shadow: 0 0 22px 7px rgba(245,150,41,0.42), 0 0 50px 14px rgba(82,113,255,0.2); }
+  0%, 100% { box-shadow: 0 0 10px 3px rgba(245,166,35,0.22), 0 0 28px 8px rgba(82,113,255,0.1); }
+  50%       { box-shadow: 0 0 22px 7px rgba(245,166,35,0.42), 0 0 50px 14px rgba(82,113,255,0.2); }
 }
 
 @keyframes stripeFlow {
@@ -434,12 +434,12 @@
   background: linear-gradient(
     100deg,
     #fde58a   0%,
-    #f59629  22%,
-    #d97720  42%,
+    #f5a623  22%,
+    #c98818  42%,
     #fff2a3  50%,
-    #d97720  58%,
-    #b35a14  78%,
-    #8a4310 100%
+    #c98818  58%,
+    #a06b14  78%,
+    #7a5012 100%
   );
   width: 40px;
   height: 1000px;
@@ -466,7 +466,7 @@
   top: 0;
   width: 340%;
   height: 18%;
-  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(245,150,41,0.3), transparent 70%);
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(245,166,35,0.3), transparent 70%);
   filter: blur(12px);
   animation: stripeFlow 3.5s ease-in-out infinite;
 }
@@ -522,6 +522,6 @@
   background: #3042c4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #f59629;
+  background: #f5a623;
   border-radius: 3px;
 }
