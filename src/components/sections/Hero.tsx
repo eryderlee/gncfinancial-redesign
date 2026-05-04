@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="hero-fade-up hero-delay-3 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
               <Link
                 href={SLUGS.bookNow}
-                className="inline-flex items-center justify-center gap-2 bg-brand-gold text-brand-navy font-semibold px-6 sm:px-7 py-3.5 rounded-lg hover:bg-brand-gold-light transition-colors duration-200 text-sm"
+                className="btn-gold inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg text-sm"
               >
                 Book Free Consultation
                 <ArrowRight className="w-4 h-4" />

@@ -16,7 +16,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           // base
           "inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           // variants
-          variant === "primary" && "bg-brand-gold text-brand-navy hover:bg-brand-gold-light",
+          variant === "primary" && "btn-gold",
           variant === "outline" && "border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white",
           variant === "ghost" && "text-brand-navy hover:bg-brand-navy/10",
           // sizes

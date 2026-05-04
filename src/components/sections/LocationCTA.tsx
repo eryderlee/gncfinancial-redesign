@@ -116,7 +116,7 @@ export default function LocationCTA() {
             <div className="mt-8 relative">
               <Link
                 href={SLUGS.contact}
-                className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-6 py-3 rounded-lg hover:bg-brand-gold-light transition-colors"
+                className="btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-lg"
               >
                 <Calendar className="w-5 h-5" />
                 Make Appointment

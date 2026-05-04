@@ -111,7 +111,7 @@ export default function HeroContactForm({ dark = false }: Props) {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full bg-brand-gold text-brand-navy font-semibold py-3 rounded-lg hover:bg-brand-gold-light transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed text-sm"
+        className="btn-gold w-full py-3 rounded-lg disabled:opacity-60 disabled:cursor-not-allowed text-sm"
       >
         {status === "sending" ? "Sending…" : "Send Request →"}
       </button>

@@ -79,7 +79,7 @@ export default function MobileNav() {
           <Link
             href="/book-now"
             onClick={() => setOpen(false)}
-            className="block w-full text-center bg-brand-gold text-brand-navy font-semibold py-3 rounded-lg hover:bg-brand-gold-light transition-colors"
+            className="btn-gold block w-full text-center py-3 rounded-lg"
           >
             Book Free Consultation
           </Link>

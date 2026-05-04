@@ -79,7 +79,7 @@ export default function CloudAccounting() {
             <div data-reveal data-delay="5">
               <Link
                 href="/book-now"
-                className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-6 py-3 rounded-lg hover:bg-brand-gold-light transition-colors"
+                className="btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-lg"
               >
                 Book Free Consultation
               </Link>

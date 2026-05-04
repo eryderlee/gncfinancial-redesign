@@ -30,7 +30,7 @@ export default function BlogPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Link
               href={SLUGS.contact}
-              className="inline-flex items-center justify-center bg-brand-gold text-brand-navy font-semibold px-6 py-3 rounded-lg hover:bg-brand-gold-light transition-colors"
+              className="btn-gold inline-flex items-center justify-center px-6 py-3 rounded-lg"
             >
               Ask Us a Question
             </Link>
