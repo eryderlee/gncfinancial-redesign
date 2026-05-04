@@ -578,11 +578,11 @@
   text-shadow:
     0 0 10px rgba(255, 176, 46, 0.55),
     0 0 24px rgba(255, 176, 46, 0.25);
-  animation: ledFlicker 12s steps(1) infinite;
+  /* 2.5s delay holds steady gold while the hero entrance plays out,
+   * then the flicker burst hits ~0.75s into each 15s loop */
+  animation: ledFlicker 15s steps(1) 2.5s infinite;
 }
 
-/* Hard-cut keyframes (steps(1)) — looks like an LED briefly losing
- * power, with one short flicker burst per 12s loop. */
 @keyframes ledFlicker {
   0%, 100% {
     opacity: 1;
@@ -591,17 +591,20 @@
       0 0 24px rgba(255, 176, 46, 0.25);
   }
 
-  /* Flicker burst around 50% of the loop */
-  50%   { opacity: 0.15;
-          text-shadow: 0 0 2px rgba(255, 176, 46, 0.15); }
-  50.4% { opacity: 1; }
-  50.8% { opacity: 0.3;
-          text-shadow: 0 0 4px rgba(255, 176, 46, 0.2); }
-  51.1% { opacity: 1; }
-  51.6% { opacity: 0.18; }
-  52%   { opacity: 1; }
-  52.6% { opacity: 0.4; }
-  53%   { opacity: 1; }
+  /* Flicker burst — opacity collapses the whole word like an LED
+   * losing power, with a dim text-shadow during the dropouts */
+  5%   { opacity: 0.08;
+         text-shadow: 0 0 2px rgba(255, 176, 46, 0.12); }
+  5.4% { opacity: 1; }
+  5.9% { opacity: 0.22;
+         text-shadow: 0 0 3px rgba(255, 176, 46, 0.15); }
+  6.2% { opacity: 1; }
+  6.7% { opacity: 0.05;
+         text-shadow: 0 0 1px rgba(255, 176, 46, 0.08); }
+  7.1% { opacity: 1; }
+  7.6% { opacity: 0.4;
+         text-shadow: 0 0 4px rgba(255, 176, 46, 0.2); }
+  8%   { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
