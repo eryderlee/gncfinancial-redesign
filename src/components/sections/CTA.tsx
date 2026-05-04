@@ -28,7 +28,7 @@ export default function CTA({
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 75% at 50% 50%, #e89018 0%, #e89018 50%, rgba(232,144,24,0.4) 80%, transparent 100%)",
+            "radial-gradient(ellipse 70% 75% at 50% 50%, #f59629 0%, #f59629 50%, rgba(245,150,41,0.4) 80%, transparent 100%)",
         }}
       />
 

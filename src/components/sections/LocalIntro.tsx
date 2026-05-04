@@ -56,13 +56,13 @@ export default function LocalIntro() {
                   right: "-25%",
                   bottom: "-25%",
                   background: `
-                    radial-gradient(ellipse 70% 22% at 18% 72%, rgba(232,144,24,0.95) 0%, transparent 60%),
-                    radial-gradient(ellipse 22% 30% at 88% 25%, rgba(246,196,74,0.85) 0%, transparent 75%),
+                    radial-gradient(ellipse 70% 22% at 18% 72%, rgba(245,150,41,0.95) 0%, transparent 60%),
+                    radial-gradient(ellipse 22% 30% at 88% 25%, rgba(255,200,97,0.85) 0%, transparent 75%),
                     radial-gradient(ellipse 35% 50% at 62% 40%, rgba(122,150,255,1) 0%, transparent 65%),
                     radial-gradient(ellipse 80% 55% at 8% 8%, rgba(82,113,255,0.85) 0%, transparent 70%),
                     radial-gradient(ellipse 45% 65% at 95% 92%, rgba(48,66,196,0.65) 0%, transparent 60%),
                     radial-gradient(ellipse 18% 14% at 45% 32%, rgba(220,230,255,0.6) 0%, transparent 90%),
-                    radial-gradient(ellipse 30% 18% at 78% 78%, rgba(232,144,24,0.45) 0%, transparent 75%),
+                    radial-gradient(ellipse 30% 18% at 78% 78%, rgba(245,150,41,0.45) 0%, transparent 75%),
                     radial-gradient(ellipse 22% 32% at 12% 38%, rgba(122,150,255,0.55) 0%, transparent 80%),
                     #5271ff
                   `,

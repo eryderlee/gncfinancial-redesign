@@ -25,7 +25,7 @@ export default function OgImage() {
           style={{
             width: "80px",
             height: "6px",
-            background: "#e89018",
+            background: "#f59629",
             marginBottom: "40px",
           }}
         />
