@@ -3,6 +3,13 @@ import { Award } from "lucide-react";
 import { FlickeringGrid } from "@/registry/magicui/flickering-grid";
 import CountUp from "@/components/CountUp";
 
+const LOCAL_STATS = [
+  { value: "30+", label: "Years Experience" },
+  { value: "1,000+", label: "Clients Served" },
+  { value: "4.9★", label: "Google Rating" },
+  { value: "24h", label: "Response Time" },
+];
+
 export default function LocalIntro() {
   return (
     <section className="py-14 sm:py-20 bg-white relative overflow-hidden" aria-labelledby="local-intro-heading">
@@ -179,6 +186,27 @@ export default function LocalIntro() {
             </p>
           </div>
 
+        </div>
+
+        {/* Stats bar */}
+        <div className="mt-14 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 border-y border-gray-200" data-reveal>
+          {LOCAL_STATS.map((stat, i) => (
+            <div
+              key={stat.label}
+              className={`px-3 sm:px-6 py-6 sm:py-8 text-center ${
+                i > 0 ? "lg:border-l border-gray-200" : ""
+              } ${i === 1 ? "border-l border-gray-200" : ""} ${
+                i >= 2 ? "border-t lg:border-t-0 border-gray-200" : ""
+              }`}
+            >
+              <p className="text-brand-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+                <CountUp value={stat.value} />
+              </p>
+              <p className="text-gray-500 text-[10px] sm:text-xs uppercase tracking-widest mt-2 sm:mt-3 font-medium">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

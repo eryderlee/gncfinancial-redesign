@@ -53,8 +53,8 @@ export default function HomePage() {
       <Hero />
 
       <LocalIntro />
-      <Ticker />
       <WhyChooseIntro />
+      <Ticker />
       <ServicesGrid />
 
       <Ticker />

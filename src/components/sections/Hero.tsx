@@ -3,14 +3,6 @@ import { SITE, SLUGS } from "@/lib/constants";
 import { Phone, Mail, ArrowRight } from "lucide-react";
 import HeroContactForm from "@/components/sections/HeroContactForm";
 import { Backlight } from "@/components/ui/Backlight";
-import CountUp from "@/components/CountUp";
-
-const STATS = [
-  { value: "30+", label: "Years Experience" },
-  { value: "1,000+", label: "Clients Served" },
-  { value: "4.9★", label: "Google Rating" },
-  { value: "24h", label: "Response Time" },
-];
 
 export default function Hero() {
   return (
@@ -94,22 +86,6 @@ export default function Hero() {
         </div>
 
       </div>
-
-      {/* Full-width stats bar */}
-      <div className="hero-slide-up hero-delay-5 relative z-10 grid grid-cols-2 lg:grid-cols-4">
-        {STATS.map((stat) => (
-          <div
-            key={stat.label}
-            className="px-3 sm:px-8 py-5 sm:py-7 text-center hover:bg-white/5 transition-colors duration-300"
-          >
-            <p className="text-brand-gold text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
-              <CountUp value={stat.value} />
-            </p>
-            <p className="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest mt-1.5 sm:mt-2">{stat.label}</p>
-          </div>
-        ))}
-      </div>
-
     </section>
   );
 }
