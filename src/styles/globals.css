@@ -395,6 +395,17 @@
   .hero-slide-up { transform: none !important; }
 }
 
+/* While the loading screen is showing, freeze hero entrance animations
+ * so they play after the screen dismisses (rather than being mostly
+ * done by the time the user actually sees the hero). */
+html.is-loading .hero-stripe,
+html.is-loading .hero-fade-up,
+html.is-loading .hero-scale-in,
+html.is-loading .hero-slide-up,
+html.is-loading .text-glow-gold {
+  animation-play-state: paused !important;
+}
+
 /* ─── IndividualsSection tab transitions ─────────────────────────────────── */
 
 @keyframes individualsFade {

@@ -12,10 +12,19 @@ export default function LoadingScreen() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    const release = () => {
+      // Remove the .is-loading class on <html>, which unpauses every
+      // hero entrance animation. From this moment they begin counting
+      // their delays and play in sequence.
+      document.documentElement.classList.remove("is-loading");
+    };
+
     try {
       if (sessionStorage.getItem("gnc_loaded_v2")) {
-        // Returning visitor in this session — hide immediately.
+        // Returning visitor in this session — hide immediately and
+        // let hero animations play on a fresh page load.
         setVisible(false);
+        release();
         return;
       }
     } catch {
@@ -24,6 +33,7 @@ export default function LoadingScreen() {
 
     const t = setTimeout(() => {
       setVisible(false);
+      release();
       try {
         sessionStorage.setItem("gnc_loaded_v2", "1");
       } catch {}
