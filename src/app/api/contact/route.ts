@@ -1,7 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+// Simple in-memory rate limiter: max 5 submissions per IP per 10 minutes
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  if (entry.count >= RATE_LIMIT) return true;
+  entry.count++;
+  return false;
+}
+
+function sanitise(value: string): string {
+  return value.replace(/[\r\n]/g, " ").trim();
+}
+
 export async function POST(req: NextRequest) {
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+    req.headers.get("x-real-ip") ??
+    "unknown";
+
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 });
+  }
+
   let body: Record<string, string>;
   try {
     body = await req.json();
@@ -15,20 +45,22 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Name, email and message are required." }, { status: 400 });
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (!emailRegex.test(email)) {
     return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
   }
+
+  const safeName = sanitise(name);
 
   // Format the notification email body
   const text = [
     "New enquiry from GNC Financial website",
     "",
-    `Name:    ${name}`,
+    `Name:    ${safeName}`,
     `Email:   ${email}`,
-    phone    ? `Phone:   ${phone}`   : null,
-    service  ? `Service: ${service}` : null,
-    date     ? `Date:    ${date}`    : null,
+    phone    ? `Phone:   ${sanitise(phone)}`   : null,
+    service  ? `Service: ${sanitise(service)}` : null,
+    date     ? `Date:    ${sanitise(date)}`    : null,
     "",
     "Message:",
     message,
@@ -66,7 +98,7 @@ export async function POST(req: NextRequest) {
         from: `"GNC Financial Website" <${process.env.SMTP_USER}>`,
         to,
         replyTo: email,
-        subject: `New enquiry from ${name} – GNC Financial`,
+        subject: `New enquiry from ${safeName} – GNC Financial`,
         text,
       });
     } catch (err) {
